@@ -1,0 +1,47 @@
+{
+  "name": "philippebeck/portfolio",
+  "version": "0.1.0",
+  "type": "website",
+  "description": "Web Development, Tool Design, Developer Training - Open-source Technologies - HTML, CSS, JavaScript, PHP, SQL",
+  "keywords": [
+    "portfolio",
+    "mvc"
+  ],
+  "homepage": "https://philippebeck.net",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Philippe Beck",
+      "email": "philippe@philippebeck.net",
+      "homepage": "https://philippebeck.net",
+      "role": "Lead Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "Tests\\": "tests/",
+      "Pam\\": "vendor/pjs/pam/"
+    }
+  },
+  "require": {
+    "php": "^7.3",
+    "animadio/animadio": "0.3.2",
+    "pjs/pam": "^0.2.5",
+    "twig/twig": "^2.9.0"
+  },
+  "require-dev": {
+    "tracy/tracy": "^2.6.2"
+  },
+  "config": {
+    "platform": {
+      "php": "7.3"
+    }
+  },
+  "support": {
+    "email": "admin@philippebeck.net",
+    "issues": "https://github.com/philippebeck/portfolio/issues",
+    "wiki": "https://github.com/philippebeck/portfolio/wiki",
+    "source": "https://github.com/philippebeck/portfolio"
+  }
+}
