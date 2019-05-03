@@ -6,10 +6,29 @@
 
 {% block main %}
 
-    <main id="certificate" class="text-center-xs">
+    <!-- Main Controls -->
+    <input id="degree" class="block-xs-radio1" type="radio" name="certificate" checked>
+    <input id="path" class="block-xs-radio2" type="radio" name="certificate">
+    <input id="course" class="block-xs-radio3" type="radio" name="certificate">
 
-        <!-- Course -->
-        <section>
+    <label class="button-tomato" for="degree">
+        <i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i>
+        <span>Degree</span>
+    </label>
+    <label class="button-jade" for="path">
+        <i class="fas fa-road fa-lg" aria-hidden="true"></i>
+        <span>Path</span>
+    </label>
+    <label class="button-sky" for="course">
+        <i class="fas fa-book fa-lg" aria-hidden="true"></i>
+        <span>Course</span>
+    </label>
+
+
+    <main id="certificate" class="text-center-xs hide-xs-global block-xs-relay">
+
+        <!-- Degree -->
+        <section class="block-xs-target1">
             <h2><i class="fa fa-book" aria-hidden="true"></i> Degree</h2>
 
             <table class="table">
@@ -38,7 +57,7 @@
         </section>
 
         <!-- Path -->
-        <section>
+        <section class="block-xs-target2">
             <h2><i class="fa fa-book" aria-hidden="true"></i> Path</h2>
 
             <table class="table">
@@ -65,7 +84,7 @@
         </section>
 
         <!-- Course -->
-        <section>
+        <section class="block-xs-target3">
             <h2><i class="fa fa-book" aria-hidden="true"></i> Cours</h2>
 
             <table class="table">
