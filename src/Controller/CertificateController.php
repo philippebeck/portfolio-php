@@ -17,9 +17,20 @@ class CertificateController extends Controller
      */
     public function indexAction()
     {
-        $allCertificates = ModelFactory::get('Certificate')->list(null,null,1);
+        $allCertificates        = ModelFactory::get('Certificate')->list(null,null,1);
+        $allCourseCertificates  = ModelFactory::get('Certificate')->list('course','type');
+        $allPathCertificates    = ModelFactory::get('Certificate')->list('path','type');
+        $allDegreeCertificates  = ModelFactory::get('Certificate')->list('degree','type');
 
-        return $this->render('front/certificate.twig', ['allCertificates' => $allCertificates]);
+        $allCourseCertificates  = array_reverse($allCourseCertificates);
+        $allPathCertificates    = array_reverse($allPathCertificates);
+
+        return $this->render('front/certificate.twig', [
+            'allCertificates'       => $allCertificates,
+            'allCourseCertificates' => $allCourseCertificates,
+            'allPathCertificates'   => $allPathCertificates,
+            'allDegreeCertificates' => $allDegreeCertificates
+        ]);
     }
 
     /**
@@ -29,7 +40,7 @@ class CertificateController extends Controller
     {
         if (!empty($_POST)) {
             ModelFactory::get('Certificate')->create($_POST);
-            htmlspecialchars(Session::createAlert('Nouveau certificat créé avec succès !', 'green'));
+            htmlspecialchars(Session::createAlert('New certificate successfully created !', 'green'));
 
             $this->redirect('admin');
             
@@ -47,7 +58,7 @@ class CertificateController extends Controller
 
         if (!empty($_POST)) {
             ModelFactory::get('Certificate')->update($id, $_POST);
-            htmlspecialchars(Session::createAlert('Modification réussie du certificat sélectionné !', 'blue'));
+            htmlspecialchars(Session::createAlert('Successful modification of the selected certificate !', 'blue'));
 
             $this->redirect('admin');
         }
