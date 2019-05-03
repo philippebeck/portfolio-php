@@ -30,7 +30,7 @@ class UserController extends Controller
 
                 htmlspecialchars(Session::createAlert('Successful authentication, welcome ' . $user['first_name'] .' !', 'purple'));
 
-                $this->redirect('home');
+                $this->redirect('admin');
 
             } else {
                 htmlspecialchars(Session::createAlert('Failed authentication !', 'gray'));
