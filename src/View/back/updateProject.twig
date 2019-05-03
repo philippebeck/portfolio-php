@@ -1,0 +1,51 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Edit a Project{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="text-center-xs">
+        <form class="form" method="post" action={{ url('project!update', {'id': project.id}) }} enctype="multipart/form-data">
+            <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+            <fieldset>
+                <legend>
+                    <i class="fab fa-github fa-fw fa-2x" aria-hidden="true"></i>
+                </legend>
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" maxlength="50" required value="{{ project.name }}">
+                    </li>
+                    <li>
+                        <label for="file">Picture</label>
+                        <input name="file" type="file" accept=".jpg, .jpeg, .png, .svg, .gif, .pdf">
+                    </li>
+                    <li>
+                        <label for="link">Link</label>
+                        <input id="link" name="link" type="text" maxlength="50" required value="{{ project.link }}">
+                    </li>
+                    <li>
+                        <label for="year">Year</label>
+                        <input id="year" name="year" type="number" required value="{{ project.year }}">
+                    </li>
+                    <li>
+                        <label for="type">Type</label>
+                        <input id="type" name="type" type="text" maxlength="10" required value="{{ project.type }}">
+                    </li>
+                    <li>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="5" maxlength="255" required>{{ project.description }}</textarea>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Update">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <a class="btn-black" href="{{ url('admin') }}">Quit</a>
+    </main>
+{% endblock %}
