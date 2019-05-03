@@ -1,0 +1,114 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block description %}Administration{% endblock %}
+
+{% block main %}
+
+    <main id="admin">
+
+        <!-- Project -->
+        <section>
+            <h2>
+                <i class="fab fa-github-square" aria-hidden="true"></i> Projects
+            </h2>
+
+            <a class="btn-green" href="{{ url('project!create') }}">New Project</a>
+
+            <table class="table">
+
+                <thead>
+                <tr>
+                    <th>Id<br>Project</th>
+                    <th>Picture</th>
+                    <th>Description<br>Year</th>
+                    <th>Update Delete</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {% for project in allProjects %}
+                    <tr>
+
+                        <td>
+                            <a class="btn-purple" href="https://github.com/{{ project.link }}" title="Voir le code du projet">
+                                {{ project.id }}<br>{{ project.name }}
+                            </a>
+                        </td>
+
+                        <td>
+                            <a class="btn-orange" href="img/projects/{{ project.image }}" title="Voir le screenshot">
+                                <img src="img/projects/{{ project.image }}" alt="Screenshot du projet {{ project.name }}">
+                            </a>
+                        </td>
+
+                        <td>
+                            {{ project.description }}
+                            <hr>
+                            {{ project.year }}
+                        </td>
+
+                        <td>
+                            <a class="btn-blue" href="{{ url('project!update', {'id': project.id}) }}">
+                                <i class="fas fa-edit fa-fw fa-lg" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn-red" href="{{ url('project!delete', {'id': project.id}) }}">
+                                <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Certificate -->
+        <section>
+            <h2>
+                <i class="fas fa-certificate" aria-hidden="true"></i> Certificates
+            </h2>
+
+            <a class="btn-green" href="{{ url('certificate!create') }}">New certificate</a>
+
+            <table class="table">
+
+                <thead>
+                <tr>
+                    <th>Id<br>Name</th>
+                    <th>Certificate</th>
+                    <th>Update Delete</th>
+                </tr>
+                </thead>
+                    
+                <tbody>
+
+                {% for certificate in allCertificates %}
+                    <tr>
+                        <td>
+                            {{ certificate.id }}<br>{{ certificate.name }}
+                        </td>
+                        <td>
+                            <a class="btn-jade" href="https://{{ certificate.link }}" title="Voir le certificat n° {{ certificate.certif_id }}">
+                                {{ date(certificate.certif_date)|date('d/m/y') }}
+                            </a>
+                        </td>
+
+                        <td>
+                            <a class="btn-blue" href="{{ url('certificate!update', {'id': certificate.id}) }}">
+                                <i class="fas fa-edit fa-fw fa-lg" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn-red" href="{{ url('certificate!delete', {'id': certificate.id}) }}">
+                                <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+{% endblock %}
