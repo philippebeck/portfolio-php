@@ -1,0 +1,60 @@
+<nav class="navbar">
+
+    <!-- Home access -->
+    <ul class="nav-brand">
+        <li>
+            <a href="./" title="Home">
+                <img src="img/phi.svg" alt="Logo Phi">
+            </a>
+        </li>
+    </ul>
+
+    <!-- Main access -->
+    <ul class="nav-main">
+        <li>
+            <a href="{{ url('project') }}" title="Websites & Frameworks">
+                <i class="fas fa-project-diagram fa-fw" aria-hidden="true"></i>
+                <span>Projects</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('service') }}" title="Developer & Mentor">
+                <i class="fas fa-tasks fa-fw" aria-hidden="true"></i>
+                <span>Services</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('certificate') }}" title="Courses & Degrees">
+                <i class="fa fa-certificate fa-fw" aria-hidden="true"></i>
+                <span>Certificates</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- User access -->
+    <ul class="nav-info">
+
+        {% if (isLogged()) %}
+            <li>
+                <p>Hello {{ userName() }}</p>
+            </li>
+            <li>
+                <a href="{{ url('admin') }}" title="Administration">
+                    <img src="img/{{ userImage() }}" alt="User Picture">
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('user!logout') }}" title="Logout">
+                    <i class="fas fa-sign-out-alt fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+
+        {% else %}
+            <li>
+                <a href="{{ url('user!login') }}" title="Login">
+                    <i class="fas fa-sign-in-alt fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
