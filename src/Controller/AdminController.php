@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use Pam\Controller\Controller;
-use Pam\Model\ModelFactory;
 use Pam\Helper\Session;
+use Pam\Model\ModelFactory;
 
 /**
  * Class AdminController
@@ -18,8 +18,8 @@ class AdminController extends Controller
     public function indexAction()
     {
         if (Session::islogged()) {
-            $allProjects        = ModelFactory::get('Project')->list();
-            $allCertificates    = ModelFactory::get('Certificate')->list();
+            $allProjects        = ModelFactory::get('Project')->list(null,null,1);
+            $allCertificates    = ModelFactory::get('Certificate')->list(null,null,1);
 
             return $this->render('admin.twig', [
                 'allProjects'       => $allProjects,
