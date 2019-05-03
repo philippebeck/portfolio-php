@@ -37,11 +37,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="text-center-xs">
 
 {{ include('layout/navbar.twig') }}
 
-<header class="text-center-xs">
+<header>
 
     {% if (hasAlert()) %}
         <p id="alert" class="bg-{{ readType() }}-color-white-base">{{ readMessage() }}</p>
