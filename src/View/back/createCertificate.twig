@@ -1,0 +1,46 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Add a New Certificate{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="text-center-xs">
+        <form class="form" method="post" action={{ url('certificate!create') }}>
+            <fieldset>
+                <legend>
+                    <i class="fas fa-certificate fa-fw fa-2x" aria-hidden="true"></i>
+                </legend>
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Certificate Name" maxlength="100" required>
+                    </li>
+                    <li>
+                        <label for="certif_id">Id</label>
+                        <input id="certif_id" name="certif_id" type="text" placeholder="0123456789" maxlength="20" required>
+                    </li>
+                    <li>
+                        <label for="link">Certificate</label>
+                        <input id="link" name="link" type="text" placeholder="https://url.ext" maxlength="100" required>
+                    </li>
+                    <li>
+                        <label for="certif_date">Date</label>
+                        <input id="certif_date" name="certif_date" type="date" required>
+                    </li>
+                    <li>
+                        <label for="type">Type</label>
+                        <input id="type" name="type" type="text" placeholder="course / path / degree" maxlength="10" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Create">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <a class="btn-black" href="{{ url('admin') }}">Quit</a>
+    </main>
+{% endblock %}
