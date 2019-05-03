@@ -1,0 +1,30 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Authentication{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="text-center-xs">
+        <form class="form" action="{{ url('user!login')}}" method="post">
+            <fieldset>
+                <legend><i class="fas fa-lock" aria-hidden="true"></i> Login to the Administration</legend>
+                <ul>
+                    <li>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Insert your email" required>
+                    </li>
+                    <li>
+                        <label for="pass">Password</label>
+                        <input id="pass" name="pass" type="password" placeholder="Insert your email" autocomplete="off" required>
+                    </li>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Login">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <a class="btn-black" href="./">Quit</a>
+    </main>
+{% endblock %}
