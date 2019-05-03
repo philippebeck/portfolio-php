@@ -1,0 +1,46 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Edit a Certificate{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="text-center-xs">
+        <form class="form" method="post" action={{ url('certificate!update', {'id': certificate.id}) }}>
+            <fieldset>
+                <legend>
+                    <i class="fas fa-certificate fa-fw fa-2x" aria-hidden="true"></i>
+                </legend>
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" maxlength="100" required value="{{ certificate.name }}">
+                    </li>
+                    <li>
+                        <label for="certif_id">Id</label>
+                        <input id="certif_id" name="certif_id" type="text" maxlength="20" required value="{{ certificate.certif_id }}">
+                    </li>
+                    <li>
+                        <label for="link">Certificate</label>
+                        <input id="link" name="link" type="text" maxlength="100" required value="{{ certificate.link }}">
+                    </li>
+                    <li>
+                        <label for="certif_date">Date</label>
+                        <input id="certif_date" name="certif_date" type="date" required value="{{ certificate.certif_date}}">
+                    </li>
+                    <li>
+                        <label for="type">Type</label>
+                        <input id="type" name="type" type="text" maxlength="10" required value="{{ certificate.type}}">
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Update">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <a class="btn-black" href="{{ url('admin') }}">Quit</a>
+    </main>
+{% endblock %}
