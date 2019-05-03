@@ -1,0 +1,22 @@
+body {
+    --global-font-family: 'Text Me One', sans-serif;
+    --global-background-color: Lavender;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    --title-font-family: 'Cinzel', serif;
+}
+
+code,
+pre {
+    --pre-font-family: 'Share Tech Mono', monospace;
+}
+
+[class*="nav"] {
+    --navbar-background-color: var(--sapphire);
+}
