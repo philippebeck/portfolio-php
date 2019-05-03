@@ -1,0 +1,52 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Create a New Project{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="text-center-xs">
+        <form class="form" method="post" action={{ url('project!create') }} enctype="multipart/form-data">
+            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+            <fieldset>
+                <legend>
+                    <i class="fab fa-github fa-fw fa-2x" aria-hidden="true"></i>
+                </legend>
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Project Name" maxlength="50" required>
+                    </li>
+                    <li>
+                        <label for="file">Picture</label>
+                        <input name="file" type="file" accept=".jpg, .jpeg, .png, .svg, .gif, .pdf" required>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="link">Link</label>
+                        <input id="link" name="link" type="text" placeholder="Project Link" maxlength="50" required>
+                    </li>
+                    <li>
+                        <label for="year">Year</label>
+                        <input id="year" name="year" type="number" placeholder="Created Year of the Project" required>
+                    </li>
+                    <li>
+                        <label for="type">Type</label>
+                        <input id="type" name="type" type="text" placeholder="Project Type" maxlength="10" required>
+                    </li>
+                    <li>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="10" placeholder="Project Description" maxlength="255" required></textarea>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Create">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <a class="btn-black" href="{{ url('admin') }}">Quit</a>
+    </main>
+{% endblock %}
