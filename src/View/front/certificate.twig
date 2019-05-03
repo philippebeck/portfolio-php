@@ -1,0 +1,94 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Certificate{% endblock %}
+
+{% block description %}My Portfolio Presents my Certificate List{% endblock %}
+
+{% block main %}
+
+    <main id="certificate" class="text-center-xs">
+
+        <!-- Course -->
+        <section>
+            <h2><i class="fa fa-book" aria-hidden="true"></i> Degree</h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Id</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for degreeCertificate in allDegreeCertificates %}
+                    <tr>
+                        <td>{{ date(degreeCertificate.certif_date)|date('d/m/y') }}</td>
+                        <td>
+                            <a class="btn-purple" href="https://{{ degreeCertificate.link }}" title="Access to Certificate" itemprop="url">
+                                <span>{{ degreeCertificate.name }}</span>
+                            </a>
+                        </td>
+                        <td>{{ degreeCertificate.certif_id }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Path -->
+        <section>
+            <h2><i class="fa fa-book" aria-hidden="true"></i> Path</h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Id</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for pathCertificate in allPathCertificates %}
+                    <tr>
+                        <td>{{ date(pathCertificate.certif_date)|date('d/m/y') }}</td>
+                        <td>
+                            <a class="btn-purple" href="https://{{ pathCertificate.link }}" title="Access to Certificate" itemprop="url">{{ pathCertificate.name }}</a>
+                        </td>
+                        <td>{{ pathCertificate.certif_id }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Course -->
+        <section>
+            <h2><i class="fa fa-book" aria-hidden="true"></i> Cours</h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Id</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for courseCertificate in allCourseCertificates %}
+                    <tr>
+                        <td>{{ date(courseCertificate.certif_date)|date('d/m/y') }}</td>
+                        <td>
+                            <a class="btn-purple" href="https://{{ courseCertificate.link }}" title="Access to Certificate" itemprop="url">{{ courseCertificate.name }}</a>
+                        </td>
+                        <td>{{ courseCertificate.certif_id }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+{% endblock %}
