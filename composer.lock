@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1e491858891a47cece11e5adaaa70c9",
+    "content-hash": "d7b2fe609ed744b3f29db6919ad17a7b",
     "packages": [
         {
             "name": "animadio/animadio",
@@ -53,16 +53,16 @@
         },
         {
             "name": "pjs/pam",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "704d4426de929d0635353eced9bae467852af33c"
+                "reference": "f92c4e1a88f9810d9905d69f45e6963db6422f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/704d4426de929d0635353eced9bae467852af33c",
-                "reference": "704d4426de929d0635353eced9bae467852af33c",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/f92c4e1a88f9810d9905d69f45e6963db6422f11",
+                "reference": "f92c4e1a88f9810d9905d69f45e6963db6422f11",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-05-01T15:18:59+00:00"
+            "time": "2019-05-03T08:12:17+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

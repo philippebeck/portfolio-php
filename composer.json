@@ -27,7 +27,7 @@
   "require": {
     "php": "^7.2",
     "animadio/animadio": "0.3.2",
-    "pjs/pam": "^0.3.1",
+    "pjs/pam": "^0.3.2"
   },
   "config": {
     "platform": {
