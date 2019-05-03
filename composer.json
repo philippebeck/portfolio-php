@@ -27,7 +27,7 @@
   "require": {
     "php": "^7.3",
     "animadio/animadio": "0.3.2",
-    "pjs/pam": "^0.2.5",
+    "pjs/pam": "^0.3.1",
     "twig/twig": "^2.9.0"
   },
   "require-dev": {
