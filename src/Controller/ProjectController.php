@@ -72,7 +72,7 @@ class ProjectController extends Controller
             ModelFactory::get('Project')->update($id, $data);
             htmlspecialchars(Session::createAlert('Successful modification of the selected project !', 'blue'));
 
-            $this->redirect('back');
+            $this->redirect('admin');
         }
         $project = ModelFactory::get('Project')->read($id);
 
