@@ -22,7 +22,7 @@ class HomeController extends Controller
         $project     = end($allProjects);
         $certificate = end($allCertificates);
 
-        return $this->render('home.twig', [
+        return $this->render('front/home.twig', [
             'project'     => $project,
             'certificate' => $certificate
         ]);

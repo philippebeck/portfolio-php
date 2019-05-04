@@ -21,7 +21,7 @@ class AdminController extends Controller
             $allProjects        = ModelFactory::get('Project')->list(null,null,1);
             $allCertificates    = ModelFactory::get('Certificate')->list(null,null,1);
 
-            return $this->render('admin.twig', [
+            return $this->render('back/admin.twig', [
                 'allProjects'       => $allProjects,
                 'allCertificates'   => $allCertificates
             ]);

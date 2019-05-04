@@ -36,7 +36,7 @@ class UserController extends Controller
                 htmlspecialchars(Session::createAlert('Failed authentication !', 'gray'));
             }
         }
-        return $this->render('login.twig');
+        return $this->render('back/login.twig');
     }
 
     /**
