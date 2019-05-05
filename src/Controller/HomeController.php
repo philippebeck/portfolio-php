@@ -16,15 +16,11 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        $allProjects     = ModelFactory::get('Project')->list();
-        $allCertificates = ModelFactory::get('Certificate')->list();
-
-        $project     = $allProjects[array_rand($allProjects)];
-        $certificate = $allCertificates[array_rand($allCertificates)];
+        $allProjects    = ModelFactory::get('Project')->list();
+        $project        = $allProjects[array_rand($allProjects)];
 
         return $this->render('front/home.twig', [
-            'project'     => $project,
-            'certificate' => $certificate
+            'project' => $project
         ]);
     }
 }
