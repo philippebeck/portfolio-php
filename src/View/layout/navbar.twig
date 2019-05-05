@@ -1,5 +1,8 @@
 <nav class="navbar">
 
+    <input id="nav-close" class="nav-close" type="radio" name="navbar" checked>
+    <input id="nav-open" class="nav-open" type="radio" name="navbar">
+
     <!-- Home access -->
     <ul class="nav-brand">
         <li>
@@ -57,4 +60,11 @@
             </li>
         {% endif %}
     </ul>
+
+    <label for="nav-close" class="nav-toggle" title="Close the Navigation Menu">
+        <i class="fas fa-angle-double-up fa-lg" aria-hidden="true"></i>
+    </label>
+    <label for="nav-open" class="nav-toggle" title="Open the Navigation Menu">
+        <i class="fas fa-angle-double-down fa-lg" aria-hidden="true"></i>
+    </label>
 </nav>
