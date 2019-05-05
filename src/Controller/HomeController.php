@@ -19,8 +19,8 @@ class HomeController extends Controller
         $allProjects     = ModelFactory::get('Project')->list();
         $allCertificates = ModelFactory::get('Certificate')->list();
 
-        $project     = end($allProjects);
-        $certificate = end($allCertificates);
+        $project     = $allProjects[array_rand($allProjects)];
+        $certificate = $allCertificates[array_rand($allCertificates)];
 
         return $this->render('front/home.twig', [
             'project'     => $project,
