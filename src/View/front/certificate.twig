@@ -29,14 +29,15 @@
 
         <!-- Degree -->
         <section class="block-xs-target1">
-            <h2><i class="fas fa-graduation-cap" aria-hidden="true"></i> Degree</h2>
+            <h2 class="color-red-base">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i> Degree
+            </h2>
 
             <table class="table">
                 <thead>
                 <tr>
                     <th>Date</th>
-                    <th>Name</th>
-                    <th>Id</th>
+                    <th>Degree Certificate</th>
                 </tr>
                 </thead>
 
@@ -45,11 +46,10 @@
                     <tr>
                         <td>{{ date(degreeCertificate.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-purple" href="https://{{ degreeCertificate.link }}" title="Access to Certificate" itemprop="url">
+                            <a class="btn-tomato" href="https://{{ degreeCertificate.link }}" title="Access to Certificate" rel="noreferrer noopener" target="_blank">
                                 <span>{{ degreeCertificate.name }}</span>
                             </a>
                         </td>
-                        <td>{{ degreeCertificate.certif_id }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -58,14 +58,15 @@
 
         <!-- Path -->
         <section class="block-xs-target2">
-            <h2><i class="fas fa-road" aria-hidden="true"></i> Paths</h2>
+            <h2 class="color-green-base">
+                <i class="fas fa-road" aria-hidden="true"></i> Paths
+            </h2>
 
             <table class="table">
                 <thead>
                 <tr>
                     <th>Date</th>
-                    <th>Name</th>
-                    <th>Id</th>
+                    <th>Path Certificate</th>
                 </tr>
                 </thead>
 
@@ -74,9 +75,8 @@
                     <tr>
                         <td>{{ date(pathCertificate.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-purple" href="https://{{ pathCertificate.link }}" title="Access to Certificate" itemprop="url">{{ pathCertificate.name }}</a>
+                            <a class="btn-jade" href="https://{{ pathCertificate.link }}" title="Access to Certificate #{{ pathCertificate.certif_id }}" rel="noreferrer noopener" target="_blank">{{ pathCertificate.name }}</a>
                         </td>
-                        <td>{{ pathCertificate.certif_id }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -85,14 +85,15 @@
 
         <!-- Course -->
         <section class="block-xs-target3">
-            <h2><i class="fas fa-book" aria-hidden="true"></i> Courses</h2>
+            <h2 class="color-blue-base">
+                <i class="fas fa-book" aria-hidden="true"></i> Courses
+            </h2>
 
             <table class="table">
                 <thead>
                 <tr>
                     <th>Date</th>
-                    <th>Name</th>
-                    <th>Id</th>
+                    <th>Course Certificate</th>
                 </tr>
                 </thead>
 
@@ -101,9 +102,8 @@
                     <tr>
                         <td>{{ date(courseCertificate.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-purple" href="https://{{ courseCertificate.link }}" title="Access to Certificate" itemprop="url">{{ courseCertificate.name }}</a>
+                            <a class="btn-sky" href="https://{{ courseCertificate.link }}" title="Access to Certificate #{{ courseCertificate.certif_id }}" rel="noreferrer noopener" target="_blank">{{ courseCertificate.name }}</a>
                         </td>
-                        <td>{{ courseCertificate.certif_id }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
