@@ -1,0 +1,49 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Fullstack Developer & Mentor{% endblock %}
+
+{% block description %}Philippe Beck - Fullstack Development & Mentorship in Development - Technologies HTML5, Twig, CSS3, SCSS, JavaScript, Nodejs, PHP, Symfony, SQL, Git, GitHub{% endblock %}
+
+{% block main %}
+    <main id="home" class="grid-3md gap-3md">
+
+        <!-- Projects -->
+        <section>
+            <h3 class="color-red-base">
+                <i class="fas fa-project-diagram fa-fw" aria-hidden="true"></i> Projects
+            </h3>
+            <a class="btn-tomato" href="{{ url('project') }}" title="Access to Projects">
+                <figure>
+                    <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
+                    <figcaption>{{ project.name }} ({{ project.year }})</figcaption>
+                </figure>
+            </a>
+        </section>
+
+        <!-- Services -->
+        <section>
+            <h3 class="color-green-base">
+                <i class="fa fa-tasks fa-fw" aria-hidden="true"></i> Services
+            </h3>
+            <a class="btn-jade" href="{{ url('service') }}" title="Access to Services">
+                <p>Fullstack Development :</p>
+                <ul>
+                    <li>Website</li>
+                    <li>Application</li>
+                    <li>Framework</li>
+                    <li>Mentorship</li>
+                </ul>
+            </a>
+        </section>
+
+        <!-- Certificates -->
+        <section>
+            <h3 class="color-blue-base">
+                <i class="fas fa-certificate fa-fw" aria-hidden="true"></i> Certificates
+            </h3>
+            <a class="btn-sky" href="{{ url('certificate') }}" title="Access to Certificates">
+                {{ certificate.name }}
+            </a>
+        </section>
+    </main>
+{% endblock %}
