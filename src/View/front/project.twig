@@ -23,20 +23,22 @@
 
         <!-- TOOLS -->
         <section class="block-xs-target1">
-            <h2 class="color-github-base">
+            <h2 class="color-red-base">
                 <i class="fas fa-tools" aria-hidden="true"></i> Tools
             </h2>
             <figure class="gallery">
 
                 {% for toolProject in allToolProjects %}
-                    <figure class="btn-quartz">
-                        <a href="{{ toolProject.link }}" title="Watch {{ toolProject.name }} on GitHub">
+                    <figure class="btn-tomato">
+                        <a href="https://github.com/{{ toolProject.link }}" title="Watch {{ toolProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ toolProject.image }}" alt="Screenshot of {{ toolProject.name }}">
                         </a>
                         <figcaption>
-                            <h3>{{ toolProject.name }}</h3>
-                            <p>{{ toolProject.description }}</p>
-                            <p>{{ toolProject.year }}</p>
+                            <a href="https://github.com/{{ toolProject.link }}" title="Watch {{ toolProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
+                                <h3>{{ toolProject.name }}</h3>
+                                <p>{{ toolProject.description }}</p>
+                                <p>{{ toolProject.year }}</p>
+                            </a>
                         </figcaption>
                     </figure>
                 {% endfor %}
@@ -46,20 +48,22 @@
 
         <!-- WEBSITES -->
         <section class="block-xs-target2">
-            <h2 class="color-github-base">
+            <h2 class="color-blue-base">
                 <i class="fas fa-globe" aria-hidden="true"></i> WebSites
             </h2>
             <figure class="gallery">
 
                 {% for websiteProject in allWebsiteProjects %}
-                    <figure class="btn-quartz">
-                        <a href="{{ websiteProject.link }}" title="Watch {{ websiteProject.name }} on GitHub">
+                    <figure class="btn-sky">
+                        <a href="https://github.com/{{ websiteProject.link }}" title="Watch {{ websiteProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ websiteProject.image }}" alt="Screenshot of {{ websiteProject.name }}">
                         </a>
                         <figcaption>
-                            <h3>{{ websiteProject.name }}</h3>
-                            <p>{{ websiteProject.description }}</p>
-                            <p>{{ websiteProject.year }}</p>
+                            <a href="https://github.com/{{ websiteProject.link }}" title="Watch {{ websiteProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
+                                <h3>{{ websiteProject.name }}</h3>
+                                <p>{{ websiteProject.description }}</p>
+                                <p>{{ websiteProject.year }}</p>
+                            </a>
                         </figcaption>
                     </figure>
                 {% endfor %}
