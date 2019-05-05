@@ -10,20 +10,20 @@
 
         <!-- Project -->
         <section>
-            <h2>
+            <h2 class="color-github-base">
                 <i class="fab fa-github-square" aria-hidden="true"></i> Projects
             </h2>
 
-            <a class="btn-green" href="{{ url('project!create') }}">New Project</a>
+            <a class="btn-green btn-lg" href="{{ url('project!create') }}">New Project</a>
 
             <table class="table">
 
                 <thead>
                 <tr>
-                    <th>Id<br>Project</th>
+                    <th>Project</th>
                     <th>Picture</th>
-                    <th>Description<br>Year</th>
-                    <th>Update Delete</th>
+                    <th>Description</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
 
@@ -33,7 +33,7 @@
                     <tr>
 
                         <td>
-                            <a class="btn-purple" href="https://github.com/{{ project.link }}" title="Voir le code du projet">
+                            <a class="btn-github" href="https://github.com/{{ project.link }}" title="Voir le code du projet">
                                 {{ project.id }}<br>{{ project.name }}
                             </a>
                         </td>
@@ -52,7 +52,7 @@
 
                         <td>
                             <a class="btn-blue" href="{{ url('project!update', {'id': project.id}) }}">
-                                <i class="fas fa-edit fa-fw fa-lg" aria-hidden="true"></i>
+                                <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                             <a class="btn-red" href="{{ url('project!delete', {'id': project.id}) }}">
                                 <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
@@ -68,19 +68,19 @@
 
         <!-- Certificate -->
         <section>
-            <h2>
+            <h2 class="color-linkedin-base">
                 <i class="fas fa-certificate" aria-hidden="true"></i> Certificates
             </h2>
 
-            <a class="btn-green" href="{{ url('certificate!create') }}">New certificate</a>
+            <a class="btn-green btn-lg" href="{{ url('certificate!create') }}">New certificate</a>
 
             <table class="table">
 
                 <thead>
                 <tr>
-                    <th>Id<br>Name</th>
                     <th>Certificate</th>
-                    <th>Update Delete</th>
+                    <th>Id & Date</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                     
@@ -89,17 +89,19 @@
                 {% for certificate in allCertificates %}
                     <tr>
                         <td>
+                            <a class="btn-linkedin" href="https://{{ certificate.link }}" title="Voir le certificat n° {{ certificate.certif_id }}">
                             {{ certificate.id }}<br>{{ certificate.name }}
+                            </a>
                         </td>
                         <td>
-                            <a class="btn-jade" href="https://{{ certificate.link }}" title="Voir le certificat n° {{ certificate.certif_id }}">
-                                {{ date(certificate.certif_date)|date('d/m/y') }}
-                            </a>
+                            {{ certificate.certif_id }}
+                            <hr>
+                            {{ date(certificate.certif_date)|date('d/m/y') }}
                         </td>
 
                         <td>
                             <a class="btn-blue" href="{{ url('certificate!update', {'id': certificate.id}) }}">
-                                <i class="fas fa-edit fa-fw fa-lg" aria-hidden="true"></i>
+                                <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                             <a class="btn-red" href="{{ url('certificate!delete', {'id': certificate.id}) }}">
                                 <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
