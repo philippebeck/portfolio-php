@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f8c93d9c706436968b1d4eb7cdcaa3d",
+    "content-hash": "86ad57a933b281c8d9c432ca62d2b8f7",
     "packages": [
         {
             "name": "animadio/animadio",
