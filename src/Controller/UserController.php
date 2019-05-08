@@ -31,10 +31,8 @@ class UserController extends Controller
                 htmlspecialchars(Session::createAlert('Successful authentication, welcome ' . $user['first_name'] .' !', 'purple'));
 
                 $this->redirect('admin');
-
-            } else {
-                htmlspecialchars(Session::createAlert('Failed authentication !', 'gray'));
             }
+            htmlspecialchars(Session::createAlert('Failed authentication !', 'gray'));
         }
         return $this->render('back/login.twig');
     }

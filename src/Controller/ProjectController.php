@@ -47,10 +47,8 @@ class ProjectController extends Controller
             htmlspecialchars(Session::createAlert('New project created successfully !', 'green'));
 
             $this->redirect('admin');
-
-        } else {
-            return $this->render('back/createProject.twig');
         }
+        return $this->render('back/createProject.twig');
     }
 
     /**

@@ -43,10 +43,9 @@ class CertificateController extends Controller
             htmlspecialchars(Session::createAlert('New certificate successfully created !', 'green'));
 
             $this->redirect('admin');
-            
-        } else {
-            return $this->render('back/createCertificate.twig');
         }
+
+        return $this->render('back/createCertificate.twig');
     }
 
     /**

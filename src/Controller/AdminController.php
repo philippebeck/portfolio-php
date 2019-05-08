@@ -25,11 +25,9 @@ class AdminController extends Controller
                 'allProjects'       => $allProjects,
                 'allCertificates'   => $allCertificates
             ]);
-
-        } else {
-            htmlspecialchars(Session::createAlert('You must be logged in to access the administration', 'gray'));
-
-            $this->redirect('user!login');
         }
+        htmlspecialchars(Session::createAlert('You must be logged in to access the administration', 'gray'));
+
+        $this->redirect('user!login');
     }
 }
