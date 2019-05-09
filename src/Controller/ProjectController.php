@@ -18,8 +18,8 @@ class ProjectController extends Controller
     public function indexAction()
     {
         $allProjects        = ModelFactory::get('Project')->list(null,null,1);
-        $allToolProjects    = ModelFactory::get('Project')->list('tool','type');
-        $allWebsiteProjects = ModelFactory::get('Project')->list('website','type');
+        $allToolProjects    = ModelFactory::get('Project')->list('tool','project_type');
+        $allWebsiteProjects = ModelFactory::get('Project')->list('website','project_type');
 
         $allToolProjects    = array_reverse($allToolProjects);
         $allWebsiteProjects = array_reverse($allWebsiteProjects);

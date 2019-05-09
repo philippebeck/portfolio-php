@@ -18,9 +18,9 @@ class CertificateController extends Controller
     public function indexAction()
     {
         $allCertificates        = ModelFactory::get('Certificate')->list(null,null,1);
-        $allCourseCertificates  = ModelFactory::get('Certificate')->list('course','type');
-        $allPathCertificates    = ModelFactory::get('Certificate')->list('path','type');
-        $allDegreeCertificates  = ModelFactory::get('Certificate')->list('degree','type');
+        $allCourseCertificates  = ModelFactory::get('Certificate')->list('course','certif_type');
+        $allPathCertificates    = ModelFactory::get('Certificate')->list('path','certif_type');
+        $allDegreeCertificates  = ModelFactory::get('Certificate')->list('degree','certif_type');
 
         $allCourseCertificates  = array_reverse($allCourseCertificates);
         $allPathCertificates    = array_reverse($allPathCertificates);
