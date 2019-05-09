@@ -10,14 +10,14 @@ CREATE TABLE IF NOT EXISTS Project
     image           VARCHAR(50)     NOT NULL    UNIQUE,
     link            VARCHAR(50)     NOT NULL    UNIQUE,
     year            YEAR            NOT NULL,
-    type            VARCHAR(10)     NOT NULL,
+    project_type    VARCHAR(10)     NOT NULL,
     description     VARCHAR(255)    NOT NULL
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- Inserts the Project data
 INSERT INTO Project
-(name,                  image,                  link,                               year,       type,           description)
+(name,                  image,                  link,                               year,       project_type,   description)
 VALUES
 ('Phi Beck',            'phibeck.jpg',          'philippebeck/phibeck',             2017,       'website',      'My first projects in FullJS'),
 ('Pam',                 'pam.png',              'philippebeck/pam',                 2018,       'tool',         'Php Approachable Microframework'),
@@ -39,13 +39,13 @@ CREATE TABLE IF NOT EXISTS Certificate
     certif_id   VARCHAR(20)     NOT NULL    UNIQUE,
     link        VARCHAR(100)    NOT NULL    UNIQUE,
     certif_date DATE            NOT NULL,
-    type        VARCHAR(10)     NOT NULL
+    certif_type VARCHAR(10)     NOT NULL
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- Inserts the Certificate data
 INSERT INTO Certificate
-(name,                                                                  certif_id,          link,                                                                                           certif_date,    type)
+(name,                                                                  certif_id,          link,                                                                                           certif_date,    certif_type)
 VALUES
 ('Comprendre le Web',                                                   '32748867',         'openclassrooms.com/course-certificates/32748867',                                              '2015-04-02',   'course'),
 ('Apprenez à créer votre site web avec HTML5 et CSS3',                  '14427758',         'openclassrooms.com/course-certificates/14427758',                                              '2015-04-03',   'course'),
