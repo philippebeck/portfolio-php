@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Project
 INSERT INTO Project
 (name,                  image,                  link,                               year,       project_type,   description)
 VALUES
-('Phi Beck',            'phibeck.jpg',          'philippebeck/phibeck',             2017,       'website',      'My first projects in FullJS'),
+('Phi Beck',            'phibeck.jpg',          'philippebeck/phibeck',             2017,       'website',      'My first project in FullJS'),
 ('Pam',                 'pam.png',              'philippebeck/pam',                 2018,       'tool',         'Php Approachable Microframework'),
 ('Jim',                 'jim.png',              'philippebeck/jim.js',              2018,       'tool',         'JavaScript Interactive Microlibrary'),
 ('Sam',                 'sam.png',              'philippebeck/sam.scss',            2018,       'tool',         'Scss Animated Microframework'),
