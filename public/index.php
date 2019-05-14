@@ -1,11 +1,13 @@
 <?php
 
 use Pam\Controller\FrontController;
+use Pam\Helper\Session;
 use Tracy\Debugger;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
 
-$frontController = new FrontController();
+$session            = new Session();
+$frontController    = new FrontController();
 
 // Basic tests area
 Debugger::enable();
