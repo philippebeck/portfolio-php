@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55464d29aa597405b0d2452e91c09366",
+    "content-hash": "e2fcb7c0e769ab7549ca7cc2045e40ca",
     "packages": [
         {
             "name": "animadio/animadio",
@@ -53,16 +53,16 @@
         },
         {
             "name": "pjs/pam",
-            "version": "0.3.3",
+            "version": "0.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "6a614e6325e9fd532e22d24c3da3162fab331575"
+                "reference": "9c2126ce7f7cd2e4a64e30a21d5a76e2a34b200d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/6a614e6325e9fd532e22d24c3da3162fab331575",
-                "reference": "6a614e6325e9fd532e22d24c3da3162fab331575",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/9c2126ce7f7cd2e4a64e30a21d5a76e2a34b200d",
+                "reference": "9c2126ce7f7cd2e4a64e30a21d5a76e2a34b200d",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-05-03T13:39:45+00:00"
+            "time": "2019-05-14T15:20:42+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -282,16 +282,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "82a1c055c8ed4c4705023bfd0405f3c74db6e3ae"
+                "reference": "5240e21982885b76629552d83b4ebb6d41ccde6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/82a1c055c8ed4c4705023bfd0405f3c74db6e3ae",
-                "reference": "82a1c055c8ed4c4705023bfd0405f3c74db6e3ae",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5240e21982885b76629552d83b4ebb6d41ccde6b",
+                "reference": "5240e21982885b76629552d83b4ebb6d41ccde6b",
                 "shasum": ""
             },
             "require": {
@@ -307,7 +307,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.9-dev"
+                    "dev-master": "2.10-dev"
                 }
             },
             "autoload": {
@@ -345,7 +345,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-04-28T06:57:38+00:00"
+            "time": "2019-05-14T12:03:52+00:00"
         }
     ],
     "packages-dev": [],
