@@ -53,20 +53,19 @@
         },
         {
             "name": "pjs/pam",
-            "version": "0.3.5",
+            "version": "0.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "f3a6afc9be246624bde55ca4821b7a566cb7acca"
+                "reference": "090e4f1f4a897fe93e4a221d29de2839503a5648"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/f3a6afc9be246624bde55ca4821b7a566cb7acca",
-                "reference": "f3a6afc9be246624bde55ca4821b7a566cb7acca",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/090e4f1f4a897fe93e4a221d29de2839503a5648",
+                "reference": "090e4f1f4a897fe93e4a221d29de2839503a5648",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
                 "php": "^7.2",
                 "tracy/tracy": "^2.6.2",
                 "twig/twig": "^2.9.0"
@@ -95,7 +94,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-05-14T18:17:53+00:00"
+            "time": "2019-05-14T18:25:37+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
