@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 use Pam\Controller\Controller;
 use Pam\Helper\Session;
 use Pam\Model\ModelFactory;
@@ -14,6 +17,9 @@ class AdminController extends Controller
 {
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function indexAction()
     {
