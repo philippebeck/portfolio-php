@@ -24,17 +24,30 @@ class ProjectController extends Controller
      */
     public function indexAction()
     {
-        $allProjects        = ModelFactory::get('Project')->list(null,null,1);
-        $allToolProjects    = ModelFactory::get('Project')->list('tool','project_type');
-        $allWebsiteProjects = ModelFactory::get('Project')->list('website','project_type');
+        $allProjects = ModelFactory::get('Project')->list();
+        $allProjects = array_reverse($allProjects);
 
-        $allToolProjects    = array_reverse($allToolProjects);
-        $allWebsiteProjects = array_reverse($allWebsiteProjects);
+        $allToolProjects    = array();
+        $allWebsiteProjects = array();
+
+        foreach ($allProjects as $project) {
+            foreach ($project as $value) {
+
+                switch ($value) {
+                    case 'tool':
+                        $allToolProjects[] = $project;
+                        break;
+                    case 'website':
+                        $allWebsiteProjects[] = $project;
+                        break;
+                }
+            }
+        }
 
         return $this->render('front/project.twig', [
-            'allProjects' => $allProjects,
-            'allToolProjects' => $allToolProjects,
-            'allWebsiteProjects' => $allWebsiteProjects
+            'allProjects'           => $allProjects,
+            'allToolProjects'       => $allToolProjects,
+            'allWebsiteProjects'    => $allWebsiteProjects
         ]);
     }
 
