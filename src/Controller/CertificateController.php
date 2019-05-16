@@ -5,6 +5,9 @@ namespace App\Controller;
 use Pam\Controller\Controller;
 use Pam\Helper\Session;
 use Pam\Model\ModelFactory;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 /**
  * Class CertificateController
@@ -14,6 +17,9 @@ class CertificateController extends Controller
 {
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function indexAction()
     {
@@ -35,6 +41,9 @@ class CertificateController extends Controller
 
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function createAction()
     {
@@ -50,6 +59,9 @@ class CertificateController extends Controller
 
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function updateAction()
     {
@@ -66,9 +78,6 @@ class CertificateController extends Controller
         return $this->render('back/updateCertificate.twig', ['certificate' => $certificate]);
     }
 
-    /**
-     *
-     */
     public function deleteAction()
     {
         $id = $_GET['id'];

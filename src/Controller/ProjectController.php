@@ -5,6 +5,9 @@ namespace App\Controller;
 use Pam\Controller\Controller;
 use Pam\Helper\Session;
 use Pam\Model\ModelFactory;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 /**
  * Class ProjectController
@@ -12,8 +15,12 @@ use Pam\Model\ModelFactory;
  */
 class ProjectController extends Controller
 {
+
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function indexAction()
     {
@@ -31,8 +38,12 @@ class ProjectController extends Controller
         ]);
     }
 
+
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function createAction()
     {
@@ -51,8 +62,12 @@ class ProjectController extends Controller
         return $this->render('back/createProject.twig');
     }
 
+
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function updateAction()
     {
@@ -77,9 +92,6 @@ class ProjectController extends Controller
         return $this->render('back/updateProject.twig', ['project' => $project]);
     }
 
-    /**
-     *
-     */
     public function deleteAction()
     {
         $id = $_GET['id'];

@@ -5,6 +5,9 @@ namespace App\Controller;
 use Pam\Controller\Controller;
 use Pam\Helper\Session;
 use Pam\Model\ModelFactory;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 /**
  * Class UserController
@@ -14,6 +17,9 @@ class UserController extends Controller
 {
     /**
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function loginAction()
     {
@@ -37,9 +43,6 @@ class UserController extends Controller
         return $this->render('back/login.twig');
     }
 
-    /**
-     *
-     */
     public function logoutAction()
     {
         Session::destroySession();
