@@ -4,7 +4,8 @@ namespace App\Model;
 
 use Pam\Model\Model;
 
-/** ***********\
- * CRUD for user
+/**
+ * Class UserModel
+ * @package App\Model
  */
 class UserModel extends Model {}

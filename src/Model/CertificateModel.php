@@ -4,7 +4,8 @@ namespace App\Model;
 
 use Pam\Model\Model;
 
-/** *******************\
- * CRUD for certificates
+/**
+ * Class CertificateModel
+ * @package App\Model
  */
 class CertificateModel extends Model {}
