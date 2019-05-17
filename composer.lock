@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a79308f33f96e4ff5cb530df8ac5826",
+    "content-hash": "d29c2c76fb0c3bdf8d7e6686e205b542",
     "packages": [
         {
             "name": "animadio/animadio",
-            "version": "0.3.5",
+            "version": "0.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/animadio/animadio.git",
-                "reference": "7f1344c7c9f1ce71a2c7fc0a457b67f479cd5c84"
+                "reference": "263216a3e34820f3ad6a91817e76eb729105233b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/animadio/animadio/zipball/7f1344c7c9f1ce71a2c7fc0a457b67f479cd5c84",
-                "reference": "7f1344c7c9f1ce71a2c7fc0a457b67f479cd5c84",
+                "url": "https://api.github.com/repos/animadio/animadio/zipball/263216a3e34820f3ad6a91817e76eb729105233b",
+                "reference": "263216a3e34820f3ad6a91817e76eb729105233b",
                 "shasum": ""
             },
             "type": "framework",
@@ -49,7 +49,7 @@
                 "pure css",
                 "reusability"
             ],
-            "time": "2019-05-08T10:07:27+00:00"
+            "time": "2019-05-17T08:34:50+00:00"
         },
         {
             "name": "pjs/pam",
