@@ -6,12 +6,12 @@ USE portfolio;
 CREATE TABLE IF NOT EXISTS Project
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
-    name            VARCHAR(50)     NOT NULL,
+    name            VARCHAR(50)     NOT NULL    UNIQUE,
     image           VARCHAR(50)     NOT NULL    UNIQUE,
     link            VARCHAR(50)     NOT NULL    UNIQUE,
     year            YEAR            NOT NULL,
     project_type    VARCHAR(10)     NOT NULL,
-    description     VARCHAR(255)    NOT NULL
+    description     VARCHAR(255)    NOT NULL    UNIQUE
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
