@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS portfolio;
-CREATE DATABASE portfolio CHARACTER SET 'utf8';
+CREATE DATABASE portfolio CHARACTER SET utf8;
 USE portfolio;
 
 -- Creates the table Project
