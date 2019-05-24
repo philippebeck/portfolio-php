@@ -34,12 +34,12 @@ VALUES
 -- Creates the table Certificate
 CREATE TABLE IF NOT EXISTS Certificate
 (
-    id          TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
-    name        VARCHAR(100)    NOT NULL,
-    certif_id   VARCHAR(20)     NOT NULL    UNIQUE,
-    link        VARCHAR(100)    NOT NULL    UNIQUE,
-    certif_date DATE            NOT NULL,
-    certif_type VARCHAR(10)     NOT NULL
+    id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
+    name            VARCHAR(100)    NOT NULL,
+    certif_id       VARCHAR(20)     NOT NULL    UNIQUE,
+    link            VARCHAR(100)    NOT NULL    UNIQUE,
+    certif_date     DATE            NOT NULL,
+    certif_type     VARCHAR(10)     NOT NULL
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
