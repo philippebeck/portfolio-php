@@ -122,4 +122,6 @@ VALUES
 ('Testez votre projet avec Python',                                     '6994803505',       'openclassrooms.com/fr/course-certificates/6994803505',                                         '2018-08-03',   'course'),
 ('Devenez auto-entrepreneur',                                           '5763945433',       'openclassrooms.com/fr/course-certificates/5763945433',                                         '2018-08-11',   'course'),
 ('Propulsez votre site avec WordPress',                                 '4551410136',       'openclassrooms.com/fr/course-certificates/4551410136',                                         '2018-11-22',   'course'),
-('Modélisez et implémentez une base de données relationnelle avec UML', '5300844331',       'openclassrooms.com/fr/course-certificates/5300844331',                                         '2019-01-24',   'course');
+('Modélisez et implémentez une base de données relationnelle avec UML', '5300844331',       'openclassrooms.com/fr/course-certificates/5300844331',                                         '2019-01-24',   'course'),
+('Mettez en place un système de veille informationnelle',               '5847009556',       'openclassrooms.com/fr/course-certificates/5847009556',                                         '2019-05-08',   'course'),
+('Devenez parrain et développez vos compétences transverses',           '6179314560',       'openclassrooms.com/fr/course-certificates/6179314560',                                         '2019-05-16',   'course');
