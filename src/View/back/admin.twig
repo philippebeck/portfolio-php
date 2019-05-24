@@ -21,8 +21,7 @@
                 <thead>
                 <tr>
                     <th>Project</th>
-                    <th>Picture</th>
-                    <th>Description</th>
+                    <th>Infos</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -31,16 +30,12 @@
 
                 {% for project in allProjects %}
                     <tr>
-
                         <td>
-                            <a class="btn-github" href="https://github.com/{{ project.link }}" title="Voir le code du projet">
-                                {{ project.id }}<br>{{ project.name }}
-                            </a>
-                        </td>
-
-                        <td>
-                            <a class="btn-orange" href="img/projects/{{ project.image }}" title="Voir le screenshot">
-                                <img src="img/projects/{{ project.image }}" alt="Screenshot du projet {{ project.name }}">
+                            <a class="btn-github" href="https://github.com/{{ project.link }}" title="Voir le projet sur GitHub">
+                                <figure>
+                                    <img src="img/projects/{{ project.image }}" alt="Screenshot du projet {{ project.name }}">
+                                    <figcaption>{{ project.id }} - {{ project.name }}</figcaption>
+                                </figure>
                             </a>
                         </td>
 
@@ -79,7 +74,7 @@
                 <thead>
                 <tr>
                     <th>Certificate</th>
-                    <th>Id & Date</th>
+                    <th>Infos</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
