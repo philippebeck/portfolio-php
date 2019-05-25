@@ -23,3 +23,9 @@ pre {
 [class*="nav"] {
     --navbar-background-color: var(--sapphire);
 }
+
+#service p,
+#service ul {
+    font-weight: bold;
+    color: var(--linkedin);
+}
