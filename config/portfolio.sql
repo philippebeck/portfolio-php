@@ -1,5 +1,8 @@
+-- For Development only ! (Depends on your online server architecture)
 DROP DATABASE IF EXISTS portfolio;
 CREATE DATABASE portfolio CHARACTER SET utf8;
+
+-- Needs to be replaced in Production with the db name of the online server
 USE portfolio;
 
 -- Creates the table Project
