@@ -27,6 +27,8 @@ form label {
 }
 
 figure {
+    margin-right: 10px;
+    margin-left: 10px;
     max-width: 300px;
 }
 
