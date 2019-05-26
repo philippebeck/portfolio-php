@@ -2,4 +2,5 @@
 config/bdd.php
 config/bdd.sql
 public/img/
+public/node_modules/
 vendor/
