@@ -4,53 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d29c2c76fb0c3bdf8d7e6686e205b542",
+    "content-hash": "4e0aeba42c90cc6591fcaebf7d66fc14",
     "packages": [
-        {
-            "name": "animadio/animadio",
-            "version": "0.3.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/animadio/animadio.git",
-                "reference": "263216a3e34820f3ad6a91817e76eb729105233b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/animadio/animadio/zipball/263216a3e34820f3ad6a91817e76eb729105233b",
-                "reference": "263216a3e34820f3ad6a91817e76eb729105233b",
-                "shasum": ""
-            },
-            "type": "framework",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Philippe Beck",
-                    "email": "philippe@philippebeck.net",
-                    "homepage": "https://philippebeck.net",
-                    "role": "Creator"
-                }
-            ],
-            "description": "Animadio CSS Framework - Grid & Flexbox Layouts - Reusable & Customizable Elements - Perform Complex Animations - Controls by Radio Buttons - No JavaScript needed or used",
-            "homepage": "https://animadio.org",
-            "keywords": [
-                "animation",
-                "click control",
-                "combinable classes",
-                "concatenation",
-                "css framework",
-                "css variables",
-                "customizability",
-                "flexbox",
-                "grid",
-                "keyframes",
-                "pure css",
-                "reusability"
-            ],
-            "time": "2019-05-17T08:34:50+00:00"
-        },
         {
             "name": "pjs/pam",
             "version": "0.3.6",
