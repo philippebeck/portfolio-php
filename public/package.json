@@ -12,7 +12,7 @@
   "repository": "github:philippebeck/portfolio",
   "bugs": "https://github.com/philippebeck/portfolio/issues",
   "dependencies": {
-    "animadio": "^0.3.7"
+    "animadio": "0.x"
   },
   "author": {
     "name": "Philippe Beck",
