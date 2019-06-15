@@ -62,10 +62,10 @@ class ProjectController extends Controller
     {
         if (!empty($_POST)) {
             $data['image']          = $this->upload('img/project');
-            $data['name']           = $_POST['name'];
-            $data['link']           = $_POST['link'];
-            $data['year']           = $_POST['year'];
-            $data['description']    = $_POST['description'];
+            $data['name']           = filter_input(INPUT_POST, 'name');
+            $data['link']           = filter_input(INPUT_POST, 'link');
+            $data['year']           = filter_input(INPUT_POST, 'year');
+            $data['description']    = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->create($data);
             htmlspecialchars(Session::createAlert('New project created successfully !', 'green'));
@@ -90,10 +90,10 @@ class ProjectController extends Controller
             if (!empty($_FILES['file']['name'])) {
                 $data['image'] = $this->upload('img/project');
             }
-            $data['name']         = $_POST['name'];
-            $data['link']         = $_POST['link'];
-            $data['year']         = $_POST['year'];
-            $data['description']  = $_POST['description'];
+            $data['name']         = filter_input(INPUT_POST, 'name');
+            $data['link']         = filter_input(INPUT_POST, 'link');
+            $data['year']         = filter_input(INPUT_POST, 'year');
+            $data['description']  = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->update($id, $data);
             htmlspecialchars(Session::createAlert('Successful modification of the selected project !', 'blue'));
