@@ -6,7 +6,7 @@ use Pam\Helper\Session;
 // For Development only (needs to be comment in Production)
 use Tracy\Debugger;
 
-require_once dirname(__DIR__).'/vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 $session            = new Session();
 $frontController    = new FrontController();
