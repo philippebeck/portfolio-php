@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c632b54b651fa23d5e363437812cb91d",
+    "content-hash": "ebae3691d4af27fdc4017f5c5d3d5aef",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "0.3.7",
+            "version": "0.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "bc4ab7a71d15db0773f4c50cc866b2d52978a38f"
+                "reference": "64ff2359b18ae1508697e024d5550518d9d59096"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/bc4ab7a71d15db0773f4c50cc866b2d52978a38f",
-                "reference": "bc4ab7a71d15db0773f4c50cc866b2d52978a38f",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/64ff2359b18ae1508697e024d5550518d9d59096",
+                "reference": "64ff2359b18ae1508697e024d5550518d9d59096",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-05-29T10:45:41+00:00"
+            "time": "2019-06-15T20:27:43+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -226,16 +226,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.2.9",
+            "version": "v4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "3c4084cb1537c0e2ad41aad622bbf55a44a5c9ce"
+                "reference": "f974f448154928d2b5fb7c412bd23b81d063f34b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/3c4084cb1537c0e2ad41aad622bbf55a44a5c9ce",
-                "reference": "3c4084cb1537c0e2ad41aad622bbf55a44a5c9ce",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f974f448154928d2b5fb7c412bd23b81d063f34b",
+                "reference": "f974f448154928d2b5fb7c412bd23b81d063f34b",
                 "shasum": ""
             },
             "require": {
@@ -264,7 +264,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "autoload": {
@@ -298,7 +298,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-05-01T12:55:36+00:00"
+            "time": "2019-06-05T02:08:12+00:00"
         },
         {
             "name": "tracy/tracy",
@@ -369,16 +369,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.10.0",
+            "version": "v2.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "5240e21982885b76629552d83b4ebb6d41ccde6b"
+                "reference": "84a463403da1c81afbcedda8f0e788c78bd25a79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5240e21982885b76629552d83b4ebb6d41ccde6b",
-                "reference": "5240e21982885b76629552d83b4ebb6d41ccde6b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/84a463403da1c81afbcedda8f0e788c78bd25a79",
+                "reference": "84a463403da1c81afbcedda8f0e788c78bd25a79",
                 "shasum": ""
             },
             "require": {
@@ -389,12 +389,12 @@
             "require-dev": {
                 "psr/container": "^1.0",
                 "symfony/debug": "^2.7",
-                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.10-dev"
+                    "dev-master": "2.11-dev"
                 }
             },
             "autoload": {
@@ -432,7 +432,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-05-14T12:03:52+00:00"
+            "time": "2019-06-05T11:17:07+00:00"
         }
     ],
     "packages-dev": [],
@@ -442,7 +442,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "7.2"
     },
     "platform-dev": [],
     "platform-overrides": {
