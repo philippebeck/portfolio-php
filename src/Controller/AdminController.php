@@ -24,8 +24,11 @@ class AdminController extends Controller
     public function indexAction()
     {
         if (Session::islogged()) {
-            $allProjects        = ModelFactory::get('Project')->list(null,null,1);
-            $allCertificates    = ModelFactory::get('Certificate')->list(null,null,1);
+            $allProjects        = ModelFactory::get('Project')->list();
+            $allCertificates    = ModelFactory::get('Certificate')->list();
+
+            $allProjects        = array_reverse($allProjects);
+            $allCertificates    = array_reverse($allCertificates);
 
             return $this->render('back/admin.twig', [
                 'allProjects'       => $allProjects,
