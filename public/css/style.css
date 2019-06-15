@@ -1,9 +1,9 @@
 body {
-    --global-font-family: 'Text Me One', sans-serif;
-    --global-background-color: Lavender;
+  --global-font-family: 'Text Me One', sans-serif;
+  --global-background-color: Lavender;
 
-    background: url("../img/bg.jpg") fixed;
-    background-size: cover;
+  background: url("../img/bg.jpg") fixed;
+  background-size: cover;
 }
 
 h1,
@@ -12,41 +12,41 @@ h3,
 h4,
 h5,
 h6 {
-    --title-font-family: 'Cinzel', serif;
+  --title-font-family: 'Cinzel', serif;
 }
 
 h1 {
-    text-shadow: 2px 2px 2px;
-    text-decoration: dashed underline var(--purple);
+  text-shadow: 2px 2px 2px;
+  text-decoration: dashed underline var(--purple);
 }
 
 main h2,
 form label {
-    display: inline-block;
-    background: var(--white);
-    border: solid thin;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: inset 0 0 10px 2px;
+  display: inline-block;
+  background: var(--white);
+  border: solid thin;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: inset 0 0 10px 2px;
 }
 
 figure {
-    margin-right: 10px;
-    margin-left: 10px;
-    max-width: 300px;
+  margin-right: 10px;
+  margin-left: 10px;
+  max-width: 300px;
 }
 
 code,
 pre {
-    --pre-font-family: 'Share Tech Mono', monospace;
+  --pre-font-family: 'Share Tech Mono', monospace;
 }
 
 [class*="nav"] {
-    --navbar-background-color: var(--sapphire);
+  --navbar-background-color: var(--sapphire);
 }
 
 #service p,
 #service ul {
-    font-weight: bold;
-    color: var(--linkedin);
+  font-weight: bold;
+  color: var(--linkedin);
 }
