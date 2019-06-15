@@ -81,7 +81,7 @@ class CertificateController extends Controller
      */
     public function updateAction()
     {
-        $id = $_GET['id'];
+        $id = filter_input(INPUT_GET, 'id');
 
         if (!empty($_POST)) {
             ModelFactory::get('Certificate')->update($id, $_POST);
@@ -96,7 +96,7 @@ class CertificateController extends Controller
 
     public function deleteAction()
     {
-        $id = $_GET['id'];
+        $id = filter_input(INPUT_GET, 'id');
         ModelFactory::get('Course')->delete($id);
         htmlspecialchars(Session::createAlert('Certificat définitivement supprimé !', 'red'));
 
