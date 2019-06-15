@@ -60,7 +60,7 @@ class ProjectController extends Controller
      */
     public function createAction()
     {
-        if (!empty($_POST)) {
+        if (!empty(filter_input_array(INPUT_POST))) {
             $data['image']          = $this->upload('img/project');
             $data['name']           = filter_input(INPUT_POST, 'name');
             $data['link']           = filter_input(INPUT_POST, 'link');
@@ -86,7 +86,7 @@ class ProjectController extends Controller
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        if (!empty($_POST)) {
+        if (!empty(filter_input_array(INPUT_POST))) {
             if (!empty($_FILES['file']['name'])) {
                 $data['image'] = $this->upload('img/project');
             }

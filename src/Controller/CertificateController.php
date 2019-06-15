@@ -63,8 +63,8 @@ class CertificateController extends Controller
      */
     public function createAction()
     {
-        if (!empty($_POST)) {
-            ModelFactory::get('Certificate')->create($_POST);
+        if (!empty(filter_input_array(INPUT_POST))) {
+            ModelFactory::get('Certificate')->create(filter_input_array(INPUT_POST));
             htmlspecialchars(Session::createAlert('New certificate successfully created !', 'green'));
 
             $this->redirect('admin');
@@ -83,8 +83,8 @@ class CertificateController extends Controller
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        if (!empty($_POST)) {
-            ModelFactory::get('Certificate')->update($id, $_POST);
+        if (!empty(filter_input_array(INPUT_POST))) {
+            ModelFactory::get('Certificate')->update($id, filter_input_array(INPUT_POST));
             htmlspecialchars(Session::createAlert('Successful modification of the selected certificate !', 'blue'));
 
             $this->redirect('admin');

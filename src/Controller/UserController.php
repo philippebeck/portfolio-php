@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function loginAction()
     {
-        if (!empty($_POST)) {
+        if (!empty(filter_input_array(INPUT_POST))) {
             $user = ModelFactory::get('User')->read(filter_input(INPUT_POST, 'email'), 'email');
 
             if (password_verify(filter_input(INPUT_POST, 'pass'), $user['pass'])) {
