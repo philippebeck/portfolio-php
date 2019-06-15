@@ -25,7 +25,7 @@
   },
   "require": {
     "php": "7.2",
-    "pjs/pam": "0.x"
+    "pjs/pam": "0.3.8"
   },
   "config": {
     "platform": {
