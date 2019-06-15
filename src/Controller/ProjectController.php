@@ -84,7 +84,7 @@ class ProjectController extends Controller
      */
     public function updateAction()
     {
-        $id = $_GET['id'];
+        $id = filter_input(INPUT_GET, 'id');
 
         if (!empty($_POST)) {
             if (!empty($_FILES['file']['name'])) {
@@ -107,7 +107,7 @@ class ProjectController extends Controller
 
     public function deleteAction()
     {
-        $id = $_GET['id'];
+        $id = filter_input(INPUT_GET, 'id');
         ModelFactory::get('Project')->delete($id);
         htmlspecialchars(Session::createAlert('Project actually deleted !', 'red'));
 
