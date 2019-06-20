@@ -6,7 +6,7 @@
 -- USE portfolio;
 
 -- Creates the table User
-CREATE TABLE IF NOT EXISTS User
+CREATE TABLE User
 (
     id            SMALLINT      UNSIGNED  PRIMARY KEY AUTO_INCREMENT,
     first_name    VARCHAR(20)   NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS User
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- Creates the table Project
-CREATE TABLE IF NOT EXISTS Project
+CREATE TABLE Project
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
     name            VARCHAR(50)     NOT NULL    UNIQUE,
@@ -47,7 +47,7 @@ VALUES
 ('Portfolio',           'portfolio.jpg',        'philippebeck/portfolio',           2019,       'website',      'My own Portfolio');
 
 -- Creates the table Certificate
-CREATE TABLE IF NOT EXISTS Certificate
+CREATE TABLE Certificate
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
     name            VARCHAR(100)    NOT NULL,
