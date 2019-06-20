@@ -5,6 +5,18 @@
 -- Needs to be replaced in Production with the db name of the online server
 -- USE portfolio;
 
+-- Creates the table User
+CREATE TABLE IF NOT EXISTS User
+(
+    id            SMALLINT      UNSIGNED  PRIMARY KEY AUTO_INCREMENT,
+    first_name    VARCHAR(20)   NOT NULL,
+    last_name     VARCHAR(20)   NOT NULL,
+    image         VARCHAR(50),
+    email         VARCHAR(100)  NOT NULL  UNIQUE,
+    pass          VARCHAR(100)  NOT NULL
+)
+    ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 -- Creates the table Project
 CREATE TABLE IF NOT EXISTS Project
 (
