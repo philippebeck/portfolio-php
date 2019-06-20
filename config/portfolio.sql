@@ -1,12 +1,24 @@
 -- For Development only ! (Depends on your online server architecture)
--- DROP DATABASE IF EXISTS portfolio;
--- CREATE DATABASE portfolio CHARACTER SET utf8;
+DROP DATABASE IF EXISTS portfolio;
+CREATE DATABASE portfolio CHARACTER SET utf8;
 
 -- Needs to be replaced in Production with the db name of the online server
--- USE portfolio;
+USE portfolio;
+
+-- Creates the table User
+CREATE TABLE User
+(
+    id            SMALLINT      UNSIGNED  PRIMARY KEY AUTO_INCREMENT,
+    first_name    VARCHAR(20)   NOT NULL,
+    last_name     VARCHAR(20)   NOT NULL,
+    image         VARCHAR(50),
+    email         VARCHAR(100)  NOT NULL  UNIQUE,
+    pass          VARCHAR(100)  NOT NULL
+)
+    ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- Creates the table Project
-CREATE TABLE IF NOT EXISTS Project
+CREATE TABLE Project
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
     name            VARCHAR(50)     NOT NULL    UNIQUE,
@@ -35,7 +47,7 @@ VALUES
 ('Portfolio',           'portfolio.jpg',        'philippebeck/portfolio',           2019,       'website',      'My own Portfolio');
 
 -- Creates the table Certificate
-CREATE TABLE IF NOT EXISTS Certificate
+CREATE TABLE Certificate
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
     name            VARCHAR(100)    NOT NULL,
