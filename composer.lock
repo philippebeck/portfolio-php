@@ -4,27 +4,74 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebae3691d4af27fdc4017f5c5d3d5aef",
+    "content-hash": "1c5717a4cdb13b5bdfa9f30030d9840b",
     "packages": [
         {
-            "name": "pjs/pam",
-            "version": "0.3.8",
+            "name": "firebase/php-jwt",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/philippebeck/pam.git",
-                "reference": "64ff2359b18ae1508697e024d5550518d9d59096"
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/64ff2359b18ae1508697e024d5550518d9d59096",
-                "reference": "64ff2359b18ae1508697e024d5550518d9d59096",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": " 4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "time": "2017-06-27T22:17:23+00:00"
+        },
+        {
+            "name": "pjs/pam",
+            "version": "0.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/philippebeck/pam.git",
+                "reference": "da30103c86d4257a680682ab7c9215ca5e2e5ed3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/da30103c86d4257a680682ab7c9215ca5e2e5ed3",
+                "reference": "da30103c86d4257a680682ab7c9215ca5e2e5ed3",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "5.x",
                 "php": "^7.2",
-                "symfony/var-dumper": "^4.2.9",
-                "tracy/tracy": "^2.6.2",
-                "twig/twig": "^2.10.0"
+                "symfony/var-dumper": "4.x",
+                "tracy/tracy": "2.x",
+                "twig/twig": "2.x"
             },
             "type": "framework",
             "autoload": {
@@ -50,7 +97,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-06-15T20:27:43+00:00"
+            "time": "2019-06-21T17:15:51+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -302,16 +349,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.6.2",
+            "version": "v2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "9a6513089a836744e70af0910ad45f50e603dcf5"
+                "reference": "7613eeff265b49a865add75360d1962449e3c12f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/9a6513089a836744e70af0910ad45f50e603dcf5",
-                "reference": "9a6513089a836744e70af0910ad45f50e603dcf5",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/7613eeff265b49a865add75360d1962449e3c12f",
+                "reference": "7613eeff265b49a865add75360d1962449e3c12f",
                 "shasum": ""
             },
             "require": {
@@ -365,20 +412,20 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2019-04-03T20:29:00+00:00"
+            "time": "2019-06-18T12:20:11+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v2.11.2",
+            "version": "v2.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "84a463403da1c81afbcedda8f0e788c78bd25a79"
+                "reference": "699ed2342557c88789a15402de5eb834dedd6792"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/84a463403da1c81afbcedda8f0e788c78bd25a79",
-                "reference": "84a463403da1c81afbcedda8f0e788c78bd25a79",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/699ed2342557c88789a15402de5eb834dedd6792",
+                "reference": "699ed2342557c88789a15402de5eb834dedd6792",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +479,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-06-05T11:17:07+00:00"
+            "time": "2019-06-18T15:37:11+00:00"
         }
     ],
     "packages-dev": [],
