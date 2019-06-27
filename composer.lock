@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1fe6f947218d21efcf288dd60cc6206",
+    "content-hash": "2d7fc9f395981010f946b5923ca98ed5",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -54,16 +54,16 @@
         },
         {
             "name": "pjs/pam",
-            "version": "0.3.9",
+            "version": "0.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "da30103c86d4257a680682ab7c9215ca5e2e5ed3"
+                "reference": "ba7261072afe05c745e3f9c63bc214209a84cad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/da30103c86d4257a680682ab7c9215ca5e2e5ed3",
-                "reference": "da30103c86d4257a680682ab7c9215ca5e2e5ed3",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/ba7261072afe05c745e3f9c63bc214209a84cad0",
+                "reference": "ba7261072afe05c745e3f9c63bc214209a84cad0",
                 "shasum": ""
             },
             "require": {
@@ -73,7 +73,7 @@
                 "tracy/tracy": "2.x",
                 "twig/twig": "2.x"
             },
-            "type": "framework",
+            "type": "project",
             "autoload": {
                 "psr-4": {
                     "Pam\\": ""
@@ -97,7 +97,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-06-21T17:15:51+00:00"
+            "time": "2019-06-26T11:53:47+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -273,16 +273,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.3.1",
+            "version": "v4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "f974f448154928d2b5fb7c412bd23b81d063f34b"
+                "reference": "45d6ef73671995aca565a1aa3d9a432a3ea63f91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f974f448154928d2b5fb7c412bd23b81d063f34b",
-                "reference": "f974f448154928d2b5fb7c412bd23b81d063f34b",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/45d6ef73671995aca565a1aa3d9a432a3ea63f91",
+                "reference": "45d6ef73671995aca565a1aa3d9a432a3ea63f91",
                 "shasum": ""
             },
             "require": {
@@ -345,7 +345,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-06-05T02:08:12+00:00"
+            "time": "2019-06-17T17:37:00+00:00"
         },
         {
             "name": "tracy/tracy",
