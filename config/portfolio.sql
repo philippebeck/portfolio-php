@@ -11,7 +11,7 @@ CREATE TABLE User
     id            SMALLINT      UNSIGNED  PRIMARY KEY AUTO_INCREMENT,
     first_name    VARCHAR(20)   NOT NULL,
     last_name     VARCHAR(20)   NOT NULL,
-    image         VARCHAR(50),
+    image         VARCHAR(50)   UNIQUE,
     email         VARCHAR(100)  NOT NULL  UNIQUE,
     pass          VARCHAR(100)  NOT NULL
 )
@@ -30,6 +30,18 @@ CREATE TABLE Project
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+-- Creates the table Certificate
+CREATE TABLE Certificate
+(
+    id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
+    name            VARCHAR(100)    NOT NULL    UNIQUE,
+    certif_id       VARCHAR(20)     NOT NULL    UNIQUE,
+    link            VARCHAR(100)    NOT NULL    UNIQUE,
+    certif_date     DATE            NOT NULL,
+    certif_type     VARCHAR(10)     NOT NULL
+)
+    ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 -- Inserts the Project data
 INSERT INTO Project
 (name,                  image,                  link,                               year,       project_type,   description)
@@ -45,18 +57,6 @@ VALUES
 ('Animadio.org',        'animadio-org.jpg',     'animadio/animadio.org',            2019,       'website',      'CSS Framework Website'),
 ('Animadio.doc',        'animadio-doc.jpg',     'animadio/doc.animadio.org',        2019,       'website',      'CSS Framework Documentation'),
 ('Portfolio',           'portfolio.jpg',        'philippebeck/portfolio',           2019,       'website',      'My own Portfolio');
-
--- Creates the table Certificate
-CREATE TABLE Certificate
-(
-    id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
-    name            VARCHAR(100)    NOT NULL,
-    certif_id       VARCHAR(20)     NOT NULL    UNIQUE,
-    link            VARCHAR(100)    NOT NULL    UNIQUE,
-    certif_date     DATE            NOT NULL,
-    certif_type     VARCHAR(10)     NOT NULL
-)
-    ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- Inserts the Certificate data
 INSERT INTO Certificate
