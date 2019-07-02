@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Pam\Controller\Controller;
-use Pam\Helper\Session;
 use Pam\Model\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -23,7 +22,7 @@ class AdminController extends Controller
      */
     public function indexAction()
     {
-        if (Session::islogged()) {
+        if ($this->session->islogged()) {
             $allProjects        = ModelFactory::get('Project')->list();
             $allCertificates    = ModelFactory::get('Certificate')->list();
 
@@ -35,8 +34,9 @@ class AdminController extends Controller
                 'allCertificates'   => $allCertificates
             ]);
         }
-        htmlspecialchars(Session::createAlert('You must be logged in to access the administration', 'gray'));
+        $this->cookie->createAlert('You must be logged in to access the administration', 'gray');
 
         $this->redirect('user!login');
     }
 }
+

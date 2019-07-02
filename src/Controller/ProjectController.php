@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Pam\Controller\Controller;
-use Pam\Helper\Session;
 use Pam\Model\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -68,7 +67,7 @@ class ProjectController extends Controller
             $data['description']    = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->create($data);
-            htmlspecialchars(Session::createAlert('New project created successfully !', 'green'));
+            $this->cookie->createAlert('New project created successfully !', 'green');
 
             $this->redirect('admin');
         }
@@ -96,7 +95,7 @@ class ProjectController extends Controller
             $data['description']  = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->update($id, $data);
-            htmlspecialchars(Session::createAlert('Successful modification of the selected project !', 'blue'));
+            $this->cookie->createAlert('Successful modification of the selected project !', 'blue');
 
             $this->redirect('admin');
         }
@@ -109,7 +108,7 @@ class ProjectController extends Controller
     {
         $id = filter_input(INPUT_GET, 'id');
         ModelFactory::get('Project')->delete($id);
-        htmlspecialchars(Session::createAlert('Project actually deleted !', 'red'));
+        $this->cookie->createAlert('Project actually deleted !', 'red');
 
         $this->redirect('admin');
     }
