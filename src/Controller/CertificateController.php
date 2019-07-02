@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Pam\Controller\Controller;
-use Pam\Helper\Session;
 use Pam\Model\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -48,7 +47,6 @@ class CertificateController extends Controller
         }
 
         return $this->render('front/certificate.twig', [
-            'allCertificates'       => $allCertificates,
             'allCourseCertificates' => $allCourseCertificates,
             'allPathCertificates'   => $allPathCertificates,
             'allDegreeCertificates' => $allDegreeCertificates
@@ -65,7 +63,7 @@ class CertificateController extends Controller
     {
         if (!empty(filter_input_array(INPUT_POST))) {
             ModelFactory::get('Certificate')->create(filter_input_array(INPUT_POST));
-            htmlspecialchars(Session::createAlert('New certificate successfully created !', 'green'));
+            $this->cookie->createAlert('New certificate successfully created !', 'green');
 
             $this->redirect('admin');
         }
@@ -85,7 +83,7 @@ class CertificateController extends Controller
 
         if (!empty(filter_input_array(INPUT_POST))) {
             ModelFactory::get('Certificate')->update($id, filter_input_array(INPUT_POST));
-            htmlspecialchars(Session::createAlert('Successful modification of the selected certificate !', 'blue'));
+            $this->cookie->createAlert('Successful modification of the selected certificate !', 'blue');
 
             $this->redirect('admin');
         }
@@ -98,8 +96,9 @@ class CertificateController extends Controller
     {
         $id = filter_input(INPUT_GET, 'id');
         ModelFactory::get('Course')->delete($id);
-        htmlspecialchars(Session::createAlert('Certificat définitivement supprimé !', 'red'));
+        $this->cookie->createAlert('Certificate permanently deleted !', 'red');
 
         $this->redirect('admin');
     }
 }
+
