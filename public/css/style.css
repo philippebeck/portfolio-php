@@ -17,10 +17,8 @@ h6 {
 
 h1 {
   text-shadow: 2px 2px 2px;
-  text-decoration: dashed underline var(--purple);
 }
 
-main h2,
 form label {
   display: inline-block;
   background: var(--white);

@@ -42,12 +42,12 @@
                 </thead>
 
                 <tbody>
-                {% for degreeCertificate in allDegreeCertificates %}
+                {% for degreeCertif in allDegreeCertifs %}
                     <tr>
-                        <td>{{ date(degreeCertificate.certif_date)|date('d/m/y') }}</td>
+                        <td>{{ date(degreeCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-tomato" href="https://{{ degreeCertificate.link }}" title="Access to Certificate" rel="noreferrer noopener" target="_blank">
-                                <span>{{ degreeCertificate.name }}</span>
+                            <a class="btn-tomato" href="https://{{ degreeCertif.link }}" title="Access to Certificate" rel="noreferrer noopener" target="_blank">
+                                <span>{{ degreeCertif.name }}</span>
                             </a>
                         </td>
                     </tr>
@@ -71,11 +71,11 @@
                 </thead>
 
                 <tbody>
-                {% for pathCertificate in allPathCertificates %}
+                {% for pathCertif in allPathCertifs %}
                     <tr>
-                        <td>{{ date(pathCertificate.certif_date)|date('d/m/y') }}</td>
+                        <td>{{ date(pathCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-jade" href="https://{{ pathCertificate.link }}" title="Access to Certificate #{{ pathCertificate.certif_id }}" rel="noreferrer noopener" target="_blank">{{ pathCertificate.name }}</a>
+                            <a class="btn-jade" href="https://{{ pathCertif.link }}" title="Access to Certificate #{{ pathCertif.certif_id }}" rel="noreferrer noopener" target="_blank">{{ pathCertif.name }}</a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -98,11 +98,11 @@
                 </thead>
 
                 <tbody>
-                {% for courseCertificate in allCourseCertificates %}
+                {% for courseCertif in allCourseCertifs %}
                     <tr>
-                        <td>{{ date(courseCertificate.certif_date)|date('d/m/y') }}</td>
+                        <td>{{ date(courseCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-sky" href="https://{{ courseCertificate.link }}" title="Access to Certificate #{{ courseCertificate.certif_id }}" rel="noreferrer noopener" target="_blank">{{ courseCertificate.name }}</a>
+                            <a class="btn-sky" href="https://{{ courseCertif.link }}" title="Access to Certificate #{{ courseCertif.certif_id }}" rel="noreferrer noopener" target="_blank">{{ courseCertif.name }}</a>
                         </td>
                     </tr>
                 {% endfor %}
