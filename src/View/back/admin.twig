@@ -6,10 +6,23 @@
 
 {% block main %}
 
-    <main id="admin">
+    <!-- CONTROLS -->
+    <input id="project" class="block-xs-radio1" type="radio" name="admin" checked>
+    <input id="certificate" class="block-xs-radio2" type="radio" name="admin">
+
+    <label class="button-obsidian" for="project">
+        <i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+        Project
+    </label>
+    <label class="button-obsidian" for="certificate">
+        <i class="fas fa-certificate fa-lg" aria-hidden="true"></i>
+        Certificate
+    </label>
+
+    <main id="admin" class="hide-xs-global block-xs-relay">
 
         <!-- Project -->
-        <section>
+        <section class="block-xs-target1">
             <h2 class="color-github-base">
                 <i class="fab fa-github-square" aria-hidden="true"></i> Projects
             </h2>
@@ -62,7 +75,7 @@
         </section>
 
         <!-- Certificate -->
-        <section>
+        <section class="block-xs-target2">
             <h2 class="color-linkedin-base">
                 <i class="fas fa-certificate" aria-hidden="true"></i> Certificates
             </h2>
