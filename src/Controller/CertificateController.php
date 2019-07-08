@@ -63,7 +63,7 @@ class CertificateController extends Controller
     {
         if (!empty(filter_input_array(INPUT_POST))) {
             ModelFactory::get('Certificate')->create(filter_input_array(INPUT_POST));
-            $this->cookie->createAlert('New certificate successfully created !', 'green');
+            $this->cookie->createAlert('New certificate successfully created !');
 
             $this->redirect('admin');
         }
@@ -83,7 +83,7 @@ class CertificateController extends Controller
 
         if (!empty(filter_input_array(INPUT_POST))) {
             ModelFactory::get('Certificate')->update($id, filter_input_array(INPUT_POST));
-            $this->cookie->createAlert('Successful modification of the selected certificate !', 'blue');
+            $this->cookie->createAlert('Successful modification of the selected certificate !');
 
             $this->redirect('admin');
         }
@@ -96,7 +96,7 @@ class CertificateController extends Controller
     {
         $id = filter_input(INPUT_GET, 'id');
         ModelFactory::get('Course')->delete($id);
-        $this->cookie->createAlert('Certificate permanently deleted !', 'red');
+        $this->cookie->createAlert('Certificate permanently deleted !');
 
         $this->redirect('admin');
     }

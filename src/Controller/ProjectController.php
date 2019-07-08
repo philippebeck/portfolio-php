@@ -67,7 +67,7 @@ class ProjectController extends Controller
             $data['description']    = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->create($data);
-            $this->cookie->createAlert('New project created successfully !', 'green');
+            $this->cookie->createAlert('New project created successfully !');
 
             $this->redirect('admin');
         }
@@ -95,7 +95,7 @@ class ProjectController extends Controller
             $data['description']  = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->update($id, $data);
-            $this->cookie->createAlert('Successful modification of the selected project !', 'blue');
+            $this->cookie->createAlert('Successful modification of the selected project !');
 
             $this->redirect('admin');
         }
@@ -108,7 +108,7 @@ class ProjectController extends Controller
     {
         $id = filter_input(INPUT_GET, 'id');
         ModelFactory::get('Project')->delete($id);
-        $this->cookie->createAlert('Project actually deleted !', 'red');
+        $this->cookie->createAlert('Project actually deleted !');
 
         $this->redirect('admin');
     }
