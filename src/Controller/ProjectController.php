@@ -44,7 +44,6 @@ class ProjectController extends Controller
         }
 
         return $this->render('front/project.twig', [
-            'allProjects'           => $allProjects,
             'allToolProjects'       => $allToolProjects,
             'allWebsiteProjects'    => $allWebsiteProjects
         ]);
