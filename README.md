@@ -3,7 +3,7 @@
 My own portfolio !
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7658c095411842b1a2d7c4c740a1bdd8)](https://www.codacy.com/app/philippebeck/portfolio?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=philippebeck/portfolio&amp;utm_campaign=Badge_Grade)
-[![CodeClimate Maintainability](https://img.shields.io/codeclimate/maintainability-percentage/philippebeck/pam.svg?label=Maintainability)](https://codeclimate.com/github/philippebeck/portfolio)
+[![CodeClimate Maintainability](https://img.shields.io/codeclimate/maintainability-percentage/philippebeck/portfolio.svg?label=Maintainability)](https://codeclimate.com/github/philippebeck/portfolio)
 
 ## Summary
 
@@ -17,7 +17,7 @@ My own portfolio !
 
 ## Download
 
-[Latest Release](https://github.com/philippebeck/pam/releases)  
+[Latest Release](https://github.com/philippebeck/portfolio/releases)  
 
 `git clone https://github.com/philippebeck/portfolio.git`  
   
@@ -54,5 +54,5 @@ Philippe Beck
 
 Code released under the MIT License
 
-[![GitHub License](https://img.shields.io/github/license/philippebeck/pam.svg?label=License)](https://github.com/philippebeck/pam/blob/master/LICENSE)
+[![GitHub License](https://img.shields.io/github/license/philippebeck/portfolio.svg?label=License)](https://github.com/philippebeck/portfolio/blob/master/LICENSE)
 
