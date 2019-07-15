@@ -44,7 +44,6 @@ class ProjectController extends Controller
         }
 
         return $this->render('front/project.twig', [
-            'allProjects'           => $allProjects,
             'allToolProjects'       => $allToolProjects,
             'allWebsiteProjects'    => $allWebsiteProjects
         ]);
@@ -60,14 +59,15 @@ class ProjectController extends Controller
     public function createAction()
     {
         if (!empty(filter_input_array(INPUT_POST))) {
-            $data['image']          = $this->upload('img/project');
+            $data['image']          = $this->upload('img/projects');
             $data['name']           = filter_input(INPUT_POST, 'name');
             $data['link']           = filter_input(INPUT_POST, 'link');
             $data['year']           = filter_input(INPUT_POST, 'year');
+            $data['project_type']   = filter_input(INPUT_POST, 'project_type');
             $data['description']    = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->create($data);
-            $this->cookie->createAlert('New project created successfully !', 'green');
+            $this->cookie->createAlert('New project created successfully !');
 
             $this->redirect('admin');
         }
@@ -87,15 +87,16 @@ class ProjectController extends Controller
 
         if (!empty(filter_input_array(INPUT_POST))) {
             if (!empty($_FILES['file']['name'])) {
-                $data['image'] = $this->upload('img/project');
+                $data['image'] = $this->upload('img/projects');
             }
-            $data['name']         = filter_input(INPUT_POST, 'name');
-            $data['link']         = filter_input(INPUT_POST, 'link');
-            $data['year']         = filter_input(INPUT_POST, 'year');
-            $data['description']  = filter_input(INPUT_POST, 'description');
+            $data['name']           = filter_input(INPUT_POST, 'name');
+            $data['link']           = filter_input(INPUT_POST, 'link');
+            $data['year']           = filter_input(INPUT_POST, 'year');
+            $data['project_type']   = filter_input(INPUT_POST, 'project_type');
+            $data['description']    = filter_input(INPUT_POST, 'description');
 
             ModelFactory::get('Project')->update($id, $data);
-            $this->cookie->createAlert('Successful modification of the selected project !', 'blue');
+            $this->cookie->createAlert('Successful modification of the selected project !');
 
             $this->redirect('admin');
         }
@@ -108,7 +109,7 @@ class ProjectController extends Controller
     {
         $id = filter_input(INPUT_GET, 'id');
         ModelFactory::get('Project')->delete($id);
-        $this->cookie->createAlert('Project actually deleted !', 'red');
+        $this->cookie->createAlert('Project actually deleted !');
 
         $this->redirect('admin');
     }

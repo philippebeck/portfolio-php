@@ -34,7 +34,7 @@ class AdminController extends Controller
                 'allCertificates'   => $allCertificates
             ]);
         }
-        $this->cookie->createAlert('You must be logged in to access the administration', 'gray');
+        $this->cookie->createAlert('You must be logged in to access the administration');
 
         $this->redirect('user!login');
     }
