@@ -35,7 +35,7 @@ class UserController extends Controller
                     $user['email']
                 );
 
-                $this->cookie->createAlert('Successful authentication, welcome ' . $user['name'] .' !');
+                $this->cookie->createAlert('Successful authentication, welcome ' . $user['name'] . ' !');
 
                 $this->redirect('admin');
             }
@@ -47,7 +47,7 @@ class UserController extends Controller
     public function logoutAction()
     {
         $this->session->destroySession();
-
+        $this->cookie->createAlert('Good bye !');
         $this->redirect('home');
     }
 }
