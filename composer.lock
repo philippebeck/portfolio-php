@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f5ed76a0ba38995d87cc51765de6dc7",
+    "content-hash": "74ca02094d4fd6ad3d7ded116a3f2fbb",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "0.4.5",
+            "version": "0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "48342fa11bba0daa07b696aaab0a693420d2ccf7"
+                "reference": "37bdfec738ca04f62dd8b8365c9e19b866b2dc5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/48342fa11bba0daa07b696aaab0a693420d2ccf7",
-                "reference": "48342fa11bba0daa07b696aaab0a693420d2ccf7",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/37bdfec738ca04f62dd8b8365c9e19b866b2dc5b",
+                "reference": "37bdfec738ca04f62dd8b8365c9e19b866b2dc5b",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             "type": "project",
             "autoload": {
                 "psr-4": {
-                    "Pam\\": ""
+                    "Pam\\": "core/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -50,7 +50,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-07-15T19:58:12+00:00"
+            "time": "2019-07-16T15:13:48+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -302,16 +302,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.6.3",
+            "version": "v2.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "7613eeff265b49a865add75360d1962449e3c12f"
+                "reference": "cad2ec2c40cee828ce5538a4bc5bbde7045a7c1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/7613eeff265b49a865add75360d1962449e3c12f",
-                "reference": "7613eeff265b49a865add75360d1962449e3c12f",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/cad2ec2c40cee828ce5538a4bc5bbde7045a7c1b",
+                "reference": "cad2ec2c40cee828ce5538a4bc5bbde7045a7c1b",
                 "shasum": ""
             },
             "require": {
@@ -365,7 +365,7 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2019-06-18T12:20:11+00:00"
+            "time": "2019-07-16T14:23:55+00:00"
         },
         {
             "name": "twig/twig",

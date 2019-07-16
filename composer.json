@@ -1,6 +1,6 @@
 {
   "name": "philippebeck/portfolio",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "library",
   "description": "Web Development, Tool Design, Developer Training - Open-source Technologies - HTML, CSS, JavaScript, PHP, SQL",
   "keywords": [
@@ -19,13 +19,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "App\\": "src/",
-      "Pam\\": "vendor/pjs/pam/"
+      "App\\": "src/"
     }
   },
   "require": {
     "php": "7.2",
-    "pjs/pam": "0.4.5"
+    "pjs/pam": "0.x"
   },
   "config": {
     "platform": {

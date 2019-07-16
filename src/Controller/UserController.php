@@ -22,10 +22,12 @@ class UserController extends Controller
      */
     public function loginAction()
     {
-        if (!empty(filter_input_array(INPUT_POST))) {
-            $user = ModelFactory::get('User')->read(filter_input(INPUT_POST, 'email'), 'email');
+        $post = filter_input_array(INPUT_POST);
 
-            if (password_verify(filter_input(INPUT_POST, 'pass'), $user['pass'])) {
+        if (!empty($post)) {
+            $user = ModelFactory::get('User')->read($post['email'], 'email');
+
+            if (password_verify($post['pass'], $user['pass'])) {
                 $this->session->createSession(
                     $user['id'],
                     $user['name'],
@@ -33,7 +35,7 @@ class UserController extends Controller
                     $user['email']
                 );
 
-                $this->cookie->createAlert('Successful authentication, welcome ' . $user['name'] .' !');
+                $this->cookie->createAlert('Successful authentication, welcome ' . $user['name'] . ' !');
 
                 $this->redirect('admin');
             }
@@ -45,7 +47,7 @@ class UserController extends Controller
     public function logoutAction()
     {
         $this->session->destroySession();
-
+        $this->cookie->createAlert('Good bye !');
         $this->redirect('home');
     }
 }
