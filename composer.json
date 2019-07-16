@@ -19,13 +19,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "App\\": "src/",
-      "Pam\\": "vendor/pjs/pam/"
+      "App\\": "src/"
     }
   },
   "require": {
     "php": "7.2",
-    "pjs/pam": "0.4.5"
+    "pjs/pam": "0.x"
   },
   "config": {
     "platform": {
