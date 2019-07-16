@@ -17,8 +17,6 @@ My own portfolio !
 
 ## Download
 
-[Latest Release](https://github.com/philippebeck/portfolio/releases)  
-
 `git clone https://github.com/philippebeck/portfolio.git`  
   
 [![Repo Size](https://img.shields.io/github/repo-size/philippebeck/portfolio.svg?label=Repo+Size)](https://github.com/philippebeck/porfolio/tree/master)
