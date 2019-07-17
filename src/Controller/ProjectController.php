@@ -14,7 +14,6 @@ use Twig\Error\SyntaxError;
  */
 class ProjectController extends Controller
 {
-
     /**
      * @return string
      * @throws LoaderError
@@ -49,7 +48,6 @@ class ProjectController extends Controller
         ]);
     }
 
-
     /**
      * @return string
      * @throws LoaderError
@@ -58,13 +56,14 @@ class ProjectController extends Controller
      */
     public function createAction()
     {
-        if (!empty(filter_input_array(INPUT_POST))) {
-            $data['image']          = $this->upload('img/projects');
-            $data['name']           = filter_input(INPUT_POST, 'name');
-            $data['link']           = filter_input(INPUT_POST, 'link');
-            $data['year']           = filter_input(INPUT_POST, 'year');
-            $data['project_type']   = filter_input(INPUT_POST, 'project_type');
-            $data['description']    = filter_input(INPUT_POST, 'description');
+        if (!empty($this->post->getPostArray())) {
+
+            $data['image']          = $this->files->uploadFile('img/projects');
+            $data['name']           = $this->post->getPostVar('name');
+            $data['link']           = $this->post->getPostVar('link');
+            $data['year']           = $this->post->getPostVar('year');
+            $data['project_type']   = $this->post->getPostVar('project_type');
+            $data['description']    = $this->post->getPostVar('description');
 
             ModelFactory::get('Project')->create($data);
             $this->cookie->createAlert('New project created successfully !');
@@ -74,7 +73,6 @@ class ProjectController extends Controller
         return $this->render('back/createProject.twig');
     }
 
-
     /**
      * @return string
      * @throws LoaderError
@@ -83,32 +81,32 @@ class ProjectController extends Controller
      */
     public function updateAction()
     {
-        $id = filter_input(INPUT_GET, 'id');
+        if (!empty($this->post->getPostArray())) {
 
-        if (!empty(filter_input_array(INPUT_POST))) {
-            if (!empty($_FILES['file']['name'])) {
-                $data['image'] = $this->upload('img/projects');
+            if (!empty($this->files->getFileVar('name'))) {
+                $data['image'] = $this->files->uploadFile('img/projects');
             }
-            $data['name']           = filter_input(INPUT_POST, 'name');
-            $data['link']           = filter_input(INPUT_POST, 'link');
-            $data['year']           = filter_input(INPUT_POST, 'year');
-            $data['project_type']   = filter_input(INPUT_POST, 'project_type');
-            $data['description']    = filter_input(INPUT_POST, 'description');
 
-            ModelFactory::get('Project')->update($id, $data);
+            $data['name']           = $this->post->getPostVar('name');
+            $data['link']           = $this->post->getPostVar('link');
+            $data['year']           = $this->post->getPostVar('year');
+            $data['project_type']   = $this->post->getPostVar('project_type');
+            $data['description']    = $this->post->getPostVar('description');
+
+            ModelFactory::get('Project')->update($this->get->getGetVar('id'), $data);
             $this->cookie->createAlert('Successful modification of the selected project !');
 
             $this->redirect('admin');
         }
-        $project = ModelFactory::get('Project')->read($id);
+        $project = ModelFactory::get('Project')->read($this->get->getGetVar('id'));
 
         return $this->render('back/updateProject.twig', ['project' => $project]);
     }
 
     public function deleteAction()
     {
-        $id = filter_input(INPUT_GET, 'id');
-        ModelFactory::get('Project')->delete($id);
+        ModelFactory::get('Project')->delete($this->get->getGetVar('id'));
+
         $this->cookie->createAlert('Project actually deleted !');
 
         $this->redirect('admin');
