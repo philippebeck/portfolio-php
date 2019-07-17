@@ -61,8 +61,9 @@ class CertificateController extends Controller
      */
     public function createAction()
     {
-        if (!empty(filter_input_array(INPUT_POST))) {
-            ModelFactory::get('Certificate')->create(filter_input_array(INPUT_POST));
+        if (!empty($this->post->getPostArray())) {
+
+            ModelFactory::get('Certificate')->create($this->post->getPostArray());
             $this->cookie->createAlert('New certificate successfully created !');
 
             $this->redirect('admin');
@@ -79,23 +80,22 @@ class CertificateController extends Controller
      */
     public function updateAction()
     {
-        $id = filter_input(INPUT_GET, 'id');
+        if (!empty($this->post->getPostArray())) {
 
-        if (!empty(filter_input_array(INPUT_POST))) {
-            ModelFactory::get('Certificate')->update($id, filter_input_array(INPUT_POST));
+            ModelFactory::get('Certificate')->update($this->get->getGetVar('id'), $this->post->getPostArray());
             $this->cookie->createAlert('Successful modification of the selected certificate !');
 
             $this->redirect('admin');
         }
-        $certificate = ModelFactory::get('Certificate')->read($id);
+        $certificate = ModelFactory::get('Certificate')->read($this->get->getGetVar('id'));
 
         return $this->render('back/updateCertificate.twig', ['certificate' => $certificate]);
     }
 
     public function deleteAction()
     {
-        $id = filter_input(INPUT_GET, 'id');
-        ModelFactory::get('Course')->delete($id);
+        ModelFactory::get('Course')->delete($this->get->getGetVar('id'));
+
         $this->cookie->createAlert('Certificate permanently deleted !');
 
         $this->redirect('admin');
