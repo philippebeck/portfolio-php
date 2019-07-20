@@ -1,6 +1,6 @@
 .idea/
-config/bdd.php
-config/bdd.sql
+config/db.php
+config/db.sql
 public/img/
 public/node_modules/
 vendor/
