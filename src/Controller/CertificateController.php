@@ -95,7 +95,6 @@ class CertificateController extends Controller
     public function deleteAction()
     {
         ModelFactory::get('Course')->delete($this->get->getGetVar('id'));
-
         $this->cookie->createAlert('Certificate permanently deleted !');
 
         $this->redirect('admin');

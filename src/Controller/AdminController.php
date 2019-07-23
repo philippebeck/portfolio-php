@@ -23,6 +23,7 @@ class AdminController extends Controller
     public function indexAction()
     {
         if ($this->session->islogged()) {
+
             $allProjects        = ModelFactory::get('Project')->list();
             $allCertificates    = ModelFactory::get('Certificate')->list();
 
