@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46ac27fb07958a817e2e18d394d85976",
+    "content-hash": "40b642a0a6e82cf628493455a91b1af7",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "0.5.3",
+            "version": "0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "330dce4431404f805b73330d44108ce2815d22ed"
+                "reference": "624fa5419a1340466b170b6102bf05a012011b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/330dce4431404f805b73330d44108ce2815d22ed",
-                "reference": "330dce4431404f805b73330d44108ce2815d22ed",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/624fa5419a1340466b170b6102bf05a012011b5d",
+                "reference": "624fa5419a1340466b170b6102bf05a012011b5d",
                 "shasum": ""
             },
             "require": {
@@ -39,9 +39,9 @@
             "authors": [
                 {
                     "name": "Philippe Beck",
+                    "role": "Lead Developer",
                     "email": "philippe@philippebeck.net",
-                    "homepage": "https://philippebeck.net",
-                    "role": "Lead Developer"
+                    "homepage": "https://philippebeck.net"
                 }
             ],
             "description": "Php Approachable Microframework",
@@ -50,7 +50,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-07-18T19:09:53+00:00"
+            "time": "2019-07-23T17:55:45+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
