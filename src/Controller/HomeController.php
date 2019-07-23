@@ -25,8 +25,6 @@ class HomeController extends Controller
         $allProjects    = ModelFactory::get('Project')->list();
         $project        = $allProjects[array_rand($allProjects)];
 
-        return $this->render('front/home.twig', [
-            'project' => $project
-        ]);
+        return $this->render('front/home.twig', ['project' => $project]);
     }
 }
