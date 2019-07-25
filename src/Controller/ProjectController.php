@@ -22,7 +22,7 @@ class ProjectController extends Controller
      */
     public function indexAction()
     {
-        $allProjects = ModelFactory::get('Project')->list();
+        $allProjects = ModelFactory::getModel('Project')->listData();
         $allProjects = array_reverse($allProjects);
 
         $allToolProjects    = array();
@@ -65,7 +65,7 @@ class ProjectController extends Controller
             $data['project_type']   = $this->post->getPostVar('project_type');
             $data['description']    = $this->post->getPostVar('description');
 
-            ModelFactory::get('Project')->create($data);
+            ModelFactory::getModel('Project')->createData($data);
             $this->cookie->createAlert('New project created successfully !');
 
             $this->redirect('admin');
@@ -93,19 +93,19 @@ class ProjectController extends Controller
             $data['project_type']   = $this->post->getPostVar('project_type');
             $data['description']    = $this->post->getPostVar('description');
 
-            ModelFactory::get('Project')->update($this->get->getGetVar('id'), $data);
+            ModelFactory::getModel('Project')->updateData($this->get->getGetVar('id'), $data);
             $this->cookie->createAlert('Successful modification of the selected project !');
 
             $this->redirect('admin');
         }
-        $project = ModelFactory::get('Project')->read($this->get->getGetVar('id'));
+        $project = ModelFactory::getModel('Project')->readData($this->get->getGetVar('id'));
 
         return $this->render('back/updateProject.twig', ['project' => $project]);
     }
 
     public function deleteAction()
     {
-        ModelFactory::get('Project')->delete($this->get->getGetVar('id'));
+        ModelFactory::getModel('Project')->deleteData($this->get->getGetVar('id'));
         $this->cookie->createAlert('Project actually deleted !');
 
         $this->redirect('admin');
