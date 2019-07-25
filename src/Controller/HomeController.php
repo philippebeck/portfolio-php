@@ -22,7 +22,7 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        $allProjects    = ModelFactory::get('Project')->list();
+        $allProjects    = ModelFactory::getModel('Project')->listData();
         $project        = $allProjects[array_rand($allProjects)];
 
         return $this->render('front/home.twig', ['project' => $project]);
