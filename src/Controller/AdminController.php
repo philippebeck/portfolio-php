@@ -24,8 +24,8 @@ class AdminController extends Controller
     {
         if ($this->session->islogged()) {
 
-            $allProjects        = ModelFactory::get('Project')->list();
-            $allCertificates    = ModelFactory::get('Certificate')->list();
+            $allProjects        = ModelFactory::getModel('Project')->listData();
+            $allCertificates    = ModelFactory::getModel('Certificate')->listData();
 
             $allProjects        = array_reverse($allProjects);
             $allCertificates    = array_reverse($allCertificates);
