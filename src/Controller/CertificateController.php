@@ -22,7 +22,7 @@ class CertificateController extends Controller
      */
     public function indexAction()
     {
-        $allCertificates = ModelFactory::get('Certificate')->list();
+        $allCertificates = ModelFactory::getModel('Certificate')->listData();
         $allCertificates = array_reverse($allCertificates);
 
         $allCourseCertifs  = array();
@@ -63,7 +63,7 @@ class CertificateController extends Controller
     {
         if (!empty($this->post->getPostArray())) {
 
-            ModelFactory::get('Certificate')->create($this->post->getPostArray());
+            ModelFactory::getModel('Certificate')->createData($this->post->getPostArray());
             $this->cookie->createAlert('New certificate successfully created !');
 
             $this->redirect('admin');
@@ -82,19 +82,19 @@ class CertificateController extends Controller
     {
         if (!empty($this->post->getPostArray())) {
 
-            ModelFactory::get('Certificate')->update($this->get->getGetVar('id'), $this->post->getPostArray());
+            ModelFactory::getModel('Certificate')->updateData($this->get->getGetVar('id'), $this->post->getPostArray());
             $this->cookie->createAlert('Successful modification of the selected certificate !');
 
             $this->redirect('admin');
         }
-        $certificate = ModelFactory::get('Certificate')->read($this->get->getGetVar('id'));
+        $certificate = ModelFactory::getModel('Certificate')->readData($this->get->getGetVar('id'));
 
         return $this->render('back/updateCertificate.twig', ['certificate' => $certificate]);
     }
 
     public function deleteAction()
     {
-        ModelFactory::get('Course')->delete($this->get->getGetVar('id'));
+        ModelFactory::getModel('Certificate')->deleteData($this->get->getGetVar('id'));
         $this->cookie->createAlert('Certificate permanently deleted !');
 
         $this->redirect('admin');
