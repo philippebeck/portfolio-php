@@ -35,11 +35,11 @@
 
         {% if (isLogged()) %}
             <li>
-                <p>Hello {{ userName() }}</p>
+                <p>Hello {{ getUserVar('name') }}</p>
             </li>
             <li>
                 <a href="{{ url('admin') }}" title="Administration">
-                    <img class="bord-circle-base" src="img/{{ userImage() }}" alt="User Picture">
+                    <img class="bord-circle-base" src="img/{{ getUserVar('image') }}" alt="User Picture">
                 </a>
             </li>
             <li>
