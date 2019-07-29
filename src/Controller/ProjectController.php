@@ -15,6 +15,11 @@ use Twig\Error\SyntaxError;
 class ProjectController extends Controller
 {
     /**
+     * @var array
+     */
+    private $data = [];
+
+    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
@@ -48,6 +53,15 @@ class ProjectController extends Controller
         ]);
     }
 
+    private function postAction()
+    {
+        $this->data['name']         = $this->post->getPostVar('name');
+        $this->data['link']         = $this->post->getPostVar('link');
+        $this->data['year']         = $this->post->getPostVar('year');
+        $this->data['category']     = $this->post->getPostVar('category');
+        $this->data['description']  = $this->post->getPostVar('description');
+    }
+
     /**
      * @return string
      * @throws LoaderError
@@ -57,15 +71,10 @@ class ProjectController extends Controller
     public function createAction()
     {
         if (!empty($this->post->getPostArray())) {
+            $this->data['image'] = $this->files->uploadFile('img/projects');
+            $this->postAction();
 
-            $data['image']          = $this->files->uploadFile('img/projects');
-            $data['name']           = $this->post->getPostVar('name');
-            $data['link']           = $this->post->getPostVar('link');
-            $data['year']           = $this->post->getPostVar('year');
-            $data['project_type']   = $this->post->getPostVar('project_type');
-            $data['description']    = $this->post->getPostVar('description');
-
-            ModelFactory::getModel('Project')->createData($data);
+            ModelFactory::getModel('Project')->createData($this->data);
             $this->cookie->createAlert('New project created successfully !');
 
             $this->redirect('admin');
@@ -84,16 +93,11 @@ class ProjectController extends Controller
         if (!empty($this->post->getPostArray())) {
 
             if (!empty($this->files->getFileVar('name'))) {
-                $data['image'] = $this->files->uploadFile('img/projects');
+                $this->data['image'] = $this->files->uploadFile('img/projects');
             }
+            $this->postAction();
 
-            $data['name']           = $this->post->getPostVar('name');
-            $data['link']           = $this->post->getPostVar('link');
-            $data['year']           = $this->post->getPostVar('year');
-            $data['project_type']   = $this->post->getPostVar('project_type');
-            $data['description']    = $this->post->getPostVar('description');
-
-            ModelFactory::getModel('Project')->updateData($this->get->getGetVar('id'), $data);
+            ModelFactory::getModel('Project')->updateData($this->get->getGetVar('id'), $this->data);
             $this->cookie->createAlert('Successful modification of the selected project !');
 
             $this->redirect('admin');
