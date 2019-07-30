@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3356a91a0fc2c94fd3be46bda7dd4b3d",
+    "content-hash": "1dff986ed0b2b998139b16f4f2561560",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "0.5.5",
+            "version": "0.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "2379048c89d9189d4588f08d42b8d77a7e3fb25d"
+                "reference": "b9a3a443f9053fb06ab1f2a77508107ec7436655"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/2379048c89d9189d4588f08d42b8d77a7e3fb25d",
-                "reference": "2379048c89d9189d4588f08d42b8d77a7e3fb25d",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/b9a3a443f9053fb06ab1f2a77508107ec7436655",
+                "reference": "b9a3a443f9053fb06ab1f2a77508107ec7436655",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2",
-                "symfony/var-dumper": "4.x",
+                "symfony/var-dumper": "4.3.3",
                 "tracy/tracy": "2.x",
                 "twig/twig": "2.x"
             },
@@ -50,7 +50,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-07-25T17:01:34+00:00"
+            "time": "2019-07-29T17:38:41+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
