@@ -1,6 +1,6 @@
 {
   "name": "philippebeck/portfolio",
-  "version": "0.2.3",
+  "version": "0.2.4",
 
   "type": "library",
   "description": "Web Development, Tool Design, Developer Training - Open-source Technologies - HTML, CSS, JavaScript, PHP, SQL",
@@ -25,7 +25,11 @@
   },
   "require": {
     "php": "7.2",
-    "pjs/pam": "0.5.7"
+    "pjs/pam": "0.x"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "4.x",
+    "tracy/tracy": "2.x"
   },
   "config": {
     "platform": {
