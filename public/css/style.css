@@ -1,6 +1,6 @@
 body {
-  --global-font-family: 'Text Me One', sans-serif;
-  --global-background-color: Lavender;
+  --body-font-family: 'Text Me One', sans-serif;
+  --body-background-color: Lavender;
 
   background: url("../img/bg.jpg") fixed;
   background-size: cover;
@@ -36,7 +36,7 @@ figure {
 
 code,
 pre {
-  --pre-font-family: 'Share Tech Mono', monospace;
+  --code-font-family: 'Share Tech Mono', monospace;
 }
 
 [class*="nav"] {
