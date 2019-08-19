@@ -25,7 +25,7 @@
   },
   "require": {
     "php": "7.2",
-    "pjs/pam": "0.5.9"
+    "pjs/pam": "0.6.0"
   },
   "require-dev": {
     "symfony/var-dumper": "4.x",
