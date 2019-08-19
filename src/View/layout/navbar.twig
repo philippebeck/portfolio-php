@@ -1,15 +1,15 @@
 <nav class="navbar">
 
-    <input id="nav-close" class="nav-close" type="radio" name="navbar" checked>
-    <input id="nav-open" class="nav-open" type="radio" name="navbar">
+    <input id="navbar-close" type="radio" name="navbar" checked>
+    <input id="navbar-open" type="radio" name="navbar">
 
     <!-- Home access -->
-    <a class="nav-brand anima-rota-onto" href="./" title="Home">
+    <a class="anima-rota-onto" href="./" title="Home">
         <img src="img/phi.svg" alt="Logo Phi">
     </a>
 
     <!-- Main access -->
-    <ul class="nav-main">
+    <ul>
         <li>
             <a href="{{ url('project') }}" title="Tools & WebSites">
                 <i class="fas fa-project-diagram fa-fw" aria-hidden="true"></i>
@@ -31,7 +31,7 @@
     </ul>
 
     <!-- User access -->
-    <ul class="nav-info">
+    <ul>
 
         {% if (isLogged()) %}
             <li>
@@ -62,10 +62,10 @@
         </li>
     </ul>
 
-    <label for="nav-close" class="nav-toggle" title="Close the Navigation Menu">
+    <label for="navbar-close" title="Close the Navigation Menu">
         <i class="fas fa-angle-double-up fa-lg" aria-hidden="true"></i>
     </label>
-    <label for="nav-open" class="nav-toggle" title="Open the Navigation Menu">
+    <label for="navbar-open" title="Open the Navigation Menu">
         <i class="fas fa-angle-double-down fa-lg" aria-hidden="true"></i>
     </label>
 </nav>
