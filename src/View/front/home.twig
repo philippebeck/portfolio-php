@@ -5,7 +5,7 @@
 {% block description %}Philippe Beck - Fullstack Development & Mentorship in Development - Technologies HTML5, Twig, CSS3, SCSS, JavaScript, Nodejs, PHP, Symfony, SQL, Git, GitHub{% endblock %}
 
 {% block main %}
-    <main id="home" class="grid-3md gap-3md mar-bot-md-base">
+    <main id="home" class="mar-bot-md-base">
 
         <!-- Projects -->
         <section class="card-red anima-tranx-base">
@@ -14,14 +14,7 @@
                 <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
             </figure>
             <p><strong>{{ project.name }}</strong> ({{ project.year }})</p>
-            <a class="btn-tomato" href="{{ url('project') }}">Access to Projects</a>
-        </section>
-
-        <!-- Services -->
-        <section class="card-green anima-tran-base">
-            <h2>Services</h2>
-            <p><strong>Fullstack Development</strong> : Websites, Applications, Tools, Mentorship</p>
-            <a class="btn-jade" href="{{ url('service') }}">Access to Services</a>
+            <a class="btn-red" href="{{ url('project') }}">Access to Projects</a>
         </section>
 
         <!-- Certificates -->
@@ -30,8 +23,8 @@
             <figure>
                 <img src="img/about/diplome-3wa.jpg" alt="Fullstack Developer Degree">
             </figure>
-            <p>Fullstack Web Development JS & PHP</p>
-            <a class="btn-sky" href="{{ url('certificate') }}">Access to Certificates</a>
+            <p>Fullstack Web Development</p>
+            <a class="btn-blue" href="{{ url('certificate') }}">Access to Certificates</a>
         </section>
     </main>
 {% endblock %}
