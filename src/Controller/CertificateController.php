@@ -30,20 +30,17 @@ class CertificateController extends Controller
         $allDegreeCertifs  = array();
 
         foreach ($allCertificates as $certificate) {
-            foreach ($certificate as $value) {
-
-                switch ($value) {
-                    case 'course':
-                        $allCourseCertifs[] = $certificate;
-                        break;
-                    case 'path':
-                        $allPathCertifs[] = $certificate;
-                        break;
-                    case 'degree':
-                        $allDegreeCertifs[] = $certificate;
-                        break;
-                }
-             }
+            switch ($certificate['category']) {
+                case 'course':
+                    $allCourseCertifs[] = $certificate;
+                    break;
+                case 'path':
+                    $allPathCertifs[] = $certificate;
+                    break;
+                case 'degree':
+                    $allDegreeCertifs[] = $certificate;
+                    break;
+            }
         }
 
         return $this->render('front/certificate.twig', [

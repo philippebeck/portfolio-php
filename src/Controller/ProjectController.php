@@ -34,16 +34,13 @@ class ProjectController extends Controller
         $allWebsiteProjects = array();
 
         foreach ($allProjects as $project) {
-            foreach ($project as $value) {
-
-                switch ($value) {
-                    case 'tool':
-                        $allToolProjects[] = $project;
-                        break;
-                    case 'website':
-                        $allWebsiteProjects[] = $project;
-                        break;
-                }
+            switch ($project['category']) {
+                case 'tool':
+                    $allToolProjects[] = $project;
+                    break;
+                case 'website':
+                    $allWebsiteProjects[] = $project;
+                    break;
             }
         }
 
