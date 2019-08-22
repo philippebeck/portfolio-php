@@ -6,7 +6,7 @@
     <meta name="viewport"               content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible"  content="IE=edge">
 
-    <title>{% block title %}{% endblock %} - {% block author %}Philippe Beck{% endblock %}</title>
+    <title>{% block title %}{{ block('subtitle') }} - {% block author %}Philippe Beck{% endblock %}{% endblock %}</title>
 
     <link rel="canonical" href="{% block canonical %}https://philippebeck.net{% endblock %}">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
@@ -16,19 +16,19 @@
     <meta name="copyright"                  content="MIT">
     <meta name="google-site-verification"   content="7S4IjLLopc3fohzOLoH35hD9vx7tr7IT07PmlQ2EX5M">
 
-    <meta property="og:title"       content="{{ block('author') }}">
     <meta property="og:type"        content="website">
+    <meta property="og:title"       content="{{ block('title') }}">
     <meta property="og:url"         content="{{ block('canonical') }}">
-    <meta property="og:image"       content="{% block image %}https://philippebeck.net/img/background.jpg{% endblock %}">
     <meta property="og:description" content="{{ block('description') }}">
+    <meta property="og:image"       content="{% block image %}https://philippebeck.net/img/background.jpg{% endblock %}">
     <meta property="fb:app_id"      content="1316979581722641">
 
     <meta name="twitter:card"           content="summary">
+    <meta name="twitter:title"          content="{{ block('title') }}">
     <meta name="twitter:site"           content="{{ block('canonical') }}">
-    <meta name="twitter:title"          content="{{ block('author') }}">
     <meta name="twitter:description"    content="{{ block('description') }}">
-    <meta name="twitter:creator"        content="@philippepjbeck">
     <meta name="twitter:image"          content="{{ block('image') }}">
+    <meta name="twitter:creator"        content="@philippepjbeck">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Text+Me+One%7cCinzel:400,700,900%7cShare+Tech+Mono">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
@@ -46,13 +46,12 @@
 
 {{ include('layout/navbar.twig') }}
 
-<header>
-
+<header class="container-90xs">
     {% if (hasAlert()) %}
         <p id="alert" class="bg-amethyst-color-white-base">{{ readAlert() }}</p>
     {% endif %}
 
-    <h1 class="color-purple-base">{{ block('title') }}</h1>
+    <h1 class="color-purple-base">{{ block('subtitle') }}</h1>
 </header>
 
 {% block main %}{% endblock %}

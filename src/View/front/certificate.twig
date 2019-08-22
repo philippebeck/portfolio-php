@@ -1,6 +1,6 @@
 {% extends 'layout/layout.twig' %}
 
-{% block title %}Certificates{% endblock %}
+{% block subtitle %}Certificates{% endblock %}
 
 {% block description %}Degree, Paths & Courses - Technologies HTML5 & CSS3, JavaScript, jQuery & Nodejs, PHP & Symfony, Python, Ruby & Rails, MySQL, XML, UML, SEO, API REST, Git & GitHub{% endblock %}
 
@@ -11,21 +11,21 @@
     <input id="path" class="block-xs-radio2" type="radio" name="certificate">
     <input id="course" class="block-xs-radio3" type="radio" name="certificate">
 
-    <label class="button-tomato" for="degree">
+    <label class="button-tomato" for="degree" title="Fullstack Web Degree">
         <i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i>
         Degree
     </label>
-    <label class="button-jade" for="path">
+    <label class="button-jade" for="path" title="Frontend, JS, PHP, Ruby & Java Paths">
         <i class="fas fa-road fa-lg" aria-hidden="true"></i>
         Paths
     </label>
-    <label class="button-sky" for="course">
+    <label class="button-sky" for="course" title="All Certified Courses">
         <i class="fas fa-book fa-lg" aria-hidden="true"></i>
         Courses
     </label>
 
 
-    <main id="certificate" class="text-center-xs hide-xs-global block-xs-relay">
+    <main id="certificate" class="container-90sm-80md-70lg text-center-xs hide-xs-global block-xs-relay">
 
         <!-- Degree -->
         <section class="block-xs-target1 anima-scal-base">

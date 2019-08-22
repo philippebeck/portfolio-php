@@ -1,6 +1,6 @@
 {% extends 'layout/layout.twig' %}
 
-{% block title %}Projects{% endblock %}
+{% block subtitle %}Projects{% endblock %}
 
 {% block description %}Frameworks & Websites - Languages HTML5, Twig, Pugjs, CSS3, SCSS, Stylus, JavaScript, jQuery, CoffeeScript, Nodejs, Expressjs, PHP, MySQL{% endblock %}
 
@@ -10,16 +10,16 @@
     <input id="tool" class="block-xs-radio1" type="radio" name="project" checked>
     <input id="website" class="block-xs-radio2" type="radio" name="project">
 
-    <label class="button-tomato" for="tool">
+    <label class="button-tomato" for="tool" title="My Tools Creations">
         <i class="fas fa-tools fa-lg" aria-hidden="true"></i>
         Tools
     </label>
-    <label class="button-sky" for="website">
+    <label class="button-sky" for="website" title="My Websites">
         <i class="fas fa-globe fa-lg" aria-hidden="true"></i>
         WebSites
     </label>
 
-    <main id="project" class="text-center-xs hide-xs-global block-xs-relay">
+    <main id="project" class="container-90sm-80md-70lg text-center-xs hide-xs-global block-xs-relay">
 
         <!-- TOOLS -->
         <section class="block-xs-target1">

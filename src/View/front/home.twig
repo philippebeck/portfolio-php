@@ -1,11 +1,11 @@
 {% extends 'layout/layout.twig' %}
 
-{% block title %}Fullstack Developer & Mentor{% endblock %}
+{% block subtitle %}Fullstack Developer & Mentor{% endblock %}
 
 {% block description %}Philippe Beck - Fullstack Development & Mentorship in Development - Technologies HTML5, Twig, CSS3, SCSS, JavaScript, Nodejs, PHP, Symfony, SQL, Git, GitHub{% endblock %}
 
 {% block main %}
-    <main id="home" class="mar-bot-md-base">
+    <main id="home" class="container-90sm-80md-70lg mar-bot-md-base">
 
         <!-- Projects -->
         <section class="card-red anima-tranx-base">
@@ -14,7 +14,9 @@
                 <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
             </figure>
             <p><strong>{{ project.name }}</strong> ({{ project.year }})</p>
-            <a class="btn-red" href="{{ url('project') }}">Access to Projects</a>
+            <a class="btn-red" href="{{ url('project') }}" title="Projects Access">
+                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+            </a>
         </section>
 
         <!-- Certificates -->
@@ -24,7 +26,9 @@
                 <img src="img/about/diplome-3wa.jpg" alt="Fullstack Developer Degree">
             </figure>
             <p>Fullstack Web Development</p>
-            <a class="btn-blue" href="{{ url('certificate') }}">Access to Certificates</a>
+            <a class="btn-blue" href="{{ url('certificate') }}" title="Certificates Access">
+                <i class="fas fa-certificate" aria-hidden="true"></i>
+            </a>
         </section>
     </main>
 {% endblock %}
