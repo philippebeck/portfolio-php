@@ -1,0 +1,43 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Edit the User{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="text-center-xs">
+        <form class="form" method="post" action={{ url('user!update', {'id': user.id}) }} enctype="multipart/form-data">
+            <input name="MAX_FILE_SIZE" type="hidden" value="10000000" />
+            <fieldset>
+                <legend>
+                    <i class="fas fa-user fa-fw fa-2x" aria-hidden="true"></i>
+                </legend>
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" maxlength="50" required value="{{ user.name }}">
+                    </li>
+                    <li>
+                        <label for="file">Image</label>
+                        <input name="file" type="file" accept=".jpg, .jpeg, .png, .svg, .gif">
+                    </li>
+                    <li>
+                        <label for="email">Email :</label>
+                        <input id="email" name="email" type="email" maxlength="100" minlength="5" required value="{{ user.email }}">
+                    </li>
+                    <!-- Champ Mot de Passe -->
+                    <li>
+                        <label for="pass">Mot de passe :</label>
+                        <input id="pass" name="pass" type="password" placeholder="Type your password" maxlength="100" minlength="8">
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Update">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </main>
+{% endblock %}
