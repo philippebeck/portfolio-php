@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Pam\Controller\Controller;
-use Pam\Model\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -22,9 +21,6 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        $allProjects    = ModelFactory::getModel('Project')->listData();
-        $project        = $allProjects[array_rand($allProjects)];
-
-        return $this->render('front/home.twig', ['project' => $project]);
+        return $this->render('front/home.twig');
     }
 }
