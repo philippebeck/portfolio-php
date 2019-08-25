@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2467f2d740e0f58fd3e26c77a2722368",
+    "content-hash": "c88e931410e0a9b24c578f09d345ee75",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "0.6.0",
+            "version": "0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "a5f96a545d1025f5f289ee03641e015e515885da"
+                "reference": "10dbb7080b40bd977e08f59a54c3e229a1c90e70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/a5f96a545d1025f5f289ee03641e015e515885da",
-                "reference": "a5f96a545d1025f5f289ee03641e015e515885da",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/10dbb7080b40bd977e08f59a54c3e229a1c90e70",
+                "reference": "10dbb7080b40bd977e08f59a54c3e229a1c90e70",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-08-19T14:50:29+00:00"
+            "time": "2019-08-24T11:38:08+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
