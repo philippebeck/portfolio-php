@@ -5,7 +5,7 @@
 {% block description %}{% endblock %}
 
 {% block main %}
-    <main class="text-center-xs">
+    <main class="text-center">
         <form class="form" method="post" action={{ url('user!update', {'id': user.id}) }} enctype="multipart/form-data">
             <input name="MAX_FILE_SIZE" type="hidden" value="10000000" />
             <fieldset>
