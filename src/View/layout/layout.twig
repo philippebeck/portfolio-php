@@ -31,7 +31,7 @@
     <meta name="twitter:creator"        content="@philippepjbeck">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Text+Me+One%7cCinzel:400,700,900%7cShare+Tech+Mono">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 
     <!-- For Dev only -->
     <!-- <link rel="stylesheet" href="node_modules/animadio/dist/animadio.css"> -->
@@ -48,10 +48,10 @@
 
 <header>
     {% if (hasAlert()) %}
-        <p id="alert" class="bg-amethyst-color-white-base">{{ readAlert() }}</p>
+        <p id="alert" class="bg-amethyst color-white">{{ readAlert() }}</p>
     {% endif %}
 
-    <h1 class="color-purple-base">{{ block('subtitle') }}</h1>
+    <h1 class="color-purple">{{ block('subtitle') }}</h1>
 </header>
 
 {% block main %}{% endblock %}
