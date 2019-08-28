@@ -48,10 +48,10 @@
 
 <header>
     {% if (hasAlert()) %}
-        <p id="alert" class="bg-amethyst-color-white-base">{{ readAlert() }}</p>
+        <p id="alert" class="bg-amethyst color-white">{{ readAlert() }}</p>
     {% endif %}
 
-    <h1 class="color-purple-base">{{ block('subtitle') }}</h1>
+    <h1 class="color-purple">{{ block('subtitle') }}</h1>
 </header>
 
 {% block main %}{% endblock %}
