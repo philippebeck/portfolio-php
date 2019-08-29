@@ -8,10 +8,14 @@
 
     <!-- CONTROLS -->
     <input id="project" class="block-radio1" type="radio" name="admin" checked>
-    <input id="certificate" class="block-radio2" type="radio" name="admin">
+    <input id="user" class="block-radio2" type="radio" name="admin">
+    <input id="certificate" class="block-radio3" type="radio" name="admin">
 
     <label class="button-ruby btn-lg" for="project" title="Show Projects">
         <i class="fas fa-project-diagram fa-lg" aria-hidden="true"></i>
+    </label>
+    <label class="button-emerald btn-lg" for="user" title="Show the User">
+        <i class="fas fa-user fa-lg" aria-hidden="true"></i>
     </label>
     <label class="button-sapphire btn-lg" for="certificate" title="Show Certificates">
         <i class="fas fa-certificate fa-lg" aria-hidden="true"></i>
@@ -19,17 +23,13 @@
 
     <main id="admin" class="container-90sm-80md-70lg hide-global block-relay">
 
-        <!-- Project -->
         <section class="block-target1">
-            <h2>
+            <h2 class="deco-under">
                 <i class="fas fa-project-diagram " aria-hidden="true"></i>
                 Projects
             </h2>
-            <br>
             <a class="btn-green btn-lg" href="{{ url('project!create') }}">New Project</a>
-
             <table class="table">
-
                 <thead>
                 <tr>
                     <th>Project</th>
@@ -37,26 +37,18 @@
                     <th>Actions</th>
                 </tr>
                 </thead>
-
                 <tbody>
-
                 {% for project in allProjects %}
                     <tr>
                         <td>
-                            <a class="btn-github" href="https://github.com/{{ project.link }}" title="Voir le projet sur GitHub">
+                            <a class="btn-github" href="https://github.com/{{ project.link }}" title="See the project @GitHub">
                                 <figure>
-                                    <img src="img/projects/{{ project.image }}" alt="Screenshot du projet {{ project.name }}">
+                                    <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
                                     <figcaption>{{ project.id }} - {{ project.name }}</figcaption>
                                 </figure>
                             </a>
                         </td>
-
-                        <td>
-                            {{ project.description }}
-                            <hr>
-                            {{ project.year }}
-                        </td>
-
+                        <td>{{ project.description }}<hr>{{ project.year }}</td>
                         <td>
                             <a class="btn-blue" href="{{ url('project!update', {'id': project.id}) }}">
                                 <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
@@ -65,25 +57,53 @@
                                 <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                         </td>
-
                     </tr>
                 {% endfor %}
-
                 </tbody>
             </table>
         </section>
 
-        <!-- Certificate -->
         <section class="block-target2">
-            <h2>
+            <h2 class="deco-under">
+                <i class="fas fa-user " aria-hidden="true"></i>
+                Users
+            </h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Infos</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in allUsers %}
+                    <tr>
+                        <td>
+                            <figure>
+                                <img src="img/user/{{ user.image }}" alt="Screenshot of {{ user.name }}">
+                                <figcaption>{{ user.id }}</figcaption>
+                            </figure>
+                        </td>
+                        <td>{{ user.name }}<hr>{{ user.email }}</td>
+                        <td>
+                            <a class="btn-blue" href="{{ url('user!update', {'id': user.id}) }}">
+                                <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="block-target3">
+            <h2 class="deco-under">
                 <i class="fas fa-certificate" aria-hidden="true"></i>
                 Certificates
             </h2>
-            <br>
             <a class="btn-green btn-lg" href="{{ url('certificate!create') }}">New certificate</a>
-
             <table class="table">
-
                 <thead>
                 <tr>
                     <th>Certificate</th>
@@ -91,22 +111,15 @@
                     <th>Actions</th>
                 </tr>
                 </thead>
-                    
                 <tbody>
-
                 {% for certificate in allCertificates %}
                     <tr>
                         <td>
-                            <a class="btn-linkedin" href="https://{{ certificate.link }}" title="Voir le certificat n° {{ certificate.certif_id }}">
+                            <a class="btn-linkedin" href="https://{{ certificate.link }}" title="See the certificate # {{ certificate.certif_id }}">
                             {{ certificate.id }}<br>{{ certificate.name }}
                             </a>
                         </td>
-                        <td>
-                            {{ certificate.certif_id }}
-                            <hr>
-                            {{ date(certificate.certif_date)|date('d/m/y') }}
-                        </td>
-
+                        <td>{{ certificate.certif_id }}<hr>{{ date(certificate.certif_date)|date('d/m/y') }}</td>
                         <td>
                             <a class="btn-blue" href="{{ url('certificate!update', {'id': certificate.id}) }}">
                                 <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
