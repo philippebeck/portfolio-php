@@ -26,13 +26,15 @@ class AdminController extends Controller
 
             $allProjects        = ModelFactory::getModel('Project')->listData();
             $allCertificates    = ModelFactory::getModel('Certificate')->listData();
+            $allUsers           = ModelFactory::getModel('User')->listData();
 
             $allProjects        = array_reverse($allProjects);
             $allCertificates    = array_reverse($allCertificates);
 
             return $this->render('back/admin.twig', [
                 'allProjects'       => $allProjects,
-                'allCertificates'   => $allCertificates
+                'allCertificates'   => $allCertificates,
+                'allUsers'          => $allUsers
             ]);
         }
         $this->cookie->createAlert('You must be logged in to access the administration');
