@@ -24,7 +24,7 @@
   },
   "require": {
     "php": "7.2",
-    "pjs/pam": "0.x"
+    "pjs/pam": "^1.0.0"
   },
   "require-dev": {
     "tracy/tracy": "2.x"
