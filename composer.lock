@@ -4,28 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc0a41aabc70f5521d9cb08f563d09a4",
+    "content-hash": "a218cbce7e7661869532c38f0dfec1ce",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "0.7.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "6b44bc60e2d770b9c18decd3ecf0e564560c4b11"
+                "reference": "edc304d3ed5a0c9dbbbc9140c1c79b0b4e6c83cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/6b44bc60e2d770b9c18decd3ecf0e564560c4b11",
-                "reference": "6b44bc60e2d770b9c18decd3ecf0e564560c4b11",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/edc304d3ed5a0c9dbbbc9140c1c79b0b4e6c83cf",
+                "reference": "edc304d3ed5a0c9dbbbc9140c1c79b0b4e6c83cf",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2",
-                "twig/twig": "2.x"
+                "twig/twig": "^2.11.3"
             },
             "require-dev": {
-                "tracy/tracy": "2.x"
+                "tracy/tracy": "^2.6.4"
             },
             "type": "project",
             "autoload": {
@@ -40,18 +40,24 @@
             "authors": [
                 {
                     "name": "Philippe Beck",
-                    "role": "Lead Developer",
                     "email": "philippe@philippebeck.net",
-                    "homepage": "https://philippebeck.net"
+                    "homepage": "https://philippebeck.net",
+                    "role": "Lead Developer"
                 }
             ],
             "description": "Php Approachable Microframework",
             "keywords": [
+                "crud",
+                "filters",
                 "framework",
+                "integrate profiler",
                 "mvc",
-                "php"
+                "php",
+                "prepared queries",
+                "superglobal",
+                "twig extension"
             ],
-            "time": "2019-08-29T06:13:44+00:00"
+            "time": "2019-08-31T20:10:15+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
