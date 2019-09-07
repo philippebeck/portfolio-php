@@ -4,20 +4,20 @@
     <input id="navbar-open" type="radio" name="navbar">
 
     <!-- Home access -->
-    <a class="anima-rota-onto" href="./" title="Home">
+    <a class="anima-rota-onto" href="./" accesskey="h" title="Home">
         <img src="img/phi.svg" alt="Logo Phi">
     </a>
 
     <!-- Main access -->
     <ul>
         <li>
-            <a href="{{ url('project') }}" title="Tools & WebSites">
+            <a href="{{ url('project') }}" accesskey="p" title="Tools & WebSites">
                 <i class="fas fa-project-diagram fa-fw" aria-hidden="true"></i>
                 <span>Projects</span>
             </a>
         </li>
         <li>
-            <a href="{{ url('certificate') }}" title="Degrees, Paths & Courses">
+            <a href="{{ url('certificate') }}" accesskey="c" title="Degrees, Paths & Courses">
                 <i class="fa fa-certificate fa-fw" aria-hidden="true"></i>
                 <span>Certificates</span>
             </a>
@@ -29,24 +29,24 @@
 
         {% if (isLogged()) %}
             <li>
-                <a href="{{ url('admin') }}" title="{{ getUserVar('name') }} Admin">
+                <a href="{{ url('admin') }}" accesskey="a" title="{{ getUserVar('name') }} Admin">
                     <img class="bord-circle" src="img/user/{{ getUserVar('image') }}" alt="{{ getUserVar('name') }} Picture">
                 </a>
             </li>
             <li>
-                <a href="{{ url('user!logout') }}" title="Logout">
+                <a href="{{ url('user!logout') }}" accesskey="l" title="Logout">
                     <i class="fas fa-sign-out-alt fa-fw" aria-hidden="true"></i>
                 </a>
             </li>
 
         {% else %}
             <li>
-                <a href="{{ url('user!login') }}" title="Login">
+                <a href="{{ url('user!login') }}" accesskey="l" title="Login">
                     <i class="fas fa-sign-in-alt fa-fw" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
-                <a href="mailto:admin@philippebeck.net" title="Contact">
+                <a href="mailto:admin@philippebeck.net" accesskey="a" title="Contact">
                     <i class="fas fa-at fa-fw" aria-hidden="true"></i>
                 </a>
             </li>
