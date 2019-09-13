@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b61bbc2e4125241e39a5156952984656",
+    "content-hash": "6190d891190f44bec546e20d712c0337",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "edc304d3ed5a0c9dbbbc9140c1c79b0b4e6c83cf"
+                "reference": "5dd2cc2ef35d72216c8d659e02b1e49eab773248"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/edc304d3ed5a0c9dbbbc9140c1c79b0b4e6c83cf",
-                "reference": "edc304d3ed5a0c9dbbbc9140c1c79b0b4e6c83cf",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/5dd2cc2ef35d72216c8d659e02b1e49eab773248",
+                "reference": "5dd2cc2ef35d72216c8d659e02b1e49eab773248",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "superglobal",
                 "twig extension"
             ],
-            "time": "2019-08-31T20:10:15+00:00"
+            "time": "2019-09-13T11:40:09+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

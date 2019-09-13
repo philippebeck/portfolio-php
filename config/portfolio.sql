@@ -29,6 +29,18 @@ CREATE TABLE Project
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+-- Creates the table Pen
+CREATE TABLE Pen
+(
+    id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
+    name            VARCHAR(50)     NOT NULL    UNIQUE,
+    link            VARCHAR(50)     NOT NULL    UNIQUE,
+    year            YEAR            NOT NULL,
+    category        VARCHAR(10)     NOT NULL,
+    description     VARCHAR(255)    NOT NULL    UNIQUE
+)
+    ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 -- Creates the table Certificate
 CREATE TABLE Certificate
 (
@@ -56,6 +68,22 @@ VALUES
 ('Animadio.org',        'animadio-org.jpg',     'animadio/animadio.org',            2019,       'website',      'CSS Framework Website'),
 ('Animadio.doc',        'animadio-doc.jpg',     'animadio/doc.animadio.org',        2019,       'website',      'CSS Framework Documentation'),
 ('Portfolio',           'portfolio.jpg',        'philippebeck/portfolio',           2019,       'website',      'My own Portfolio');
+
+-- Inserts the Pen data
+INSERT INTO Pen
+(name,                                      link,                               year,       category,       description)
+VALUES
+('Btn',                                     'animadio/pen/LamGvj',              2019,       'animadio',     'Animadio Btn examples'),
+('Card',                                    'animadio/pen/KKPmGvE',             2019,       'animadio',     'Animadio Card examples'),
+('Foot',                                    'animadio/pen/YgLwbe',              2019,       'animadio',     'Animadio Foot example'),
+('Form',                                    'animadio/pen/EMLPzN',              2019,       'animadio',     'Animadio Form example'),
+('Gallery',                                 'animadio/pen/NJMxmm',              2019,       'animadio',     'Animadio Gallery example'),
+('Menu',                                    'animadio/pen/rRvxbe',              2019,       'animadio',     'Animadio Menu example'),
+('Navbar',                                  'animadio/pen/rRvxRe',              2019,       'animadio',     'Animadio Navbar example'),
+('Slider',                                  'animadio/pen/QoryoX',              2019,       'animadio',     'Animadio Slider example'),
+('Table',                                   'animadio/pen/ZPoQNb',              2019,       'animadio',     'Animadio Table example'),
+('Build a Tribute Page',                    'philippebeck/pen/oNvdLem',         2019,       'perso',        'Responsive Web Design Projects 1'),
+('Build a Personal Portfolio Webpage',      'philippebeck/pen/pozVemB',         2019,       'perso',        'Responsive Web Design Projects 5');
 
 -- Inserts the Certificate data
 INSERT INTO Certificate

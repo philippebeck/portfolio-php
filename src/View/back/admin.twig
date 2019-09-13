@@ -8,17 +8,21 @@
 
     <!-- CONTROLS -->
     <input id="project" class="block-radio1" type="radio" name="admin" checked>
-    <input id="user" class="block-radio2" type="radio" name="admin">
+    <input id="pen" class="block-radio2" type="radio" name="admin">
     <input id="certificate" class="block-radio3" type="radio" name="admin">
+    <input id="user" class="block-radio4" type="radio" name="admin">
 
     <label class="button-ruby btn-lg" for="project" title="Show Projects">
         <i class="fas fa-project-diagram fa-lg" aria-hidden="true"></i>
     </label>
-    <label class="button-obsidian btn-lg" for="user" title="Show the User">
-        <i class="fas fa-user fa-lg" aria-hidden="true"></i>
+    <label class="button-emerald btn-lg" for="pen" title="Show Pens">
+        <i class="fab fa-codepen fa-lg" aria-hidden="true"></i>
     </label>
     <label class="button-sapphire btn-lg" for="certificate" title="Show Certificates">
         <i class="fas fa-certificate fa-lg" aria-hidden="true"></i>
+    </label>
+    <label class="button-obsidian btn-lg" for="user" title="Show the User">
+        <i class="fas fa-user fa-lg" aria-hidden="true"></i>
     </label>
 
     <main id="admin" class="container-90sm-80md-70lg hide-global block-relay">
@@ -65,30 +69,30 @@
 
         <section class="block-target2">
             <h2 class="deco-under">
-                <i class="fas fa-user " aria-hidden="true"></i>
-                Users
+                <i class="fab fa-codepen" aria-hidden="true"></i>
+                Pens
             </h2>
             <table class="table">
                 <thead>
                 <tr>
-                    <th>User</th>
+                    <th>Pen</th>
                     <th>Infos</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for user in allUsers %}
+                {% for pen in allPens %}
                     <tr>
                         <td>
-                            <figure>
-                                <img src="img/user/{{ user.image }}" alt="Screenshot of {{ user.name }}">
-                                <figcaption>{{ user.id }}</figcaption>
-                            </figure>
+                            <a class="btn-green" href="https://codepen.io/{{ pen.link }}" title="See the pen @CodePen">{{ pen.name }}</a>
                         </td>
-                        <td>{{ user.name }}<hr>{{ user.email }}</td>
+                        <td>{{ pen.description }}<hr>{{ pen.year }}</td>
                         <td>
-                            <a class="btn-blue" href="{{ url('user!update', {'id': user.id}) }}">
+                            <a class="btn-blue" href="{{ url('pen!update', {'id': pen.id}) }}">
                                 <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn-red" href="{{ url('pen!delete', {'id': pen.id}) }}">
+                                <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                         </td>
                     </tr>
@@ -126,6 +130,40 @@
                             </a>
                             <a class="btn-red" href="{{ url('certificate!delete', {'id': certificate.id}) }}">
                                 <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="block-target4">
+            <h2 class="deco-under">
+                <i class="fas fa-user " aria-hidden="true"></i>
+                Users
+            </h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Infos</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in allUsers %}
+                    <tr>
+                        <td>
+                            <figure>
+                                <img src="img/user/{{ user.image }}" alt="Screenshot of {{ user.name }}">
+                                <figcaption>{{ user.id }}</figcaption>
+                            </figure>
+                        </td>
+                        <td>{{ user.name }}<hr>{{ user.email }}</td>
+                        <td>
+                            <a class="btn-blue" href="{{ url('user!update', {'id': user.id}) }}">
+                                <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                         </td>
                     </tr>

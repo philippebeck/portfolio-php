@@ -25,14 +25,17 @@ class AdminController extends Controller
         if ($this->session->islogged()) {
 
             $allProjects        = ModelFactory::getModel('Project')->listData();
+            $allPens            = ModelFactory::getModel('Pen')->listData();
             $allCertificates    = ModelFactory::getModel('Certificate')->listData();
             $allUsers           = ModelFactory::getModel('User')->listData();
 
             $allProjects        = array_reverse($allProjects);
+            $allPens            = array_reverse($allPens);
             $allCertificates    = array_reverse($allCertificates);
 
             return $this->render('back/admin.twig', [
                 'allProjects'       => $allProjects,
+                'allPens'           => $allPens,
                 'allCertificates'   => $allCertificates,
                 'allUsers'          => $allUsers
             ]);
