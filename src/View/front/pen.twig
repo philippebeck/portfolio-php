@@ -1,0 +1,83 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Pens{% endblock %}
+
+{% block description %}Animadio & Personal Pens - Technologies HTML5, CSS3 & JavaScript{% endblock %}
+
+{% block main %}
+
+    <!-- Main Controls -->
+    <input id="animadio" class="block-radio1" type="radio" name="pen">
+    <input id="perso" class="block-radio2" type="radio" name="pen" checked>
+
+    <label class="button-tomato" for="animadio" title="Animadio Pens">
+        <i class="fas fa-tools fa-lg" aria-hidden="true"></i>
+        Animadio
+    </label>
+    <label class="button-sky" for="perso" title="Personal Pens">
+        <i class="fas fa-user fa-lg" aria-hidden="true"></i>
+        Personal
+    </label>
+
+
+    <main id="pen" class="container-90sm-80md-70lg text-center hide-global block-relay">
+
+        <!-- Animadio -->
+        <section class="block-target1 anima-skewx">
+            <h2 class="color-red">
+                <i class="fas fa-tools" aria-hidden="true"></i> Animadio
+            </h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Pen</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for animadioPen in allAnimadioPens %}
+                    <tr>
+                        <td>{{ animadioPen.year }}</td>
+                        <td>
+                            <a class="btn-tomato" href="https://codepen.io/{{ animadioPen.link }}" title="Access to Pen" rel="noreferrer noopener" target="_blank">{{ animadioPen.name }}</a>
+                        </td>
+                        <td>{{ animadioPen.description }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Perso -->
+        <section class="block-target2 anima-skewy">
+            <h2 class="color-green">
+                <i class="fas fa-user" aria-hidden="true"></i> Personal
+            </h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Pen</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for persoPen in allPersoPens %}
+                    <tr>
+                        <td>{{ persoPen.year }}</td>
+                        <td>
+                            <a class="btn-jade" href="https://codepen.io/{{ persoPen.link }}" title="Access to Pen" rel="noreferrer noopener" target="_blank">{{ persoPen.name }}</a>
+                        </td>
+                        <td>{{ persoPen.description }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+{% endblock %}
