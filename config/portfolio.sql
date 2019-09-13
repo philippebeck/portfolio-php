@@ -29,6 +29,18 @@ CREATE TABLE Project
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+-- Creates the table Pen
+CREATE TABLE Pen
+(
+    id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
+    name            VARCHAR(50)     NOT NULL    UNIQUE,
+    link            VARCHAR(50)     NOT NULL    UNIQUE,
+    year            YEAR            NOT NULL,
+    category        VARCHAR(10)     NOT NULL,
+    description     VARCHAR(255)    NOT NULL    UNIQUE
+)
+    ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 -- Creates the table Certificate
 CREATE TABLE Certificate
 (
