@@ -82,8 +82,11 @@ VALUES
 ('Navbar',                                  'animadio/pen/rRvxRe',              2019,       'animadio',     'Animadio Navbar example'),
 ('Slider',                                  'animadio/pen/QoryoX',              2019,       'animadio',     'Animadio Slider example'),
 ('Table',                                   'animadio/pen/ZPoQNb',              2019,       'animadio',     'Animadio Table example'),
-('Build a Tribute Page',                    'philippebeck/pen/oNvdLem',         2019,       'perso',        'Responsive Web Design Projects 1'),
-('Build a Personal Portfolio Webpage',      'philippebeck/pen/pozVemB',         2019,       'perso',        'Responsive Web Design Projects 5');
+('Build a Tribute Page',                    'philippebeck/pen/oNvdLem',         2019,       'perso',        'Responsive Web Design Project 1'),
+('Build a Survey Form',                     'philippebeck/pen/qBWyBrp',         2019,       'perso',        'Responsive Web Design Project 2'),
+('Build a Product Landing Page',            'philippebeck/pen/VwZBwVq',         2019,       'perso',        'Responsive Web Design Project 3'),
+('Build a Technical Documentation Page',    'philippebeck/pen/KKPBdeM',         2019,       'perso',        'Responsive Web Design Project 4'),
+('Build a Personal Portfolio Webpage',      'philippebeck/pen/pozVemB',         2019,       'perso',        'Responsive Web Design Project 5');
 
 -- Inserts the Certificate data
 INSERT INTO Certificate
