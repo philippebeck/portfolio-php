@@ -4,28 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1242f5b3654515b748f2dfba0c7e3901",
+    "content-hash": "22b008b36eee5fb4b0ecdf883e482602",
     "packages": [
         {
             "name": "pjs/pam",
-            "version": "1.0.3",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "fbd27e9fc369d11c6716e69145754e31188a52ad"
+                "reference": "a0f926a74803f9d6264654bc458dc3b6749096f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/fbd27e9fc369d11c6716e69145754e31188a52ad",
-                "reference": "fbd27e9fc369d11c6716e69145754e31188a52ad",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/a0f926a74803f9d6264654bc458dc3b6749096f3",
+                "reference": "a0f926a74803f9d6264654bc458dc3b6749096f3",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2",
-                "twig/twig": "^2.11.3"
+                "twig/twig": "^2.12.0"
             },
             "require-dev": {
-                "tracy/tracy": "^2.6.4"
+                "tracy/tracy": "^2.7.0"
             },
             "type": "library",
             "autoload": {
@@ -57,7 +57,8 @@
                 "superglobal",
                 "twig extension"
             ],
-            "time": "2019-09-28T15:14:44+00:00"
+            "abandoned": "philippebeck/pam",
+            "time": "2019-10-05T18:01:09+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -178,16 +179,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.11.3",
+            "version": "v2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "699ed2342557c88789a15402de5eb834dedd6792"
+                "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/699ed2342557c88789a15402de5eb834dedd6792",
-                "reference": "699ed2342557c88789a15402de5eb834dedd6792",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c7a85fd08348ca04b4d8f234f49583d9910906aa",
+                "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa",
                 "shasum": ""
             },
             "require": {
@@ -197,13 +198,13 @@
             },
             "require-dev": {
                 "psr/container": "^1.0",
-                "symfony/debug": "^2.7",
-                "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0"
+                "symfony/debug": "^3.4|^4.2",
+                "symfony/phpunit-bridge": "^4.4@dev|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.11-dev"
+                    "dev-master": "2.12-dev"
                 }
             },
             "autoload": {
@@ -226,14 +227,14 @@
                     "role": "Lead Developer"
                 },
                 {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
                     "name": "Twig Team",
                     "homepage": "https://twig.symfony.com/contributors",
                     "role": "Contributors"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -241,7 +242,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-06-18T15:37:11+00:00"
+            "time": "2019-10-05T16:42:38+00:00"
         }
     ],
     "packages-dev": [
