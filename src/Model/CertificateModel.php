@@ -2,10 +2,10 @@
 
 namespace App\Model;
 
-use Pam\Model\Model;
+use Pam\Model\MainModel;
 
 /**
  * Class CertificateModel
  * @package App\Model
  */
-class CertificateModel extends Model {}
+class CertificateModel extends MainModel {}
