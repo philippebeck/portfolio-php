@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a829d0f5120b0f8712883eba344fdbc",
+    "content-hash": "4c4c6abe5c8abf9d281f9b2fb9f01a25",
     "packages": [
         {
             "name": "philippebeck/pam",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "a0f926a74803f9d6264654bc458dc3b6749096f3"
+                "reference": "082de40ae934cd2f8d131b5cc0d70be3a3cab327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/a0f926a74803f9d6264654bc458dc3b6749096f3",
-                "reference": "a0f926a74803f9d6264654bc458dc3b6749096f3",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/082de40ae934cd2f8d131b5cc0d70be3a3cab327",
+                "reference": "082de40ae934cd2f8d131b5cc0d70be3a3cab327",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "superglobal",
                 "twig extension"
             ],
-            "time": "2019-10-05T18:01:09+00:00"
+            "time": "2019-10-20T12:18:14+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -178,16 +178,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.12.0",
+            "version": "v2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa"
+                "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c7a85fd08348ca04b4d8f234f49583d9910906aa",
-                "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
+                "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +241,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-10-05T16:42:38+00:00"
+            "time": "2019-10-17T07:34:53+00:00"
         }
     ],
     "packages-dev": [
