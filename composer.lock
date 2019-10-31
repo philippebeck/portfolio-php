@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "philippebeck/pam",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "082de40ae934cd2f8d131b5cc0d70be3a3cab327"
+                "reference": "43673e10355eb94415444f6c86fdc5e06adf28ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/082de40ae934cd2f8d131b5cc0d70be3a3cab327",
-                "reference": "082de40ae934cd2f8d131b5cc0d70be3a3cab327",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/43673e10355eb94415444f6c86fdc5e06adf28ce",
+                "reference": "43673e10355eb94415444f6c86fdc5e06adf28ce",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "superglobal",
                 "twig extension"
             ],
-            "time": "2019-10-20T12:18:14+00:00"
+            "time": "2019-10-26T17:46:00+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
