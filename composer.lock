@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c4c6abe5c8abf9d281f9b2fb9f01a25",
+    "content-hash": "22b008b36eee5fb4b0ecdf883e482602",
     "packages": [
         {
             "name": "philippebeck/pam",
@@ -57,7 +57,8 @@
                 "superglobal",
                 "twig extension"
             ],
-            "time": "2019-10-26T17:46:00+00:00"
+            "abandoned": "philippebeck/pam",
+            "time": "2019-10-05T18:01:09+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
