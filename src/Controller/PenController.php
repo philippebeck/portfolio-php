@@ -20,7 +20,7 @@ class PenController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function indexAction()
+    public function defaultMethod()
     {
         $allPens = ModelFactory::getModel('Pen')->listData();
         $allPens = array_reverse($allPens);
@@ -51,7 +51,7 @@ class PenController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function createAction()
+    public function createMethod()
     {
         if (!empty($this->post->getPostArray())) {
 
@@ -70,7 +70,7 @@ class PenController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function updateAction()
+    public function updateMethod()
     {
         if (!empty($this->post->getPostArray())) {
 
@@ -84,7 +84,7 @@ class PenController extends MainController
         return $this->render('back/updatePen.twig', ['pen' => $pen]);
     }
 
-    public function deleteAction()
+    public function deleteMethod()
     {
         ModelFactory::getModel('Pen')->deleteData($this->get->getGetVar('id'));
         $this->cookie->createAlert('Pen permanently deleted !');

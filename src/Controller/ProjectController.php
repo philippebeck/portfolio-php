@@ -25,7 +25,7 @@ class ProjectController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function indexAction()
+    public function defaultMethod()
     {
         $allProjects = ModelFactory::getModel('Project')->listData();
         $allProjects = array_reverse($allProjects);
@@ -50,7 +50,7 @@ class ProjectController extends MainController
         ]);
     }
 
-    private function postAction()
+    private function postMethod()
     {
         $this->data['name']         = $this->post->getPostVar('name');
         $this->data['link']         = $this->post->getPostVar('link');
@@ -65,11 +65,11 @@ class ProjectController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function createAction()
+    public function createMethod()
     {
         if (!empty($this->post->getPostArray())) {
             $this->data['image'] = $this->files->uploadFile('img/projects');
-            $this->postAction();
+            $this->postMethod();
 
             ModelFactory::getModel('Project')->createData($this->data);
             $this->cookie->createAlert('New project created successfully !');
@@ -85,14 +85,14 @@ class ProjectController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function updateAction()
+    public function updateMethod()
     {
         if (!empty($this->post->getPostArray())) {
 
             if (!empty($this->files->getFileVar('name'))) {
                 $this->data['image'] = $this->files->uploadFile('img/projects');
             }
-            $this->postAction();
+            $this->postMethod();
 
             ModelFactory::getModel('Project')->updateData($this->get->getGetVar('id'), $this->data);
             $this->cookie->createAlert('Successful modification of the selected project !');
@@ -104,7 +104,7 @@ class ProjectController extends MainController
         return $this->render('back/updateProject.twig', ['project' => $project]);
     }
 
-    public function deleteAction()
+    public function deleteMethod()
     {
         ModelFactory::getModel('Project')->deleteData($this->get->getGetVar('id'));
         $this->cookie->createAlert('Project actually deleted !');

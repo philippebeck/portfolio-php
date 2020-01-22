@@ -20,7 +20,7 @@ class UserController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function loginAction()
+    public function loginMethod()
     {
         if (!empty($this->post->getPostArray())) {
             $user = ModelFactory::getModel('User')->readData($this->post->getPostVar('email'), 'email');
@@ -48,7 +48,7 @@ class UserController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function updateAction()
+    public function updateMethod()
     {
         if (!empty($this->post->getPostArray())) {
 
@@ -73,7 +73,7 @@ class UserController extends MainController
         return $this->render('back/updateUser.twig', ['user' => $user]);
     }
 
-    public function logoutAction()
+    public function logoutMethod()
     {
         $this->session->destroySession();
         $this->cookie->createAlert('Good bye !');
