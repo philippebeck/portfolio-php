@@ -24,7 +24,7 @@
   },
   "require": {
     "php": "7.2",
-    "philippebeck/pam": "^2.0.3"
+    "philippebeck/pam": "^2.0.4"
   },
   "require-dev": {
     "tracy/tracy": "^2.7.2"
