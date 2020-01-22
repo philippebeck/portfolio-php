@@ -20,7 +20,7 @@ class AdminController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function indexAction()
+    public function defaultMethod()
     {
         if ($this->session->islogged()) {
 

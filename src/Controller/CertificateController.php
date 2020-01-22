@@ -20,7 +20,7 @@ class CertificateController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function indexAction()
+    public function defaultMethod()
     {
         $allCertificates = ModelFactory::getModel('Certificate')->listData();
         $allCertificates = array_reverse($allCertificates);
@@ -56,7 +56,7 @@ class CertificateController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function createAction()
+    public function createMethod()
     {
         if (!empty($this->post->getPostArray())) {
 
@@ -75,7 +75,7 @@ class CertificateController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function updateAction()
+    public function updateMethod()
     {
         if (!empty($this->post->getPostArray())) {
 
@@ -89,7 +89,7 @@ class CertificateController extends MainController
         return $this->render('back/updateCertificate.twig', ['certificate' => $certificate]);
     }
 
-    public function deleteAction()
+    public function deleteMethod()
     {
         ModelFactory::getModel('Certificate')->deleteData($this->get->getGetVar('id'));
         $this->cookie->createAlert('Certificate permanently deleted !');
