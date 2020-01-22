@@ -13,4 +13,4 @@ define('DB_PASS', 'userpass');
 // You don't need to change anything here : this array is for PDO options
 define('DB_OPTIONS', array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-// Then remove the '-example' from 'db-example.php' to get 'db.php'
+// Then remove the '-example' from 'parameters-example.php' to get 'parameters.php'
