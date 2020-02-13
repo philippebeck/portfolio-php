@@ -11,7 +11,7 @@
   "repository": "github:philippebeck/portfolio",
   "bugs": "https://github.com/philippebeck/portfolio/issues",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.0",
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "animadio": "^1.1.4"
   },
   "author": {
