@@ -35,17 +35,17 @@
             <a class="btn-green btn-lg" href="{{ url('project!create') }}">New Project</a>
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Infos</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Project</th>
+                        <th>Infos</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {% for project in allProjects %}
                     <tr>
                         <td>
-                            <a class="btn-github" href="https://github.com/{{ project.link }}" title="See the project @GitHub">
+                            <a class="btn-github" href="https://{{ project.link }}" title="See the project @GitHub">
                                 <figure>
                                     <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
                                     <figcaption>{{ project.id }} - {{ project.name }}</figcaption>
@@ -69,29 +69,40 @@
 
         <section class="block-target2">
             <h2 class="deco-under">
-                <i class="fab fa-codepen" aria-hidden="true"></i>
-                Pens
+                <i class="fas fa-suitcase" aria-hidden="true"></i>
+                Xps
             </h2>
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Pen</th>
-                    <th>Infos</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Infos</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {% for pen in allPens %}
+                {% for xp in allXps %}
                     <tr>
                         <td>
-                            <a class="btn-green" href="https://codepen.io/{{ pen.link }}" title="See the pen @CodePen">{{ pen.name }}</a>
+                            <a class="btn-green" href="https://{{ xp.company_link }}" title="See the Company">
+                                <figure>
+                                    <img src="img/logo/{{ xp.logo }}" alt="Logo of {{ xp.company }}">
+                                    <figcaption>{{ xp.company }}</figcaption>
+                                </figure>
+                            </a>
                         </td>
-                        <td>{{ pen.description }}<hr>{{ pen.year }}</td>
                         <td>
-                            <a class="btn-blue" href="{{ url('pen!update', {'id': pen.id}) }}">
+                            {{ xp.position }}
+                            <hr>
+                            <a href="https://{{ xp.project_link }}"> {{ xp.project }}</a>
+                        </td>
+                        <td>{{ xp.description }}<hr>{{ xp.start_year }} - {{ xp.end_year }}</td>
+                        <td>
+                            <a class="btn-blue" href="{{ url('xp!update', {'id': xp.id}) }}">
                                 <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
-                            <a class="btn-red" href="{{ url('pen!delete', {'id': pen.id}) }}">
+                            <a class="btn-red" href="{{ url('xp!delete', {'id': xp.id}) }}">
                                 <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                         </td>
@@ -109,11 +120,11 @@
             <a class="btn-green btn-lg" href="{{ url('certificate!create') }}">New certificate</a>
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Certificate</th>
-                    <th>Infos</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Certificate</th>
+                        <th>Infos</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {% for certificate in allCertificates %}
