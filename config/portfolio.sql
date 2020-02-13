@@ -24,19 +24,23 @@ CREATE TABLE Project
     image           VARCHAR(50)     NOT NULL    UNIQUE,
     link            VARCHAR(50)     NOT NULL    UNIQUE,
     year            YEAR            NOT NULL,
-    category        VARCHAR(10)     NOT NULL,
+    category        VARCHAR(20)     NOT NULL,
     description     VARCHAR(255)    NOT NULL    UNIQUE
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
--- Creates the table Pen
-CREATE TABLE Pen
+-- Creates the table Xp
+CREATE TABLE Xp
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
-    name            VARCHAR(50)     NOT NULL    UNIQUE,
-    link            VARCHAR(50)     NOT NULL    UNIQUE,
-    year            YEAR            NOT NULL,
-    category        VARCHAR(10)     NOT NULL,
+    company         VARCHAR(50)     NOT NULL    UNIQUE,
+    company_link    VARCHAR(50)     NOT NULL    UNIQUE,
+    logo            VARCHAR(20)     NOT NULL    UNIQUE,
+    position        VARCHAR(50)     NOT NULL,
+    project         VARCHAR(50)     NOT NULL    UNIQUE,
+    project_link    VARCHAR(50)     NOT NULL    UNIQUE,
+    start_year      YEAR            NOT NULL,
+    end_year        VARCHAR(10)     NOT NULL,
     description     VARCHAR(255)    NOT NULL    UNIQUE
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
@@ -49,44 +53,48 @@ CREATE TABLE Certificate
     certif_id       VARCHAR(20)     NOT NULL    UNIQUE,
     link            VARCHAR(100)    NOT NULL    UNIQUE,
     certif_date     DATE            NOT NULL,
-    category        VARCHAR(10)     NOT NULL
+    category        VARCHAR(20)     NOT NULL
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- Inserts the Project data
 INSERT INTO Project
-(name,                  image,                  link,                               year,       category,       description)
+(name,                              image,                      link,                                           year,       category,           description)
 VALUES
-('Phi Beck',            'phibeck.jpg',          'philippebeck/phibeck',             2017,       'website',      'My first project in FullJS'),
-('Pam',                 'pam.png',              'philippebeck/pam',                 2018,       'tool',         'Php Approachable Microframework'),
-('Jim',                 'jim.png',              'philippebeck/jim.js',              2018,       'tool',         'JavaScript Interactive Microlibrary'),
-('Sam',                 'sam.png',              'philippebeck/sam.scss',            2018,       'tool',         'Scss Animated Microframework'),
-('Pjs',                 'pjs.png',              'philippebeck/pjs',                 2018,       'tool',         'A microCMS with Pam, Jim & Sam'),
-('Philippe Beck',       'philippebeck.jpg',     'philippebeck/philippebeck',        2018,       'website',      'Personal Website made with PJS'),
-('WebAgency',           'webagency.jpg',        'philippebeck/webagency',           2019,       'website',      'Junior Web Developer Project 1'),
-('Animadio',            'animadio.png',         'animadio/animadio',                2019,       'tool',         'CSS Framework'),
-('Animadio.org',        'animadio-org.jpg',     'animadio/animadio.org',            2019,       'website',      'CSS Framework Website'),
-('Animadio.doc',        'animadio-doc.jpg',     'animadio/doc.animadio.org',        2019,       'website',      'CSS Framework Documentation'),
-('Portfolio',           'portfolio.jpg',        'philippebeck/portfolio',           2019,       'website',      'My own Portfolio');
+('Phi Beck',                        'phibeck.jpg',              'github.com/philippebeck/phibeck',              2017,       'website',          'My first project in FullJS'),
+('Pam',                             'pam.png',                  'github.com/philippebeck/pam',                  2018,       'tool',             'Php Approachable Microframework'),
+('Jim',                             'jim.png',                  'github.com/philippebeck/jim.js',               2018,       'tool',             'JavaScript Interactive Microlibrary'),
+('Sam',                             'sam.png',                  'github.com/philippebeck/sam.scss',             2018,       'tool',             'Scss Animated Microframework'),
+('Pjs',                             'pjs.png',                  'github.com/philippebeck/pjs',                  2018,       'tool',             'A microCMS with Pam, Jim & Sam'),
+('Philippe Beck',                   'philippebeck.jpg',         'github.com/philippebeck/philippebeck',         2018,       'website',          'Personal Website made with PJS'),
+('WebAgency',                       'webagency.jpg',            'github.com/philippebeck/webagency',            2019,       'website',          'Junior Web Developer Project 1'),
+('Animadio',                        'animadio.png',             'github.com/animadio/animadio',                 2019,       'tool',             'CSS Framework'),
+('Animadio.org',                    'animadio-org.jpg',         'github.com/animadio/animadio.org',             2019,       'website',          'CSS Framework Website'),
+('Animadio.doc',                    'animadio-doc.jpg',         'github.com/animadio/doc.animadio.org',         2019,       'website',          'CSS Framework Documentation'),
+('Portfolio',                       'portfolio.jpg',            'github.com/philippebeck/portfolio',            2019,       'website',          'My own Portfolio'),
+('Btn',                             'cp-btn.png',               'codepen.io/animadio/pen/LamGvj',               2019,       'animadio',         'Animadio Btn examples'),
+('Card',                            'cp-card.png',              'codepen.io/animadio/pen/KKPmGvE',              2019,       'animadio',         'Animadio Card examples'),
+('Foot',                            'cp-foot.png',              'codepen.io/animadio/pen/YgLwbe',               2019,       'animadio',         'Animadio Foot example'),
+('Form',                            'cp-form.png',              'codepen.io/animadio/pen/EMLPzN',               2019,       'animadio',         'Animadio Form example'),
+('Gallery',                         'cp-gallery.png',           'codepen.io/animadio/pen/NJMxmm',               2019,       'animadio',         'Animadio Gallery example'),
+('Menu',                            'cp-menu.png',              'codepen.io/animadio/pen/rRvxbe',               2019,       'animadio',         'Animadio Menu example'),
+('Navbar',                          'cp-navbar.png',            'codepen.io/animadio/pen/rRvxRe',               2019,       'animadio',         'Animadio Navbar example'),
+('Slider',                          'cp-slider.png',            'codepen.io/animadio/pen/QoryoX',               2019,       'animadio',         'Animadio Slider example'),
+('Table',                           'cp-table.png',             'codepen.io/animadio/pen/ZPoQNb',               2019,       'animadio',         'Animadio Table example'),
+('Tribute Page',                    'cp-tribute-page.png',      'codepen.io/philippebeck/pen/oNvdLem',          2019,       'freecodecamp',     'Responsive Web Design Project 1'),
+('Survey Form',                     'cp-survey-form.png',       'codepen.io/philippebeck/pen/qBWyBrp',          2019,       'freecodecamp',     'Responsive Web Design Project 2'),
+('Product Landing Page',            'cp-landing-page.png',      'codepen.io/philippebeck/pen/VwZBwVq',          2019,       'freecodecamp',     'Responsive Web Design Project 3'),
+('Technical Documentation Page',    'cp-documentation.png',     'codepen.io/philippebeck/pen/KKPBdeM',          2019,       'freecodecamp',     'Responsive Web Design Project 4'),
+('Personal Portfolio Webpage',      'cp-portfolio.png',         'codepen.io/philippebeck/pen/pozVemB',          2019,       'freecodecamp',     'Responsive Web Design Project 5');
 
--- Inserts the Pen data
-INSERT INTO Pen
-(name,                                      link,                               year,       category,       description)
+-- Inserts the Xp data
+INSERT INTO Xp
+(company,               company_link,                   logo,               position,                       project,                        project_link,                                               start_year,     end_year,       description)
 VALUES
-('Btn',                                     'animadio/pen/LamGvj',              2019,       'animadio',     'Animadio Btn examples'),
-('Card',                                    'animadio/pen/KKPmGvE',             2019,       'animadio',     'Animadio Card examples'),
-('Foot',                                    'animadio/pen/YgLwbe',              2019,       'animadio',     'Animadio Foot example'),
-('Form',                                    'animadio/pen/EMLPzN',              2019,       'animadio',     'Animadio Form example'),
-('Gallery',                                 'animadio/pen/NJMxmm',              2019,       'animadio',     'Animadio Gallery example'),
-('Menu',                                    'animadio/pen/rRvxbe',              2019,       'animadio',     'Animadio Menu example'),
-('Navbar',                                  'animadio/pen/rRvxRe',              2019,       'animadio',     'Animadio Navbar example'),
-('Slider',                                  'animadio/pen/QoryoX',              2019,       'animadio',     'Animadio Slider example'),
-('Table',                                   'animadio/pen/ZPoQNb',              2019,       'animadio',     'Animadio Table example'),
-('Build a Tribute Page',                    'philippebeck/pen/oNvdLem',         2019,       'perso',        'Responsive Web Design Project 1'),
-('Build a Survey Form',                     'philippebeck/pen/qBWyBrp',         2019,       'perso',        'Responsive Web Design Project 2'),
-('Build a Product Landing Page',            'philippebeck/pen/VwZBwVq',         2019,       'perso',        'Responsive Web Design Project 3'),
-('Build a Technical Documentation Page',    'philippebeck/pen/KKPBdeM',         2019,       'perso',        'Responsive Web Design Project 4'),
-('Build a Personal Portfolio Webpage',      'philippebeck/pen/pozVemB',         2019,       'perso',        'Responsive Web Design Project 5');
+('Independant',         'philippebeck.net',             'phi.png',          'Fullstack Developer',          'Animadio',                     'animadio.org',                                             2018,           'Current',      'Mentor & Fullstack Developer working as Freelance Remote'),
+('Alhena Agency',       'www.alhena-conseil.com',       'alhena.png',       'PHP Backend Developer',        'SociallyMap',                  'www.sociallymap.com',                                      2018,           '2018',         'Usage of Vagrant for environments, implementing a WebSocket with RatchetPhp & 0MQ, setting up unit tests with PhpUnit, creating Symfony maintenance commands, interactions with MongoDB by Doctrine, corrections of bugs'),
+('OpenClassrooms',      'openclassrooms.com',           'oc.png',           'Development Mentor',           'Development Professions',      'openclassrooms.com/fr/paths/topics/18-developpement',      2018,           'Current',      'Support & Evaluation of students in diploma courses for Fullstack Preparation, Web Developer, PHP/Symfony Application Developer & Frontend Application D'),
+('Meetphone',           'www.meetphone.com',            'meetphone.png'     ,'Ruby Fullstack Developer',     'TagEmploi',                    'tagemploi.com',                                           2018,           '2018',         'Usage of MongoDB, Docker & ElasticSearch, technological watch & search for solutions, rewrite the installation process');
 
 -- Inserts the Certificate data
 INSERT INTO Certificate
