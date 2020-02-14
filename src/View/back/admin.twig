@@ -8,15 +8,15 @@
 
     <!-- CONTROLS -->
     <input id="project" class="block-radio1" type="radio" name="admin" checked>
-    <input id="pen" class="block-radio2" type="radio" name="admin">
+    <input id="job" class="block-radio2" type="radio" name="admin">
     <input id="certificate" class="block-radio3" type="radio" name="admin">
     <input id="user" class="block-radio4" type="radio" name="admin">
 
     <label class="button-ruby btn-lg" for="project" title="Show Projects">
         <i class="fas fa-project-diagram fa-lg" aria-hidden="true"></i>
     </label>
-    <label class="button-emerald btn-lg" for="pen" title="Show Pens">
-        <i class="fab fa-codepen fa-lg" aria-hidden="true"></i>
+    <label class="button-emerald btn-lg" for="job" title="Show Jobs">
+        <i class="fas fa-suitcase fa-lg" aria-hidden="true"></i>
     </label>
     <label class="button-sapphire btn-lg" for="certificate" title="Show Certificates">
         <i class="fas fa-certificate fa-lg" aria-hidden="true"></i>
@@ -35,17 +35,17 @@
             <a class="btn-green btn-lg" href="{{ url('project!create') }}">New Project</a>
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Infos</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Project</th>
+                        <th>Infos</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {% for project in allProjects %}
                     <tr>
                         <td>
-                            <a class="btn-github" href="https://github.com/{{ project.link }}" title="See the project @GitHub">
+                            <a class="btn-github" href="https://{{ project.link }}" title="See the project @GitHub">
                                 <figure>
                                     <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
                                     <figcaption>{{ project.id }} - {{ project.name }}</figcaption>
@@ -69,29 +69,40 @@
 
         <section class="block-target2">
             <h2 class="deco-under">
-                <i class="fab fa-codepen" aria-hidden="true"></i>
-                Pens
+                <i class="fas fa-suitcase" aria-hidden="true"></i>
+                Jobs
             </h2>
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Pen</th>
-                    <th>Infos</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Infos</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {% for pen in allPens %}
+                {% for job in allJobs %}
                     <tr>
                         <td>
-                            <a class="btn-green" href="https://codepen.io/{{ pen.link }}" title="See the pen @CodePen">{{ pen.name }}</a>
+                            <a class="btn-green" href="https://{{ job.company_link }}" title="See the Company">
+                                <figure>
+                                    <img src="img/logo/{{ job.logo }}" alt="Logo of {{ job.company }}">
+                                    <figcaption>{{ job.company }}</figcaption>
+                                </figure>
+                            </a>
                         </td>
-                        <td>{{ pen.description }}<hr>{{ pen.year }}</td>
                         <td>
-                            <a class="btn-blue" href="{{ url('pen!update', {'id': pen.id}) }}">
+                            {{ job.position }}
+                            <hr>
+                            <a href="https://{{ job.project_link }}"> {{ job.project }}</a>
+                        </td>
+                        <td>{{ job.description }}<hr>{{ job.start_date }} - {{ job.end_date }}</td>
+                        <td>
+                            <a class="btn-blue" href="{{ url('job!update', {'id': job.id}) }}">
                                 <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
-                            <a class="btn-red" href="{{ url('pen!delete', {'id': pen.id}) }}">
+                            <a class="btn-red" href="{{ url('job!delete', {'id': job.id}) }}">
                                 <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                         </td>
@@ -109,11 +120,11 @@
             <a class="btn-green btn-lg" href="{{ url('certificate!create') }}">New certificate</a>
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Certificate</th>
-                    <th>Infos</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Certificate</th>
+                        <th>Infos</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {% for certificate in allCertificates %}

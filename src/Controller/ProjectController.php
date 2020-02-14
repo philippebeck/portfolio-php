@@ -30,8 +30,10 @@ class ProjectController extends MainController
         $allProjects = ModelFactory::getModel('Project')->listData();
         $allProjects = array_reverse($allProjects);
 
-        $allToolProjects    = array();
-        $allWebsiteProjects = array();
+        $allToolProjects        = array();
+        $allWebsiteProjects     = array();
+        $allAnimadioPens        = array();
+        $allFreecodecampPens    = array();
 
         foreach ($allProjects as $project) {
             switch ($project['category']) {
@@ -41,12 +43,20 @@ class ProjectController extends MainController
                 case 'website':
                     $allWebsiteProjects[] = $project;
                     break;
+                case 'animadio':
+                    $allAnimadioPens[] = $project;
+                    break;
+                case 'freecodecamp':
+                    $allFreecodecampPens[] = $project;
+                    break;
             }
         }
 
         return $this->render('front/project.twig', [
             'allToolProjects'       => $allToolProjects,
-            'allWebsiteProjects'    => $allWebsiteProjects
+            'allWebsiteProjects'    => $allWebsiteProjects,
+            'allAnimadioPens'       => $allAnimadioPens,
+            'allFreecodecampPens'   => $allFreecodecampPens
         ]);
     }
 
