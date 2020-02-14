@@ -12,20 +12,20 @@
     <input id="animadio" class="block-radio3" type="radio" name="project">
     <input id="freecodecamp" class="block-radio4" type="radio" name="project">
 
-    <label class="button-tomato" for="tool" title="My Tools Creations">
+    <label class="button-red" for="tool" title="My Tools Creations">
         <i class="fas fa-tools fa-lg" aria-hidden="true"></i>
         Tools
     </label>
-    <label class="button-sky" for="website" title="My Websites">
+    <label class="button-blue" for="website" title="My Websites">
         <i class="fas fa-globe fa-lg" aria-hidden="true"></i>
         WebSites
     </label>
-    <label class="button-sky" for="animadio" title="My Pens for Animadio">
-        <i class="fas fa-globe fa-lg" aria-hidden="true"></i>
+    <label class="button-black" for="animadio" title="My Pens for Animadio">
+        <i class="fab fa-codepen fa-lg" aria-hidden="true"></i>
         Animadio Pens
     </label>
-    <label class="button-sky" for="freecodecamp" title="My Pens for Free Code Camp">
-        <i class="fas fa-globe fa-lg" aria-hidden="true"></i>
+    <label class="button-fcc" for="freecodecamp" title="My Pens for Free Code Camp">
+        <i class="fab fa-free-code-camp fa-lg" aria-hidden="true"></i>
         Free Code Camp Pens
     </label>
 
@@ -58,13 +58,13 @@
 
         <!-- WEBSITES -->
         <section class="block-target2">
-            <h2 class="color-orange">
+            <h2 class="color-blue">
                 <i class="fas fa-globe" aria-hidden="true"></i> WebSites
             </h2>
             <figure class="gallery">
 
                 {% for websiteProject in allWebsiteProjects %}
-                    <figure class="btn-salmon anima-rotay">
+                    <figure class="btn-sky anima-rotay">
                         <a href="https://{{ websiteProject.link }}" title="Watch {{ websiteProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ websiteProject.image }}" alt="Screenshot of {{ websiteProject.name }}">
                         </a>
@@ -83,13 +83,13 @@
 
         <!-- ANIMADIO -->
         <section class="block-target3">
-            <h2 class="color-green">
+            <h2 class="color-black">
                 <i class="fab fa-codepen" aria-hidden="true"></i> Animadio Pens
             </h2>
             <figure class="gallery">
 
                 {% for animadioPen in allAnimadioPens %}
-                    <figure class="btn-jade anima-rotax">
+                    <figure class="btn-silver anima-rotax">
                         <a href="https://{{ animadioPen.link }}" title="Watch {{ animadioPen.name }} on CodePen" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ animadioPen.image }}" alt="Screenshot of {{ animadioPen.name }}">
                         </a>
@@ -108,13 +108,13 @@
 
         <!-- FREE CODE CAMP -->
         <section class="block-target4">
-            <h2 class="color-blue">
-                <i class="fab fa-freecodecamp" aria-hidden="true"></i> Free Code Camp Pens
+            <h2 class="color-fcc">
+                <i class="fab fa-free-code-camp" aria-hidden="true"></i> Free Code Camp Pens
             </h2>
             <figure class="gallery">
 
                 {% for freecodecampPen in allFreecodecampPens %}
-                    <figure class="btn-sky anima-rotay">
+                    <figure class="btn-jade anima-rotay">
                         <a href="https://{{ freecodecampPen.link }}" title="Watch {{ freecodecampPen.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ freecodecampPen.image }}" alt="Screenshot of {{ freecodecampPen.name }}">
                         </a>

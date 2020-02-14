@@ -22,7 +22,7 @@ class JobController extends MainController
      */
     public function defaultMethod()
     {
-        $allJobs = ModelFactory::getModel('Job')->listData('current', 'end_date');
+        $allJobs = ModelFactory::getModel('Job')->listData();
 
         return $this->render('front/job.twig', ['allJobs'  =>  $allJobs]);
     }

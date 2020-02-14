@@ -11,7 +11,7 @@
         <!-- JOBS -->
         <article>
             <h2 class="color-red">
-                <i class="fab fa-suitcase" aria-hidden="true"></i> Jobs
+                <i class="fas fa-suitcase" aria-hidden="true"></i> Jobs
             </h2>
 
                 {% for job in allJobs %}
@@ -22,10 +22,8 @@
                             </a>
                         </figure>
                         <h3>{{ job.position }}</h3>
-                        <p>{{ job.start_date }} - {{ job.end_date }}<br>{{ job.description }}</p>
+                        <p>From {{ job.start_date }} until {{ job.end_date }} :<br>{{ job.description }}</p>
                         <a class="btn" href="https://{{ job.project_link }}" title="Watch {{ job.project }}" rel="noreferrer noopener" target="_blank">{{ job.project }}</a>
-                        <input class="button-check" id="card-check" type="checkbox">
-                        <label class="button" for="card-check">Card Button</label>
                     </section>
                 {% endfor %}
 
