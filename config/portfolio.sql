@@ -29,8 +29,8 @@ CREATE TABLE Project
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
--- Creates the table Xp
-CREATE TABLE Xp
+-- Creates the table Job
+CREATE TABLE Job
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
     company         VARCHAR(50)     NOT NULL    UNIQUE,
@@ -39,8 +39,8 @@ CREATE TABLE Xp
     position        VARCHAR(50)     NOT NULL,
     project         VARCHAR(50)     NOT NULL    UNIQUE,
     project_link    VARCHAR(50)     NOT NULL    UNIQUE,
-    start_year      YEAR            NOT NULL,
-    end_year        VARCHAR(10)     NOT NULL,
+    start_date      YEAR            NOT NULL,
+    end_date        VARCHAR(10)     NOT NULL,
     description     VARCHAR(255)    NOT NULL    UNIQUE
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
@@ -87,9 +87,9 @@ VALUES
 ('Technical Documentation Page',    'cp-documentation.png',     'codepen.io/philippebeck/pen/KKPBdeM',          2019,       'freecodecamp',     'Responsive Web Design Project 4'),
 ('Personal Portfolio Webpage',      'cp-portfolio.png',         'codepen.io/philippebeck/pen/pozVemB',          2019,       'freecodecamp',     'Responsive Web Design Project 5');
 
--- Inserts the Xp data
-INSERT INTO Xp
-(company,               company_link,                   logo,               position,                       project,                        project_link,                                               start_year,     end_year,       description)
+-- Inserts the Job data
+INSERT INTO Job
+(company,               company_link,                   logo,               position,                       project,                        project_link,                                               start_date,     end_date,       description)
 VALUES
 ('Independant',         'philippebeck.net',             'phi.svg',          'Fullstack Developer',          'Animadio',                     'animadio.org',                                             2018,           'Current',      'Mentor & Fullstack Developer working as Freelance Remote'),
 ('Alhena Agency',       'www.alhena-conseil.com',       'alhena.jpeg',      'PHP Backend Developer',        'SociallyMap',                  'www.sociallymap.com',                                      2018,           '2018',         'Usage of Vagrant for environments, implementing a WebSocket with RatchetPhp & 0MQ, setting up unit tests with PhpUnit, creating Symfony maintenance commands, interactions with MongoDB by Doctrine, corrections of bugs'),
