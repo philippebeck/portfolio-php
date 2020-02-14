@@ -1,0 +1,63 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Create a New Job{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="text-center">
+        <form class="form" method="post" action={{ url('job!create') }} enctype="multipart/form-data">
+            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+            <fieldset>
+                <legend>
+                    <i class="fas fa-suitcase fa-fw fa-2x" aria-hidden="true"></i>
+                </legend>
+                <ul>
+                    <li>
+                        <label for="company">Company</label>
+                        <input id="company" name="company" type="text" placeholder="Company Name" maxlength="50" required>
+                    </li>
+                    <li>
+                        <label for="company_link">Company Link</label>
+                        <input id="company_link" name="company_link" type="text" placeholder="https://" maxlength="50" required>
+                    </li>
+                    <li>
+                        <label for="logo">Logo</label>
+                        <input name="logo" type="file" accept=".jpg, .jpeg, .png, .svg, .gif, .pdf" required>
+                    </li>
+                    <li>
+                        <label for="position">Position</label>
+                        <input id="position" name="position" type="text" placeholder="Position" maxlength="50" required>
+                    </li>
+                    <li>
+                        <label for="project">Project</label>
+                        <input id="project" name="project" type="text" placeholder="Project Name" maxlength="50" required>
+                    </li>
+                    <li>
+                        <label for="project_link">Project Link</label>
+                        <input id="project_link" name="project_link" type="text" placeholder="https://" maxlength="50" required>
+                    </li>
+                    <li>
+                        <label for="start_date">Start Date</label>
+                        <input id="start_date" name="start_date" type="number" placeholder="2019" required>
+                    </li>
+                    <li>
+                        <label for="end_date">Year</label>
+                        <input id="end_date" name="end_date" type="number" placeholder="2020" required>
+                    </li>
+                    <li>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="10" placeholder="Job Description" maxlength="255" required></textarea>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Create">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <a class="btn-black btn-lg" href="{{ url('admin') }}">Quit</a>
+    </main>
+{% endblock %}
