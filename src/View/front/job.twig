@@ -11,17 +11,17 @@
         <!-- JOBS -->
         <article>
             <h2 class="color-red">
-                <i class="fas fa-suitcase" aria-hidden="true"></i> Jobs
+                <i class="fas fa-suitcase" aria-hidden="true"></i> Web Development
             </h2>
 
                 {% for job in allJobs %}
                     <section class="card">
+                        <h3>{{ job.position }}</h3>
                         <figure class="btn-tomato anima-rotax">
                             <a href="https://{{ job.company_link }}" title="Website of {{ job.company }}" rel="noreferrer noopener" target="_blank">
                                 <img src="img/jobs/{{ job.logo }}" alt="Logo of {{ job.company }}">
                             </a>
                         </figure>
-                        <h3>{{ job.position }}</h3>
                         <p>From {{ job.start_date }} until {{ job.end_date }} :<br>{{ job.description }}</p>
                         <a class="btn" href="https://{{ job.project_link }}" title="Watch {{ job.project }}" rel="noreferrer noopener" target="_blank">{{ job.project }}</a>
                     </section>
