@@ -8,15 +8,15 @@
 
     <!-- CONTROLS -->
     <input id="project" class="block-radio1" type="radio" name="admin" checked>
-    <input id="pen" class="block-radio2" type="radio" name="admin">
+    <input id="job" class="block-radio2" type="radio" name="admin">
     <input id="certificate" class="block-radio3" type="radio" name="admin">
     <input id="user" class="block-radio4" type="radio" name="admin">
 
     <label class="button-ruby btn-lg" for="project" title="Show Projects">
         <i class="fas fa-project-diagram fa-lg" aria-hidden="true"></i>
     </label>
-    <label class="button-emerald btn-lg" for="pen" title="Show Pens">
-        <i class="fab fa-codepen fa-lg" aria-hidden="true"></i>
+    <label class="button-emerald btn-lg" for="job" title="Show Jobs">
+        <i class="fas fa-suitcase fa-lg" aria-hidden="true"></i>
     </label>
     <label class="button-sapphire btn-lg" for="certificate" title="Show Certificates">
         <i class="fas fa-certificate fa-lg" aria-hidden="true"></i>
@@ -70,7 +70,7 @@
         <section class="block-target2">
             <h2 class="deco-under">
                 <i class="fas fa-suitcase" aria-hidden="true"></i>
-                Xps
+                Jobs
             </h2>
             <table class="table">
                 <thead>
@@ -82,27 +82,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for xp in allXps %}
+                {% for job in allJobs %}
                     <tr>
                         <td>
-                            <a class="btn-green" href="https://{{ xp.company_link }}" title="See the Company">
+                            <a class="btn-green" href="https://{{ job.company_link }}" title="See the Company">
                                 <figure>
-                                    <img src="img/logo/{{ xp.logo }}" alt="Logo of {{ xp.company }}">
-                                    <figcaption>{{ xp.company }}</figcaption>
+                                    <img src="img/logo/{{ job.logo }}" alt="Logo of {{ job.company }}">
+                                    <figcaption>{{ job.company }}</figcaption>
                                 </figure>
                             </a>
                         </td>
                         <td>
-                            {{ xp.position }}
+                            {{ job.position }}
                             <hr>
-                            <a href="https://{{ xp.project_link }}"> {{ xp.project }}</a>
+                            <a href="https://{{ job.project_link }}"> {{ job.project }}</a>
                         </td>
-                        <td>{{ xp.description }}<hr>{{ xp.start_year }} - {{ xp.end_year }}</td>
+                        <td>{{ job.description }}<hr>{{ job.start_date }} - {{ job.end_date }}</td>
                         <td>
-                            <a class="btn-blue" href="{{ url('xp!update', {'id': xp.id}) }}">
+                            <a class="btn-blue" href="{{ url('job!update', {'id': job.id}) }}">
                                 <i class="fas fa-pen-square fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
-                            <a class="btn-red" href="{{ url('xp!delete', {'id': xp.id}) }}">
+                            <a class="btn-red" href="{{ url('job!delete', {'id': job.id}) }}">
                                 <i class="fas fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>
                             </a>
                         </td>
