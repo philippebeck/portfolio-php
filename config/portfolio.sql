@@ -50,10 +50,10 @@ CREATE TABLE Certificate
 (
     id              TINYINT         UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
     name            VARCHAR(100)    NOT NULL    UNIQUE,
-    certif_id       VARCHAR(20)     NOT NULL    UNIQUE,
+    certif_id       VARCHAR(30)     NOT NULL    UNIQUE,
     link            VARCHAR(100)    NOT NULL    UNIQUE,
     certif_date     DATE            NOT NULL,
-    category        VARCHAR(20)     NOT NULL
+    category        VARCHAR(10)     NOT NULL
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
