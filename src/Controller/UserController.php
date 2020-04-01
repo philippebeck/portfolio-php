@@ -20,7 +20,7 @@ class UserController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function loginMethod()
+    public function defaultMethod()
     {
         if (!empty($this->globals->getPost()->getPostArray())) {
             $user = ModelFactory::getModel('User')->readData($this->globals->getPost()->getPostVar('email'), 'email');
