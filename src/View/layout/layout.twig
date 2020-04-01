@@ -48,7 +48,7 @@
 
 <header>
     {% if (hasAlert()) %}
-        <p id="alert" class="bg-amethyst color-white">{{ readAlert() }}</p>
+        <p id="alert" class="bg-{{ getAlertType() }} color-white">{{ getAlertMessage() }}</p>
     {% endif %}
 
     <h1 class="color-purple">{{ block('subtitle') }}</h1>
