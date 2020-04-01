@@ -26,7 +26,7 @@ class UserController extends MainController
             $user = ModelFactory::getModel('User')->readData($this->globals->getPost()->getPostVar('email'), 'email');
 
             if (password_verify($this->globals->getPost()->getPostVar('pass'), $user['pass'])) {
-                $this->session->createSession(
+                $this->globals->getSession()->createSession($user);
                 $this->globals->getSession()->createAlert('Successful authentication, welcome ' . $user['name'] . ' !', 'purple');
 
                 $this->redirect('admin');
@@ -69,7 +69,7 @@ class UserController extends MainController
 
     public function logoutMethod()
     {
-        $this->session->destroySession();
+        $this->globals->getSession()->destroySession();
         $this->globals->getSession()->createAlert('Good bye !', 'purple');
 
         $this->redirect('home');

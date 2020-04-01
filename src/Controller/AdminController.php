@@ -23,7 +23,7 @@ class AdminController extends MainController
      */
     public function defaultMethod()
     {
-        if ($this->session->islogged()) {
+        if ($this->globals->getSession()->islogged()) {
 
             $allProjects        = ModelFactory::getModel('Project')->listData();
             $allJobs            = ModelFactory::getModel('Job')->listData();
