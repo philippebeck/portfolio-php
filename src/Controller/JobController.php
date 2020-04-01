@@ -35,9 +35,9 @@ class JobController extends MainController
      */
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            $data           = $this->post->getPostArray();
+            $data           = $this->globals->getPost()->getPostArray();
             $data['logo']   = $this->files->uploadFile('img/jobs');
 
             ModelFactory::getModel('Job')->createData($data);
@@ -57,8 +57,8 @@ class JobController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $data = $this->post->getPostArray();
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $data = $this->globals->getPost()->getPostArray();
 
             if (!empty($this->files->getFileVar('name'))) {
                 $data['logo'] = $this->files->uploadFile('img/jobs');

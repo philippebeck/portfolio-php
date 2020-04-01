@@ -22,10 +22,10 @@ class UserController extends MainController
      */
     public function loginMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $user = ModelFactory::getModel('User')->readData($this->post->getPostVar('email'), 'email');
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $user = ModelFactory::getModel('User')->readData($this->globals->getPost()->getPostVar('email'), 'email');
 
-            if (password_verify($this->post->getPostVar('pass'), $user['pass'])) {
+            if (password_verify($this->globals->getPost()->getPostVar('pass'), $user['pass'])) {
                 $this->session->createSession(
                 $this->globals->getSession()->createAlert('Successful authentication, welcome ' . $user['name'] . ' !', 'purple');
 
@@ -44,17 +44,17 @@ class UserController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            $user['name']   = $this->post->getPostVar('name');
-            $user['email']  = $this->post->getPostVar('email');
+            $user['name']   = $this->globals->getPost()->getPostVar('name');
+            $user['email']  = $this->globals->getPost()->getPostVar('email');
 
             if (!empty($this->files->getFileVar('name'))) {
                 $user['image'] = $this->files->uploadFile('img/user');
             }
 
-            if (!empty($this->post->getPostVar('pass'))) {
-                $user['pass'] = password_hash($this->post->getPostVar('pass'), PASSWORD_DEFAULT);
+            if (!empty($this->globals->getPost()->getPostVar('pass'))) {
+                $user['pass'] = password_hash($this->globals->getPost()->getPostVar('pass'), PASSWORD_DEFAULT);
             }
 
             ModelFactory::getModel('User')->updateData('1', $user);

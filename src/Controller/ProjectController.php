@@ -77,8 +77,8 @@ class ProjectController extends MainController
      */
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $this->data['image'] = $this->files->uploadFile('img/projects');
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $data = $this->globals->getPost()->getPostArray();
             $this->postMethod();
 
             ModelFactory::getModel('Project')->createData($this->data);
@@ -97,7 +97,8 @@ class ProjectController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $data = $this->globals->getPost()->getPostArray();
 
             if (!empty($this->files->getFileVar('name'))) {
                 $this->data['image'] = $this->files->uploadFile('img/projects');

@@ -58,9 +58,9 @@ class CertificateController extends MainController
      */
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            ModelFactory::getModel('Certificate')->createData($this->post->getPostArray());
+            ModelFactory::getModel('Certificate')->createData($this->globals->getPost()->getPostArray());
             $this->globals->getSession()->createAlert('New certificate successfully created !', 'green');
 
             $this->redirect('admin');
@@ -77,9 +77,9 @@ class CertificateController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            ModelFactory::getModel('Certificate')->updateData($this->get->getGetVar('id'), $this->post->getPostArray());
+            ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->globals->getPost()->getPostArray());
             $this->globals->getSession()->createAlert('Successful modification of the selected certificate !', 'blue');
 
             $this->redirect('admin');
