@@ -40,7 +40,7 @@ class AdminController extends MainController
                 'allUsers'          => $allUsers
             ]);
         }
-        $this->cookie->createAlert('You must be logged in to access the administration');
+        $this->globals->getSession()->createAlert('You must be logged in to access the administration', 'black');
 
         $this->redirect('user!login');
     }

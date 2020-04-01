@@ -61,7 +61,7 @@ class CertificateController extends MainController
         if (!empty($this->post->getPostArray())) {
 
             ModelFactory::getModel('Certificate')->createData($this->post->getPostArray());
-            $this->cookie->createAlert('New certificate successfully created !');
+            $this->globals->getSession()->createAlert('New certificate successfully created !', 'green');
 
             $this->redirect('admin');
         }
@@ -80,7 +80,7 @@ class CertificateController extends MainController
         if (!empty($this->post->getPostArray())) {
 
             ModelFactory::getModel('Certificate')->updateData($this->get->getGetVar('id'), $this->post->getPostArray());
-            $this->cookie->createAlert('Successful modification of the selected certificate !');
+            $this->globals->getSession()->createAlert('Successful modification of the selected certificate !', 'blue');
 
             $this->redirect('admin');
         }
@@ -92,7 +92,7 @@ class CertificateController extends MainController
     public function deleteMethod()
     {
         ModelFactory::getModel('Certificate')->deleteData($this->get->getGetVar('id'));
-        $this->cookie->createAlert('Certificate permanently deleted !');
+        $this->globals->getSession()->createAlert('Certificate permanently deleted !', 'red');
 
         $this->redirect('admin');
     }

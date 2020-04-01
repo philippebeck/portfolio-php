@@ -41,7 +41,7 @@ class JobController extends MainController
             $data['logo']   = $this->files->uploadFile('img/jobs');
 
             ModelFactory::getModel('Job')->createData($data);
-            $this->cookie->createAlert('New job successfully created !');
+            $this->globals->getSession()->createAlert('New job successfully created !', 'green');
 
             $this->redirect('admin');
         }
@@ -65,7 +65,7 @@ class JobController extends MainController
             }
 
             ModelFactory::getModel('Job')->updateData($this->get->getGetVar('id'), $data);
-            $this->cookie->createAlert('Successful modification of the selected job !');
+            $this->globals->getSession()->createAlert('Successful modification of the selected job !', 'blue');
 
             $this->redirect('admin');
         }
@@ -77,7 +77,7 @@ class JobController extends MainController
     public function deleteMethod()
     {
         ModelFactory::getModel('Job')->deleteData($this->get->getGetVar('id'));
-        $this->cookie->createAlert('Job permanently deleted !');
+        $this->globals->getSession()->createAlert('Job permanently deleted !', 'red');
 
         $this->redirect('admin');
     }

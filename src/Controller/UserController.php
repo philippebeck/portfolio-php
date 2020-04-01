@@ -27,17 +27,11 @@ class UserController extends MainController
 
             if (password_verify($this->post->getPostVar('pass'), $user['pass'])) {
                 $this->session->createSession(
-                    $user['id'],
-                    $user['name'],
-                    $user['image'],
-                    $user['email']
-                );
-
-                $this->cookie->createAlert('Successful authentication, welcome ' . $user['name'] . ' !');
+                $this->globals->getSession()->createAlert('Successful authentication, welcome ' . $user['name'] . ' !', 'purple');
 
                 $this->redirect('admin');
             }
-            $this->cookie->createAlert('Failed authentication !');
+            $this->globals->getSession()->createAlert('Failed authentication !', 'black');
         }
         return $this->render('back/login.twig');
     }
@@ -64,7 +58,7 @@ class UserController extends MainController
             }
 
             ModelFactory::getModel('User')->updateData('1', $user);
-            $this->cookie->createAlert('Successful modification of the user !');
+            $this->globals->getSession()->createAlert('Successful modification of the user !', 'blue');
 
             $this->redirect('admin');
         }
@@ -76,7 +70,7 @@ class UserController extends MainController
     public function logoutMethod()
     {
         $this->session->destroySession();
-        $this->cookie->createAlert('Good bye !');
+        $this->globals->getSession()->createAlert('Good bye !', 'purple');
 
         $this->redirect('home');
     }

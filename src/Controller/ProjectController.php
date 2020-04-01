@@ -82,7 +82,7 @@ class ProjectController extends MainController
             $this->postMethod();
 
             ModelFactory::getModel('Project')->createData($this->data);
-            $this->cookie->createAlert('New project created successfully !');
+            $this->globals->getSession()->createAlert('New project created successfully !', 'green');
 
             $this->redirect('admin');
         }
@@ -105,7 +105,7 @@ class ProjectController extends MainController
             $this->postMethod();
 
             ModelFactory::getModel('Project')->updateData($this->get->getGetVar('id'), $this->data);
-            $this->cookie->createAlert('Successful modification of the selected project !');
+            $this->globals->getSession()->createAlert('Successful modification of the selected project !', 'blue');
 
             $this->redirect('admin');
         }
@@ -117,7 +117,7 @@ class ProjectController extends MainController
     public function deleteMethod()
     {
         ModelFactory::getModel('Project')->deleteData($this->get->getGetVar('id'));
-        $this->cookie->createAlert('Project actually deleted !');
+        $this->globals->getSession()->createAlert('Project actually deleted !', 'red');
 
         $this->redirect('admin');
     }
