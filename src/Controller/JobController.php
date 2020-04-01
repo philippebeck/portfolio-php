@@ -64,19 +64,19 @@ class JobController extends MainController
                 $data['logo'] = $this->files->uploadFile('img/jobs');
             }
 
-            ModelFactory::getModel('Job')->updateData($this->get->getGetVar('id'), $data);
+            ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $data);
             $this->globals->getSession()->createAlert('Successful modification of the selected job !', 'blue');
 
             $this->redirect('admin');
         }
-        $job = ModelFactory::getModel('Job')->readData($this->get->getGetVar('id'));
+        $job = ModelFactory::getModel('Job')->readData($this->globals->getGet()->getGetVar('id'));
 
         return $this->render('back/updateJob.twig', ['job' => $job]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Job')->deleteData($this->get->getGetVar('id'));
+        ModelFactory::getModel('Job')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Job permanently deleted !', 'red');
 
         $this->redirect('admin');

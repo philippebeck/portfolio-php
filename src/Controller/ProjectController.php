@@ -105,19 +105,19 @@ class ProjectController extends MainController
             }
             $this->postMethod();
 
-            ModelFactory::getModel('Project')->updateData($this->get->getGetVar('id'), $this->data);
+            ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $data);
             $this->globals->getSession()->createAlert('Successful modification of the selected project !', 'blue');
 
             $this->redirect('admin');
         }
-        $project = ModelFactory::getModel('Project')->readData($this->get->getGetVar('id'));
+        $project = ModelFactory::getModel('Project')->readData($this->globals->getGet()->getGetVar('id'));
 
         return $this->render('back/updateProject.twig', ['project' => $project]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Project')->deleteData($this->get->getGetVar('id'));
+        ModelFactory::getModel('Project')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Project actually deleted !', 'red');
 
         $this->redirect('admin');

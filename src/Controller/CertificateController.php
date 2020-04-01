@@ -84,14 +84,14 @@ class CertificateController extends MainController
 
             $this->redirect('admin');
         }
-        $certificate = ModelFactory::getModel('Certificate')->readData($this->get->getGetVar('id'));
+        $certificate = ModelFactory::getModel('Certificate')->readData($this->globals->getGet()->getGetVar('id'));
 
         return $this->render('back/updateCertificate.twig', ['certificate' => $certificate]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Certificate')->deleteData($this->get->getGetVar('id'));
+        ModelFactory::getModel('Certificate')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Certificate permanently deleted !', 'red');
 
         $this->redirect('admin');
