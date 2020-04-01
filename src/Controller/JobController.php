@@ -38,7 +38,7 @@ class JobController extends MainController
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             $data           = $this->globals->getPost()->getPostArray();
-            $data['logo']   = $this->files->uploadFile('img/jobs');
+            $data['logo']   = $this->globals->getFiles()->uploadFile('img/jobs');
 
             ModelFactory::getModel('Job')->createData($data);
             $this->globals->getSession()->createAlert('New job successfully created !', 'green');
@@ -60,8 +60,8 @@ class JobController extends MainController
         if (!empty($this->globals->getPost()->getPostArray())) {
             $data = $this->globals->getPost()->getPostArray();
 
-            if (!empty($this->files->getFileVar('name'))) {
-                $data['logo'] = $this->files->uploadFile('img/jobs');
+            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+                $data['logo'] = $this->globals->getFiles()->uploadFile('img/jobs');
             }
 
             ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $data);

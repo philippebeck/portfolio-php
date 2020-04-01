@@ -49,8 +49,8 @@ class UserController extends MainController
             $user['name']   = $this->globals->getPost()->getPostVar('name');
             $user['email']  = $this->globals->getPost()->getPostVar('email');
 
-            if (!empty($this->files->getFileVar('name'))) {
-                $user['image'] = $this->files->uploadFile('img/user');
+            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+                $user['image'] = $this->globals->getFiles()->uploadFile('img/user');
             }
 
             if (!empty($this->globals->getPost()->getPostVar('pass'))) {

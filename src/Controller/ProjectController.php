@@ -79,7 +79,7 @@ class ProjectController extends MainController
     {
         if (!empty($this->globals->getPost()->getPostArray())) {
             $data = $this->globals->getPost()->getPostArray();
-            $this->postMethod();
+            $data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
 
             ModelFactory::getModel('Project')->createData($this->data);
             $this->globals->getSession()->createAlert('New project created successfully !', 'green');
@@ -100,8 +100,8 @@ class ProjectController extends MainController
         if (!empty($this->globals->getPost()->getPostArray())) {
             $data = $this->globals->getPost()->getPostArray();
 
-            if (!empty($this->files->getFileVar('name'))) {
-                $this->data['image'] = $this->files->uploadFile('img/projects');
+            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+                $data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
             }
             $this->postMethod();
 
