@@ -32,7 +32,7 @@ class UserController extends BaseController
             }
             $this->globals->getSession()->createAlert('Failed authentication !', 'black');
         }
-        return $this->render('back/login.twig');
+        return $this->render('front/login.twig');
     }
 
     /**
