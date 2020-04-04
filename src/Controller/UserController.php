@@ -20,24 +20,18 @@ class UserController extends MainController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function loginMethod()
+    public function defaultMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $user = ModelFactory::getModel('User')->readData($this->post->getPostVar('email'), 'email');
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $user = ModelFactory::getModel('User')->readData($this->globals->getPost()->getPostVar('email'), 'email');
 
-            if (password_verify($this->post->getPostVar('pass'), $user['pass'])) {
-                $this->session->createSession(
-                    $user['id'],
-                    $user['name'],
-                    $user['image'],
-                    $user['email']
-                );
-
-                $this->cookie->createAlert('Successful authentication, welcome ' . $user['name'] . ' !');
+            if (password_verify($this->globals->getPost()->getPostVar('pass'), $user['pass'])) {
+                $this->globals->getSession()->createSession($user);
+                $this->globals->getSession()->createAlert('Successful authentication, welcome ' . $user['name'] . ' !', 'purple');
 
                 $this->redirect('admin');
             }
-            $this->cookie->createAlert('Failed authentication !');
+            $this->globals->getSession()->createAlert('Failed authentication !', 'black');
         }
         return $this->render('back/login.twig');
     }
@@ -50,21 +44,21 @@ class UserController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            $user['name']   = $this->post->getPostVar('name');
-            $user['email']  = $this->post->getPostVar('email');
+            $user['name']   = $this->globals->getPost()->getPostVar('name');
+            $user['email']  = $this->globals->getPost()->getPostVar('email');
 
-            if (!empty($this->files->getFileVar('name'))) {
-                $user['image'] = $this->files->uploadFile('img/user');
+            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+                $user['image'] = $this->globals->getFiles()->uploadFile('img/user');
             }
 
-            if (!empty($this->post->getPostVar('pass'))) {
-                $user['pass'] = password_hash($this->post->getPostVar('pass'), PASSWORD_DEFAULT);
+            if (!empty($this->globals->getPost()->getPostVar('pass'))) {
+                $user['pass'] = password_hash($this->globals->getPost()->getPostVar('pass'), PASSWORD_DEFAULT);
             }
 
             ModelFactory::getModel('User')->updateData('1', $user);
-            $this->cookie->createAlert('Successful modification of the user !');
+            $this->globals->getSession()->createAlert('Successful modification of the user !', 'blue');
 
             $this->redirect('admin');
         }
@@ -75,8 +69,8 @@ class UserController extends MainController
 
     public function logoutMethod()
     {
-        $this->session->destroySession();
-        $this->cookie->createAlert('Good bye !');
+        $this->globals->getSession()->destroySession();
+        $this->globals->getSession()->createAlert('Good bye !', 'purple');
 
         $this->redirect('home');
     }

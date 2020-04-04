@@ -15,11 +15,6 @@ use Twig\Error\SyntaxError;
 class ProjectController extends MainController
 {
     /**
-     * @var array
-     */
-    private $data = [];
-
-    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
@@ -60,15 +55,6 @@ class ProjectController extends MainController
         ]);
     }
 
-    private function postMethod()
-    {
-        $this->data['name']         = $this->post->getPostVar('name');
-        $this->data['link']         = $this->post->getPostVar('link');
-        $this->data['year']         = $this->post->getPostVar('year');
-        $this->data['category']     = $this->post->getPostVar('category');
-        $this->data['description']  = $this->post->getPostVar('description');
-    }
-
     /**
      * @return string
      * @throws LoaderError
@@ -77,12 +63,12 @@ class ProjectController extends MainController
      */
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $this->data['image'] = $this->files->uploadFile('img/projects');
-            $this->postMethod();
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $data = $this->globals->getPost()->getPostArray();
+            $data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
 
-            ModelFactory::getModel('Project')->createData($this->data);
-            $this->cookie->createAlert('New project created successfully !');
+            ModelFactory::getModel('Project')->createData($data);
+            $this->globals->getSession()->createAlert('New project created successfully !', 'green');
 
             $this->redirect('admin');
         }
@@ -97,27 +83,27 @@ class ProjectController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $data = $this->globals->getPost()->getPostArray();
 
-            if (!empty($this->files->getFileVar('name'))) {
-                $this->data['image'] = $this->files->uploadFile('img/projects');
+            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+                $data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
             }
-            $this->postMethod();
 
-            ModelFactory::getModel('Project')->updateData($this->get->getGetVar('id'), $this->data);
-            $this->cookie->createAlert('Successful modification of the selected project !');
+            ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $data);
+            $this->globals->getSession()->createAlert('Successful modification of the selected project !', 'blue');
 
             $this->redirect('admin');
         }
-        $project = ModelFactory::getModel('Project')->readData($this->get->getGetVar('id'));
+        $project = ModelFactory::getModel('Project')->readData($this->globals->getGet()->getGetVar('id'));
 
         return $this->render('back/updateProject.twig', ['project' => $project]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Project')->deleteData($this->get->getGetVar('id'));
-        $this->cookie->createAlert('Project actually deleted !');
+        ModelFactory::getModel('Project')->deleteData($this->globals->getGet()->getGetVar('id'));
+        $this->globals->getSession()->createAlert('Project actually deleted !', 'red');
 
         $this->redirect('admin');
     }

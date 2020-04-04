@@ -35,13 +35,13 @@ class JobController extends MainController
      */
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            $data           = $this->post->getPostArray();
-            $data['logo']   = $this->files->uploadFile('img/jobs');
+            $data           = $this->globals->getPost()->getPostArray();
+            $data['logo']   = $this->globals->getFiles()->uploadFile('img/jobs');
 
             ModelFactory::getModel('Job')->createData($data);
-            $this->cookie->createAlert('New job successfully created !');
+            $this->globals->getSession()->createAlert('New job successfully created !', 'green');
 
             $this->redirect('admin');
         }
@@ -57,27 +57,27 @@ class JobController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $data = $this->post->getPostArray();
+        if (!empty($this->globals->getPost()->getPostArray())) {
+            $data = $this->globals->getPost()->getPostArray();
 
-            if (!empty($this->files->getFileVar('name'))) {
-                $data['logo'] = $this->files->uploadFile('img/jobs');
+            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+                $data['logo'] = $this->globals->getFiles()->uploadFile('img/jobs');
             }
 
-            ModelFactory::getModel('Job')->updateData($this->get->getGetVar('id'), $data);
-            $this->cookie->createAlert('Successful modification of the selected job !');
+            ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $data);
+            $this->globals->getSession()->createAlert('Successful modification of the selected job !', 'blue');
 
             $this->redirect('admin');
         }
-        $job = ModelFactory::getModel('Job')->readData($this->get->getGetVar('id'));
+        $job = ModelFactory::getModel('Job')->readData($this->globals->getGet()->getGetVar('id'));
 
         return $this->render('back/updateJob.twig', ['job' => $job]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Job')->deleteData($this->get->getGetVar('id'));
-        $this->cookie->createAlert('Job permanently deleted !');
+        ModelFactory::getModel('Job')->deleteData($this->globals->getGet()->getGetVar('id'));
+        $this->globals->getSession()->createAlert('Job permanently deleted !', 'red');
 
         $this->redirect('admin');
     }

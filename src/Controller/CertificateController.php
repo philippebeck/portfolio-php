@@ -58,10 +58,10 @@ class CertificateController extends MainController
      */
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            ModelFactory::getModel('Certificate')->createData($this->post->getPostArray());
-            $this->cookie->createAlert('New certificate successfully created !');
+            ModelFactory::getModel('Certificate')->createData($this->globals->getPost()->getPostArray());
+            $this->globals->getSession()->createAlert('New certificate successfully created !', 'green');
 
             $this->redirect('admin');
         }
@@ -77,22 +77,22 @@ class CertificateController extends MainController
      */
     public function updateMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($this->globals->getPost()->getPostArray())) {
 
-            ModelFactory::getModel('Certificate')->updateData($this->get->getGetVar('id'), $this->post->getPostArray());
-            $this->cookie->createAlert('Successful modification of the selected certificate !');
+            ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->globals->getPost()->getPostArray());
+            $this->globals->getSession()->createAlert('Successful modification of the selected certificate !', 'blue');
 
             $this->redirect('admin');
         }
-        $certificate = ModelFactory::getModel('Certificate')->readData($this->get->getGetVar('id'));
+        $certificate = ModelFactory::getModel('Certificate')->readData($this->globals->getGet()->getGetVar('id'));
 
         return $this->render('back/updateCertificate.twig', ['certificate' => $certificate]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Certificate')->deleteData($this->get->getGetVar('id'));
-        $this->cookie->createAlert('Certificate permanently deleted !');
+        ModelFactory::getModel('Certificate')->deleteData($this->globals->getGet()->getGetVar('id'));
+        $this->globals->getSession()->createAlert('Certificate permanently deleted !', 'red');
 
         $this->redirect('admin');
     }
