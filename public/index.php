@@ -1,7 +1,7 @@
 <?php
 
 use Pam\Controller\FrontController;
-use Tracy\Debugger;
+//use Tracy\Debugger;
 
 require_once '../vendor/autoload.php';
 require_once '../config/parameters.php';
@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-Debugger::enable();
+//Debugger::enable();
 
 $frontController = new FrontController();
 $frontController->run();
