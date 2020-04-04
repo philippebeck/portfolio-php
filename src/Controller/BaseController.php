@@ -15,7 +15,7 @@ class BaseController extends MainController
         if ($this->globals->getSession()->islogged() === false) {
             $this->globals->getSession()->createAlert('You must be logged in to access the administration', 'black');
 
-            $this->redirect('user!login');
+            $this->redirect('user');
         }
     }
 }
