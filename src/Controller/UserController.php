@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -12,7 +11,7 @@ use Twig\Error\SyntaxError;
  * Class UserController
  * @package App\Controller
  */
-class UserController extends MainController
+class UserController extends BaseController
 {
     /**
      * @return string
@@ -44,6 +43,8 @@ class UserController extends MainController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             $user['name']   = $this->globals->getPost()->getPostVar('name');

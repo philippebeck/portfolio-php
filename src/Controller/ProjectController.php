@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -12,7 +11,7 @@ use Twig\Error\SyntaxError;
  * Class ProjectController
  * @package App\Controller
  */
-class ProjectController extends MainController
+class ProjectController extends BaseController
 {
     /**
      * @return string
@@ -63,9 +62,12 @@ class ProjectController extends MainController
      */
     public function createMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $data = $this->globals->getPost()->getPostArray();
-            $data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
+
+            $data           = $this->globals->getPost()->getPostArray();
+            $data['image']  = $this->globals->getFiles()->uploadFile('img/projects');
 
             ModelFactory::getModel('Project')->createData($data);
             $this->globals->getSession()->createAlert('New project created successfully !', 'green');
@@ -83,6 +85,8 @@ class ProjectController extends MainController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
             $data = $this->globals->getPost()->getPostArray();
 
@@ -102,6 +106,8 @@ class ProjectController extends MainController
 
     public function deleteMethod()
     {
+        $this->checkAdminAccess();
+
         ModelFactory::getModel('Project')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Project actually deleted !', 'red');
 

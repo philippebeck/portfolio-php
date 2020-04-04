@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -12,7 +11,7 @@ use Twig\Error\SyntaxError;
  * Class CertificateController
  * @package App\Controller
  */
-class CertificateController extends MainController
+class CertificateController extends BaseController
 {
     /**
      * @return string
@@ -58,6 +57,8 @@ class CertificateController extends MainController
      */
     public function createMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             ModelFactory::getModel('Certificate')->createData($this->globals->getPost()->getPostArray());
@@ -65,7 +66,6 @@ class CertificateController extends MainController
 
             $this->redirect('admin');
         }
-
         return $this->render('back/createCertificate.twig');
     }
 
@@ -77,6 +77,8 @@ class CertificateController extends MainController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->globals->getPost()->getPostArray());
@@ -91,10 +93,13 @@ class CertificateController extends MainController
 
     public function deleteMethod()
     {
+        $this->checkAdminAccess();
+
         ModelFactory::getModel('Certificate')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Certificate permanently deleted !', 'red');
 
         $this->redirect('admin');
+
     }
 }
 

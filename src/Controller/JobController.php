@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -12,7 +11,7 @@ use Twig\Error\SyntaxError;
  * Class JobController
  * @package App\Controller
  */
-class JobController extends MainController
+class JobController extends BaseController
 {
     /**
      * @return string
@@ -35,6 +34,8 @@ class JobController extends MainController
      */
     public function createMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             $data           = $this->globals->getPost()->getPostArray();
@@ -57,6 +58,8 @@ class JobController extends MainController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
             $data = $this->globals->getPost()->getPostArray();
 
@@ -76,6 +79,8 @@ class JobController extends MainController
 
     public function deleteMethod()
     {
+        $this->checkAdminAccess();
+
         ModelFactory::getModel('Job')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Job permanently deleted !', 'red');
 
