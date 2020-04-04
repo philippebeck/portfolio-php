@@ -13,4 +13,22 @@ define('DB_PASS', 'userpass');
 // You don't need to change anything here : this array is for PDO options
 define('DB_OPTIONS', array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
+// You need to replace mail.domain.ext with your mail host
+define('MAIL_HOST', 'mail.domain.ext');
+
+// You need to replace 000 with your mail port
+define('MAIL_PORT', 000);
+
+// You need to replace mailfrom@domain.ext with the email address for sending
+define('MAIL_FROM', 'mailfrom@domain.ext');
+
+// You need to replace mailpass with your email address password for sending
+define('MAIL_PASSWORD', 'mailpass');
+
+// You need to replace mailto@domain.ext with your email address for receiving
+define('MAIL_TO', 'mailto@domain.ext');
+
+// You need to replace mailusername with your name
+define('MAIL_USERNAME', 'mailusername');
+
 // Then remove the '-example' from 'parameters-example.php' to get 'parameters.php'
