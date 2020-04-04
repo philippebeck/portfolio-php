@@ -43,6 +43,8 @@ class UserController extends BaseController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             $user['name']   = $this->globals->getPost()->getPostVar('name');

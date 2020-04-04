@@ -57,6 +57,8 @@ class CertificateController extends BaseController
      */
     public function createMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             ModelFactory::getModel('Certificate')->createData($this->globals->getPost()->getPostArray());
@@ -64,7 +66,6 @@ class CertificateController extends BaseController
 
             $this->redirect('admin');
         }
-
         return $this->render('back/createCertificate.twig');
     }
 
@@ -76,6 +77,8 @@ class CertificateController extends BaseController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->globals->getPost()->getPostArray());
@@ -90,10 +93,13 @@ class CertificateController extends BaseController
 
     public function deleteMethod()
     {
+        $this->checkAdminAccess();
+
         ModelFactory::getModel('Certificate')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Certificate permanently deleted !', 'red');
 
         $this->redirect('admin');
+
     }
 }
 

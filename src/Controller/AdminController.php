@@ -21,26 +21,22 @@ class AdminController extends BaseController
      */
     public function defaultMethod()
     {
-        if ($this->globals->getSession()->islogged()) {
+        $this->checkAdminAccess();
 
-            $allProjects        = ModelFactory::getModel('Project')->listData();
-            $allJobs            = ModelFactory::getModel('Job')->listData();
-            $allCertificates    = ModelFactory::getModel('Certificate')->listData();
-            $allUsers           = ModelFactory::getModel('User')->listData();
+        $allProjects        = ModelFactory::getModel('Project')->listData();
+        $allJobs            = ModelFactory::getModel('Job')->listData();
+        $allCertificates    = ModelFactory::getModel('Certificate')->listData();
+        $allUsers           = ModelFactory::getModel('User')->listData();
 
-            $allProjects        = array_reverse($allProjects);
-            $allCertificates    = array_reverse($allCertificates);
+        $allProjects        = array_reverse($allProjects);
+        $allCertificates    = array_reverse($allCertificates);
 
-            return $this->render('back/admin.twig', [
-                'allProjects'       => $allProjects,
-                'allJobs'           => $allJobs,
-                'allCertificates'   => $allCertificates,
-                'allUsers'          => $allUsers
-            ]);
-        }
-        $this->globals->getSession()->createAlert('You must be logged in to access the administration', 'black');
-
-        $this->redirect('user!login');
+        return $this->render('back/admin.twig', [
+            'allProjects'       => $allProjects,
+            'allJobs'           => $allJobs,
+            'allCertificates'   => $allCertificates,
+            'allUsers'          => $allUsers
+        ]);
     }
 }
 

@@ -34,6 +34,8 @@ class JobController extends BaseController
      */
     public function createMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
 
             $data           = $this->globals->getPost()->getPostArray();
@@ -56,6 +58,8 @@ class JobController extends BaseController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
             $data = $this->globals->getPost()->getPostArray();
 
@@ -75,6 +79,8 @@ class JobController extends BaseController
 
     public function deleteMethod()
     {
+        $this->checkAdminAccess();
+
         ModelFactory::getModel('Job')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Job permanently deleted !', 'red');
 

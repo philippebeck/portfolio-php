@@ -62,9 +62,12 @@ class ProjectController extends BaseController
      */
     public function createMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $data = $this->globals->getPost()->getPostArray();
-            $data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
+
+            $data           = $this->globals->getPost()->getPostArray();
+            $data['image']  = $this->globals->getFiles()->uploadFile('img/projects');
 
             ModelFactory::getModel('Project')->createData($data);
             $this->globals->getSession()->createAlert('New project created successfully !', 'green');
@@ -82,6 +85,8 @@ class ProjectController extends BaseController
      */
     public function updateMethod()
     {
+        $this->checkAdminAccess();
+
         if (!empty($this->globals->getPost()->getPostArray())) {
             $data = $this->globals->getPost()->getPostArray();
 
@@ -101,6 +106,8 @@ class ProjectController extends BaseController
 
     public function deleteMethod()
     {
+        $this->checkAdminAccess();
+
         ModelFactory::getModel('Project')->deleteData($this->globals->getGet()->getGetVar('id'));
         $this->globals->getSession()->createAlert('Project actually deleted !', 'red');
 
