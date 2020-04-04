@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -12,7 +11,7 @@ use Twig\Error\SyntaxError;
  * Class CertificateController
  * @package App\Controller
  */
-class CertificateController extends MainController
+class CertificateController extends BaseController
 {
     /**
      * @return string

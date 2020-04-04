@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -12,9 +11,8 @@ use Twig\Error\SyntaxError;
  * Class AdminController
  * @package App\Controller
  */
-class AdminController extends MainController
+class AdminController extends BaseController
 {
-
     /**
      * @return string
      * @throws LoaderError
