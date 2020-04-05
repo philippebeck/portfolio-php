@@ -21,16 +21,21 @@ class ContactController extends BaseController
     public function defaultMethod()
     {
         if (!empty($this->globals->getPost()->getPostArray())) {
+            $mail = $this->globals->getPost()->getPostArray();
 
-            $mail   = $this->globals->getPost()->getPostArray();
-            $result = $this->mail->defaultMethod($mail);
+            if (isset($mail['g-recaptcha-response']) && !empty($mail['g-recaptcha-response'])) {
+                $result = $this->checkRecaptcha($mail['g-recaptcha-response']);
 
-            if ($result !== 0) {
-                $this->globals->getSession()->createAlert('Message successfully sent to ' . MAIL_USERNAME . ' !', 'green');
+                if ($result) {
+                    $this->mail->sendMessage($mail);
+                    $this->globals->getSession()->createAlert('Message successfully sent to ' . MAIL_USERNAME . ' !', 'green');
 
-                $this->redirect('home');
+                    $this->redirect('home');
+                }
             }
-            $this->globals->getSession()->createAlert('Message error !', 'red');
+            $this->globals->getSession()->createAlert('Check the reCAPTCHA !', 'red');
+
+            $this->redirect('contact');
         }
         return $this->render('front/contact.twig');
     }

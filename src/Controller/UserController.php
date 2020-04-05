@@ -22,15 +22,28 @@ class UserController extends BaseController
     public function defaultMethod()
     {
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $user = ModelFactory::getModel('User')->readData($this->globals->getPost()->getPostVar('email'), 'email');
+            $userPost = $this->globals->getPost()->getPostArray();
 
-            if (password_verify($this->globals->getPost()->getPostVar('pass'), $user['pass'])) {
-                $this->globals->getSession()->createSession($user);
-                $this->globals->getSession()->createAlert('Successful authentication, welcome ' . $user['name'] . ' !', 'purple');
+            if (isset($userPost['g-recaptcha-response']) && !empty($userPost['g-recaptcha-response'])) {
+                $result = $this->checkRecaptcha($userPost['g-recaptcha-response']);
 
-                $this->redirect('admin');
+                if ($result) {
+                    $userData = ModelFactory::getModel('User')->readData($userPost['email'], 'email');
+
+                    if (password_verify($userPost['pass'], $userData['pass'])) {
+                        $this->globals->getSession()->createSession($userData);
+                        $this->globals->getSession()->createAlert('Successful authentication, welcome ' . $userData['name'] . ' !', 'purple');
+
+                        $this->redirect('admin');
+                    }
+                    $this->globals->getSession()->createAlert('Failed authentication !', 'black');
+
+                    $this->redirect('user');
+                }
             }
-            $this->globals->getSession()->createAlert('Failed authentication !', 'black');
+            $this->globals->getSession()->createAlert('Check the reCAPTCHA !', 'red');
+
+            $this->redirect('user');
         }
         return $this->render('front/login.twig');
     }
@@ -63,7 +76,7 @@ class UserController extends BaseController
 
             $this->redirect('admin');
         }
-        $user = ModelFactory::getModel('User')->readData('1');
+        $user = ModelFactory::getModel('User')->readData(1);
 
         return $this->render('back/updateUser.twig', ['user' => $user]);
     }
@@ -71,7 +84,6 @@ class UserController extends BaseController
     public function logoutMethod()
     {
         $this->globals->getSession()->destroySession();
-        $this->globals->getSession()->createAlert('Good bye !', 'purple');
 
         $this->redirect('home');
     }
