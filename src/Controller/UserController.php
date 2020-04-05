@@ -63,7 +63,7 @@ class UserController extends BaseController
 
             $this->redirect('admin');
         }
-        $user = ModelFactory::getModel('User')->readData('1');
+        $user = ModelFactory::getModel('User')->readData(1);
 
         return $this->render('back/updateUser.twig', ['user' => $user]);
     }
@@ -71,7 +71,6 @@ class UserController extends BaseController
     public function logoutMethod()
     {
         $this->globals->getSession()->destroySession();
-        $this->globals->getSession()->createAlert('Good bye !', 'purple');
 
         $this->redirect('home');
     }
