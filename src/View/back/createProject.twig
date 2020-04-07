@@ -31,8 +31,12 @@
                         <input id="year" name="year" type="number" placeholder="2019" required>
                     </li>
                     <li>
-                        <label for="category">Type</label>
-                        <input id="category" name="category" type="text" placeholder="tool / website" maxlength="10" required>
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="tool">-- Choose a category</option>
+                            <option value="tool">Tool</option>
+                            <option value="website">Website</option>
+                        </select>
                     </li>
                     <li>
                         <label for="description">Description</label>

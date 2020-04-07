@@ -29,8 +29,13 @@
                         <input id="certif_date" name="certif_date" type="date" required>
                     </li>
                     <li>
-                        <label for="category">Type</label>
-                        <input id="category" name="category" type="text" placeholder="course / path / degree" maxlength="10" required>
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="course">-- Choose a category</option>
+                            <option value="course">Course</option>
+                            <option value="path">Path</option>
+                            <option value="degree">Degree</option>
+                        </select>
                     </li>
                 </ul>
                 <ul>
