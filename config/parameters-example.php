@@ -31,4 +31,7 @@ define('MAIL_TO', 'mailto@domain.ext');
 // You need to replace mailusername with your name
 define('MAIL_USERNAME', 'mailusername');
 
+// You need to replace your-backend-site-key with your Google ReCaptcha backend site key
+define('RECAPTCHA_TOKEN', 'your-backend-site-key');
+
 // Then remove the '-example' from 'parameters-example.php' to get 'parameters.php'
