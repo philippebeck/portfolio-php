@@ -14,6 +14,11 @@ use Twig\Error\SyntaxError;
 class ProjectController extends BaseController
 {
     /**
+     * @var array
+     */
+    private $data = [];
+
+    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
@@ -54,6 +59,15 @@ class ProjectController extends BaseController
         ]);
     }
 
+    private function postMethod()
+    {
+        $this->data['name']         = $this->globals->getPost()->getPostVar('name');
+        $this->data['link']         = $this->globals->getPost()->getPostVar('link');
+        $this->data['year']         = $this->globals->getPost()->getPostVar('year');
+        $this->data['category']     = $this->globals->getPost()->getPostVar('category');
+        $this->data['description']  = $this->globals->getPost()->getPostVar('description');
+    }
+
     /**
      * @return string
      * @throws LoaderError
@@ -65,11 +79,10 @@ class ProjectController extends BaseController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
+            $this->postMethod();
+            $this->data['image']  = $this->globals->getFiles()->uploadFile('img/projects');
 
-            $data           = $this->globals->getPost()->getPostArray();
-            $data['image']  = $this->globals->getFiles()->uploadFile('img/projects');
-
-            ModelFactory::getModel('Project')->createData($data);
+            ModelFactory::getModel('Project')->createData($this->data);
             $this->globals->getSession()->createAlert('New project created successfully !', 'green');
 
             $this->redirect('admin');
@@ -88,13 +101,13 @@ class ProjectController extends BaseController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $data = $this->globals->getPost()->getPostArray();
+            $this->postMethod();
 
             if (!empty($this->globals->getFiles()->getFileVar('name'))) {
-                $data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
+                $this->data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
             }
 
-            ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $data);
+            ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $this->data);
             $this->globals->getSession()->createAlert('Successful modification of the selected project !', 'blue');
 
             $this->redirect('admin');
