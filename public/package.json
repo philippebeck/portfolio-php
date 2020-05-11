@@ -12,7 +12,7 @@
   "bugs": "https://github.com/philippebeck/portfolio/issues",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "animadio": "^2.0.3"
+    "animadio": "^2.1.1"
   },
   "author": {
     "name": "Philippe Beck",
