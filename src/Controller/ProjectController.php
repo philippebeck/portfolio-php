@@ -80,7 +80,7 @@ class ProjectController extends BaseController
 
         if (!empty($this->globals->getPost()->getPostArray())) {
             $this->postMethod();
-            $this->data['image']  = $this->globals->getFiles()->uploadFile('img/projects');
+            $this->data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
 
             ModelFactory::getModel('Project')->createData($this->data);
             $this->globals->getSession()->createAlert('New project created successfully !', 'green');
