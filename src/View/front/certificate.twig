@@ -11,11 +11,11 @@
     <input id="path" class="block-radio2" type="radio" name="certificate">
     <input id="course" class="block-radio3" type="radio" name="certificate">
 
-    <label class="button-tomato" for="degree" title="Fullstack Web Degree">
+    <label class="button-red" for="degree" title="Fullstack Web Degree">
         <i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i>
         Degree
     </label>
-    <label class="button-jade" for="path" title="All Certified Paths">
+    <label class="button-green" for="path" title="All Certified Paths">
         <i class="fas fa-road fa-lg" aria-hidden="true"></i>
         Paths
     </label>
@@ -46,7 +46,7 @@
                     <tr>
                         <td>{{ date(degreeCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-tomato" href="https://{{ degreeCertif.link }}" title="Access to Certificate" rel="noreferrer noopener" target="_blank">
+                            <a class="button-red" href="https://{{ degreeCertif.link }}" title="Access to Certificate" rel="noreferrer noopener" target="_blank">
                                 <span>{{ degreeCertif.name }}</span>
                             </a>
                         </td>
@@ -75,7 +75,7 @@
                     <tr>
                         <td>{{ date(pathCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-jade" href="https://{{ pathCertif.link }}" title="Access to Certificate #{{ pathCertif.certif_id }}" rel="noreferrer noopener" target="_blank">{{ pathCertif.name }}</a>
+                            <a class="button-green" href="https://{{ pathCertif.link }}" title="Access to Certificate #{{ pathCertif.certif_id }}" rel="noreferrer noopener" target="_blank">{{ pathCertif.name }}</a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -102,7 +102,7 @@
                     <tr>
                         <td>{{ date(courseCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
-                            <a class="btn-sky" href="https://{{ courseCertif.link }}" title="Access to Certificate #{{ courseCertif.certif_id }}" rel="noreferrer noopener" target="_blank">{{ courseCertif.name }}</a>
+                            <a class="button-blue" href="https://{{ courseCertif.link }}" title="Access to Certificate #{{ courseCertif.certif_id }}" rel="noreferrer noopener" target="_blank">{{ courseCertif.name }}</a>
                         </td>
                     </tr>
                 {% endfor %}

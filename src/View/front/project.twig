@@ -24,7 +24,7 @@
         <i class="fab fa-codepen fa-lg" aria-hidden="true"></i>
         Animadio Pens
     </label>
-    <label class="button-fcc" for="freecodecamp" title="My Pens for Free Code Camp">
+    <label class="button-green" for="freecodecamp" title="My Pens for Free Code Camp">
         <i class="fab fa-free-code-camp fa-lg" aria-hidden="true"></i>
         Free Code Camp Pens
     </label>
@@ -39,7 +39,7 @@
             <figure class="gallery">
 
                 {% for toolProject in allToolProjects %}
-                    <figure class="btn-tomato anima-rotax">
+                    <figure class="button-red anima-rotax">
                         <a href="https://{{ toolProject.link }}" title="Watch {{ toolProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ toolProject.image }}" alt="Screenshot of {{ toolProject.name }}">
                         </a>
@@ -64,7 +64,7 @@
             <figure class="gallery">
 
                 {% for websiteProject in allWebsiteProjects %}
-                    <figure class="btn-sky anima-rotay">
+                    <figure class="btn-blue anima-rotay">
                         <a href="https://{{ websiteProject.link }}" title="Watch {{ websiteProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ websiteProject.image }}" alt="Screenshot of {{ websiteProject.name }}">
                         </a>
@@ -89,7 +89,7 @@
             <figure class="gallery">
 
                 {% for animadioPen in allAnimadioPens %}
-                    <figure class="btn-silver anima-rotax">
+                    <figure class="btn anima-rotax">
                         <a href="https://{{ animadioPen.link }}" title="Watch {{ animadioPen.name }} on CodePen" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ animadioPen.image }}" alt="Screenshot of {{ animadioPen.name }}">
                         </a>
@@ -114,7 +114,7 @@
             <figure class="gallery">
 
                 {% for freecodecampPen in allFreecodecampPens %}
-                    <figure class="btn-jade anima-rotay">
+                    <figure class="btn-green anima-rotay">
                         <a href="https://{{ freecodecampPen.link }}" title="Watch {{ freecodecampPen.name }} on CodePen" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ freecodecampPen.image }}" alt="Screenshot of {{ freecodecampPen.name }}">
                         </a>
