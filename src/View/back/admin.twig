@@ -12,16 +12,16 @@
     <input id="certificate" class="block-radio3" type="radio" name="admin">
     <input id="user" class="block-radio4" type="radio" name="admin">
 
-    <label class="button-ruby btn-lg" for="project" title="Show Projects">
+    <label class="button-red btn-lg" for="project" title="Show Projects">
         <i class="fas fa-project-diagram fa-lg" aria-hidden="true"></i>
     </label>
-    <label class="button-emerald btn-lg" for="job" title="Show Jobs">
+    <label class="button-green btn-lg" for="job" title="Show Jobs">
         <i class="fas fa-suitcase fa-lg" aria-hidden="true"></i>
     </label>
-    <label class="button-sapphire btn-lg" for="certificate" title="Show Certificates">
+    <label class="button-blue btn-lg" for="certificate" title="Show Certificates">
         <i class="fas fa-certificate fa-lg" aria-hidden="true"></i>
     </label>
-    <label class="button-obsidian btn-lg" for="user" title="Show the User">
+    <label class="button btn-lg" for="user" title="Show the User">
         <i class="fas fa-user fa-lg" aria-hidden="true"></i>
     </label>
 
@@ -45,7 +45,7 @@
                 {% for project in allProjects %}
                     <tr>
                         <td>
-                            <a class="btn-github" href="https://{{ project.link }}" title="See the project @GitHub">
+                            <a class="btn-gh" href="https://{{ project.link }}" title="See the project @GitHub">
                                 <figure>
                                     <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
                                     <figcaption>{{ project.id }} - {{ project.name }}</figcaption>
@@ -131,7 +131,7 @@
                 {% for certificate in allCertificates %}
                     <tr>
                         <td>
-                            <a class="btn-linkedin" href="https://{{ certificate.link }}" title="See the certificate # {{ certificate.certif_id }}">
+                            <a class="btn-in" href="https://{{ certificate.link }}" title="See the certificate # {{ certificate.certif_id }}">
                             {{ certificate.id }}<br>{{ certificate.name }}
                             </a>
                         </td>

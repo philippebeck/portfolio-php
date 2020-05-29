@@ -1,5 +1,5 @@
 body {
-  --body-font-family: 'Text Me One', sans-serif;
+  --sans-serif-font-family: 'Text Me One', sans-serif;
   --body-background-color: Lavender;
 
   background: url("../img/bg.jpg") fixed;
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  --title-font-family: 'Cinzel', serif;
+  --serif-font-family: 'Cinzel', serif;
 }
 
 h1 {
@@ -36,16 +36,16 @@ figure {
 
 code,
 pre {
-  --code-font-family: 'Share Tech Mono', monospace;
+  --monospace-font-family: 'Share Tech Mono', monospace;
 }
 
 [class*="nav"] {
-  --navbar-background-color: var(--sapphire);
+  --navbar-background-color: var(--blue-dark);
 }
 
 #service p,
 #service ul {
   font-weight: bold;
-  color: var(--linkedin);
+  color: var(--in);
 }
 

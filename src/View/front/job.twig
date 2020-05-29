@@ -6,18 +6,18 @@
 
 {% block main %}
 
-    <main id="jobs" class="container-90sm-80md-70lg text-center">
+    <main id="jobs" class="container-90sm-80md-70lg align-center">
 
         <!-- JOBS -->
         <article>
-            <h2 class="color-red">
+            <h2>
                 <i class="fas fa-suitcase" aria-hidden="true"></i> Web Development
             </h2>
 
                 {% for job in allJobs %}
                     <section class="card">
                         <h3>{{ job.position }}</h3>
-                        <figure class="btn-tomato anima-rotax">
+                        <figure class="anima-rotax">
                             <a href="https://{{ job.company_link }}" title="Website of {{ job.company }}" rel="noreferrer noopener" target="_blank">
                                 <img src="img/jobs/{{ job.logo }}" alt="Logo of {{ job.company }}">
                             </a>
