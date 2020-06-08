@@ -68,6 +68,11 @@ class ProjectController extends BaseController
         $this->data['description']  = $this->globals->getPost()->getPostVar('description');
     }
 
+    private function setImage() {
+        $this->data['image'] = $this->globals->getFiles()->uploadFile('img/projects/', $this->data['name']);
+        $this->globals->getFiles()->makeThumbnail("img/projects/" . $this->data['image'], 300);
+    }
+
     /**
      * @return string
      * @throws LoaderError
@@ -80,7 +85,7 @@ class ProjectController extends BaseController
 
         if (!empty($this->globals->getPost()->getPostArray())) {
             $this->postMethod();
-            $this->data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
+            $this->setImage();
 
             ModelFactory::getModel('Project')->createData($this->data);
             $this->globals->getSession()->createAlert('New project created successfully !', 'green');
@@ -104,7 +109,7 @@ class ProjectController extends BaseController
             $this->postMethod();
 
             if (!empty($this->globals->getFiles()->getFileVar('name'))) {
-                $this->data['image'] = $this->globals->getFiles()->uploadFile('img/projects');
+                $this->setImage();
             }
 
             ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $this->data);
