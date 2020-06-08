@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -11,7 +12,7 @@ use Twig\Error\SyntaxError;
  * Class ProjectController
  * @package App\Controller
  */
-class ProjectController extends BaseController
+class ProjectController extends MainController
 {
     /**
      * @var array

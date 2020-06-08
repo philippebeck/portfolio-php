@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Pam\Controller\MainController;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -10,7 +11,7 @@ use Twig\Error\SyntaxError;
  * Class ContactController
  * @package App\Controller
  */
-class ContactController extends BaseController
+class ContactController extends MainController
 {
     /**
      * @return string
