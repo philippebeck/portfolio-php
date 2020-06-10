@@ -1,4 +1,4 @@
-{% extends 'layout/layout.twig' %}
+{% extends 'layout/layout.twig' %}  {# TODO -> Add content #}
 
 {% block subtitle %}Contact{% endblock %}
 
@@ -6,33 +6,33 @@
 
 {% block main %}
     <main class="align-center">
-        <form class="form" method="post" action={{ url('contact') }}>
+        <form class="form anima-growX" method="post" action={{ url('contact') }}>
             <fieldset>
                 <ul>
                     <li>
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" placeholder="Your name" maxlength="20" required>
+                        <label class="anima-slideR" for="name">Name</label>
+                        <input class="anima-slideL" id="name" name="name" type="text" placeholder="Your name" maxlength="20" required>
                     </li>
                     <li>
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="Your email" maxlength="50" required>
+                        <label class="anima-slideR" for="email">Email</label>
+                        <input class="anima-slideL" id="email" name="email" type="email" placeholder="Your email" maxlength="50" required>
                     </li>
                     <li>
-                        <label for="subject">Subject</label>
-                        <input id="subject" name="subject" type="text" placeholder="Your subject" maxlength="50" required>
+                        <label class="anima-slideR" for="subject">Subject</label>
+                        <input class="anima-slideL" id="subject" name="subject" type="text" placeholder="Your subject" maxlength="50" required>
                     </li>
                     <li>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your message" rows="5" cols="20"></textarea>
+                        <label class="anima-slideR" for="message">Message</label>
+                        <textarea class="anima-slideL" id="message" name="message" placeholder="Your message" rows="5" cols="20"></textarea>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <div id="recaptcha" class="g-recaptcha container" data-sitekey="6Ld_2eYUAAAAAPHLRqN5mOEqZJqNKq7RO01CcwIy"></div>
+                        <div id="recaptcha" class="g-recaptcha" data-sitekey="6Ld_2eYUAAAAAPHLRqN5mOEqZJqNKq7RO01CcwIy"></div>
                     </li>
                     <li>
-                        <input type="reset" value="Reset">
-                        <input type="submit" value="Send">
+                        <input class="anima-slideR" type="reset" value="Reset">
+                        <input class="anima-slideL" type="submit" value="Send">
                     </li>
                 </ul>
             </fieldset>
