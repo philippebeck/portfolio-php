@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68e1c5c25ddcdecbbab59560d17551a1",
+    "content-hash": "78d061a1f11a4c636790d165dbb59463",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -175,19 +175,21 @@
         },
         {
             "name": "philippebeck/pam",
-            "version": "3.2.2",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "501b34ed10e173668529a48115048fcac8ef7e16"
+                "reference": "7e18b889ebb5fbf468fa49c99604de34517455de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/501b34ed10e173668529a48115048fcac8ef7e16",
-                "reference": "501b34ed10e173668529a48115048fcac8ef7e16",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/7e18b889ebb5fbf468fa49c99604de34517455de",
+                "reference": "7e18b889ebb5fbf468fa49c99604de34517455de",
                 "shasum": ""
             },
             "require": {
+                "ext-exif": "*",
+                "ext-gd": "*",
                 "google/recaptcha": "^1.2.4",
                 "php": "^7.3",
                 "swiftmailer/swiftmailer": "^6.2.3",
@@ -226,7 +228,7 @@
                 "superglobal",
                 "twig extension"
             ],
-            "time": "2020-05-21T18:15:02+00:00"
+            "time": "2020-06-09T07:54:04+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
