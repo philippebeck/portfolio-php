@@ -45,7 +45,7 @@
                 {% for project in allProjects %}
                     <tr>
                         <td>
-                            <a class="btn-gh" href="https://{{ project.link }}" title="See the project @GitHub">
+                            <a class="button-gh" href="https://{{ project.link }}" title="See the project @GitHub">
                                 <figure>
                                     <img src="img/projects/{{ project.image }}" alt="Screenshot of the project {{ project.name }}">
                                     <figcaption>{{ project.id }} - {{ project.name }}</figcaption>
@@ -86,7 +86,7 @@
                 {% for job in allJobs %}
                     <tr>
                         <td>
-                            <a class="btn-green" href="https://{{ job.company_link }}" title="See the Company">
+                            <a class="button-green" href="https://{{ job.company_link }}" title="See the Company">
                                 <figure>
                                     <img src="img/jobs/{{ job.logo }}" alt="Logo of {{ job.company }}">
                                     <figcaption>{{ job.company }}</figcaption>
@@ -131,7 +131,7 @@
                 {% for certificate in allCertificates %}
                     <tr>
                         <td>
-                            <a class="btn-in" href="https://{{ certificate.link }}" title="See the certificate # {{ certificate.certif_id }}">
+                            <a class="button-in" href="https://{{ certificate.link }}" title="See the certificate # {{ certificate.certif_id }}">
                             {{ certificate.id }}<br>{{ certificate.name }}
                             </a>
                         </td>
@@ -168,7 +168,7 @@
                     <tr>
                         <td>
                             <figure>
-                                <img src="img/user/{{ user.image }}" alt="Screenshot of {{ user.name }}">
+                                <img class="bord-sm bord-purple" src="img/user/{{ user.image }}" alt="Screenshot of {{ user.name }}">
                                 <figcaption>{{ user.id }}</figcaption>
                             </figure>
                         </td>

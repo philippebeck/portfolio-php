@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Pam\Controller\MainController;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -10,7 +11,7 @@ use Twig\Error\SyntaxError;
  * Class ContactController
  * @package App\Controller
  */
-class ContactController extends BaseController
+class ContactController extends MainController
 {
     /**
      * @return string
@@ -24,9 +25,8 @@ class ContactController extends BaseController
             $mail = $this->globals->getPost()->getPostArray();
 
             if (isset($mail['g-recaptcha-response']) && !empty($mail['g-recaptcha-response'])) {
-                $result = $this->checkRecaptcha($mail['g-recaptcha-response']);
 
-                if ($result) {
+                if ($this->checkRecaptcha($mail['g-recaptcha-response'])) {
                     $this->mail->sendMessage($mail);
                     $this->globals->getSession()->createAlert('Message successfully sent to ' . MAIL_USERNAME . ' !', 'green');
 

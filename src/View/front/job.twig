@@ -6,7 +6,7 @@
 
 {% block main %}
 
-    <main id="jobs" class="container-90sm-80md-70lg align-center">
+    <main id="jobs" class="container-90sm-80lg align-center">
 
         <!-- JOBS -->
         <article>
@@ -15,9 +15,9 @@
             </h2>
 
                 {% for job in allJobs %}
-                    <section class="card">
+                    <section class="card anima-slipT">
                         <h3>{{ job.position }}</h3>
-                        <figure class="anima-rotax">
+                        <figure>
                             <a href="https://{{ job.company_link }}" title="Website of {{ job.company }}" rel="noreferrer noopener" target="_blank">
                                 <img src="img/jobs/{{ job.logo }}" alt="Logo of {{ job.company }}">
                             </a>

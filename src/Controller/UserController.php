@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Pam\Controller\MainController;
 use Pam\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -11,7 +12,7 @@ use Twig\Error\SyntaxError;
  * Class UserController
  * @package App\Controller
  */
-class UserController extends BaseController
+class UserController extends MainController
 {
     /**
      * @return string
@@ -25,9 +26,8 @@ class UserController extends BaseController
             $userPost = $this->globals->getPost()->getPostArray();
 
             if (isset($userPost['g-recaptcha-response']) && !empty($userPost['g-recaptcha-response'])) {
-                $result = $this->checkRecaptcha($userPost['g-recaptcha-response']);
 
-                if ($result) {
+                if ($this->checkRecaptcha($userPost['g-recaptcha-response'])) {
                     $userData = ModelFactory::getModel('User')->readData($userPost['email'], 'email');
 
                     if (password_verify($userPost['pass'], $userData['pass'])) {

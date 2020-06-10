@@ -5,10 +5,17 @@
 {% block description %}Philippe Beck - Fullstack Development & Mentorship in Development - Technologies HTML5, Twig, CSS3, SCSS, JavaScript, Nodejs, PHP, Symfony, SQL, Git, GitHub{% endblock %}
 
 {% block main %}
-    <main id="home" class="container-90sm-80md-70lg mar-bot-md">
+    <main id="home" class="container-90tn-80md-70wd mar-bot-md">
+
+        <header class="bg-white bord-double bord-curve bord-purple pad-md mar-bot-lg anima-slipB">
+            <p>Amateur of computer graphics on Amiga at the high school, CNAM student in post-baccalaureate in programming, then computer technician, but also hardgamer for many years, otaku & Sci-Fi fan forever, the evolution of technologies fascinate me.</p>
+            <p>I am passionate about the web, open-source, cross-platform, robotics & advanced techniques in general ; since the beginning of my professional reconversion in 2015, I have validated paths, especially in PHP / Symfony & I got a title RNCP Level III Developer Fullstack PHP.</p>
+            <p>Open-minded & in continuous vigil, research & learning are intrinsically linked to my personality; I am both a student & mentor at OpenClassrooms ...</p>
+            <p>Having a great pleasure to design architectures, my goal is to build skills in Frontend as Backend, but also to touch mobile development and later to robotics.</p>
+        </header>
 
         <!-- Projects -->
-        <section class="card-red anima-tranx">
+        <section class="card-red anima-slideR">
             <h2>Projects</h2>
             <figure>
                 <a href="{{ url('project') }}" title="Projects Access">
@@ -22,7 +29,7 @@
         </section>
 
         <!-- Jobs -->
-        <section class="card-green anima-tran">
+        <section class="card-green anima-slideT">
             <h2>Jobs</h2>
             <figure>
                 <a href="{{ url('job') }}" title="Jobs Access">
@@ -36,7 +43,7 @@
         </section>
 
         <!-- Certificates -->
-        <section class="card-blue anima-trany">
+        <section class="card-blue anima-slideL">
             <h2>Certificates</h2>
             <figure>
                 <a href="{{ url('certificate') }}" title="Certificates Access">
