@@ -19,11 +19,11 @@
                     </li>
                     <li>
                         <label for="file">Picture</label>
-                        <input name="file" type="file" accept=".jpg, .jpeg, .png, .svg, .gif, .pdf">
+                        <input name="file" type="file" accept=".jpg, .jpeg, .png, .gif">
                     </li>
                     <li>
                         <label for="link">Link</label>
-                        <input id="link" name="link" type="text" maxlength="50" required value="{{ project.link }}">
+                        <input id="link" name="link" type="text" maxlength="50" required value="https://{{ project.link }}">
                     </li>
                     <li>
                         <label for="year">Year</label>

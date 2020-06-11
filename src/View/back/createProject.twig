@@ -7,7 +7,7 @@
 {% block main %}
     <main class="align-center">
         <form class="form" method="post" action={{ url('project!create') }} enctype="multipart/form-data">
-            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+            <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
             <fieldset>
                 <legend>
                     <i class="fab fa-github fa-2x" aria-hidden="true"></i>
@@ -19,12 +19,12 @@
                     </li>
                     <li>
                         <label for="file">Picture</label>
-                        <input name="file" type="file" accept=".jpg, .jpeg, .png, .svg, .gif, .pdf" required>
+                        <input name="file" type="file" accept=".jpg, .jpeg, .png, .gif" required>
                         </label>
                     </li>
                     <li>
                         <label for="link">Link</label>
-                        <input id="link" name="link" type="text" placeholder="https://github.com/" maxlength="50" required>
+                        <input id="link" name="link" type="text" value="https://" maxlength="50" required>
                     </li>
                     <li>
                         <label for="year">Year</label>
