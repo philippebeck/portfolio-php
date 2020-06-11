@@ -17,7 +17,7 @@ class ProjectController extends MainController
     /**
      * @var array
      */
-    private $data = [];
+    private $project = [];
 
     /**
      * @return string
@@ -65,14 +65,15 @@ class ProjectController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $this->postMethod();
-            $this->setImage();
+            $this->setProjectData();
+            $this->setProjectPicture();
 
-            ModelFactory::getModel('Project')->createData($this->data);
+            ModelFactory::getModel('Project')->createData($this->project);
             $this->globals->getSession()->createAlert('New project created successfully !', 'green');
 
             $this->redirect('admin');
         }
+
         return $this->render('back/createProject.twig');
     }
 
@@ -87,13 +88,13 @@ class ProjectController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $this->postMethod();
+            $this->setProjectData();
 
             if (!empty($this->globals->getFiles()->getFileVar('name'))) {
-                $this->setImage();
+                $this->setProjectPicture();
             }
 
-            ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $this->data);
+            ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $this->project);
             $this->globals->getSession()->createAlert('Successful modification of the selected project !', 'blue');
 
             $this->redirect('admin');
