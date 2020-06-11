@@ -32,6 +32,20 @@ class JobController extends MainController
         return $this->render('front/job.twig', ['allJobs'  =>  $allJobs]);
     }
 
+    private function setJobLink()
+    {
+        $this->job["company_link"]  = str_replace("https://", "", $this->job["company_link"]);
+        $this->job["project_link"]  = str_replace("https://", "", $this->job["project_link"]);
+    }
+
+    private function setJobLogo()
+    {
+        $this->job["logo"] = $this->cleanString($this->job["company"]) . $this->globals->getFiles()->setFileExtension();
+
+        $this->globals->getFiles()->uploadFile("img/jobs/", $this->cleanString($this->job["company"]));
+        $this->globals->getFiles()->makeThumbnail("img/jobs/" . $this->job["logo"], 100);
+    }
+
     /**
      * @return string
      * @throws LoaderError
