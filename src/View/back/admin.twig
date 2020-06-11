@@ -42,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for project in allProjects %}
+                {% for project in projects %}
                     <tr>
                         <td>
                             <a class="button-gh" href="https://{{ project.link }}" title="See the project @GitHub">
@@ -83,7 +83,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for job in allJobs %}
+                {% for job in jobs %}
                     <tr>
                         <td>
                             <a class="button-green" href="https://{{ job.company_link }}" title="See the Company">
@@ -128,7 +128,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for certificate in allCertificates %}
+                {% for certificate in certificates %}
                     <tr>
                         <td>
                             <a class="button-in" href="https://{{ certificate.link }}" title="See the certificate # {{ certificate.certif_id }}">
@@ -164,7 +164,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for user in allUsers %}
+                {% for user in users %}
                     <tr>
                         <td>
                             <figure>
