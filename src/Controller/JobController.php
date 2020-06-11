@@ -15,6 +15,11 @@ use Twig\Error\SyntaxError;
 class JobController extends MainController
 {
     /**
+     * @var array
+     */
+    private $job = [];
+
+    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
