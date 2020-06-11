@@ -27,31 +27,12 @@ class CertificateController extends MainController
      */
     public function defaultMethod()
     {
-        $allCertificates = ModelFactory::getModel('Certificate')->listData();
-        $allCertificates = array_reverse($allCertificates);
-
-        $allCourseCertifs  = array();
-        $allPathCertifs    = array();
-        $allDegreeCertifs  = array();
-
-        foreach ($allCertificates as $certificate) {
-            switch ($certificate['category']) {
-                case 'course':
-                    $allCourseCertifs[] = $certificate;
-                    break;
-                case 'path':
-                    $allPathCertifs[] = $certificate;
-                    break;
-                case 'degree':
-                    $allDegreeCertifs[] = $certificate;
-                    break;
-            }
-        }
+        $certificates = $this->getArrayElements(ModelFactory::getModel('Certificate')->listData());
 
         return $this->render('front/certificate.twig', [
-            'allCourseCertifs' => $allCourseCertifs,
-            'allPathCertifs'   => $allPathCertifs,
-            'allDegreeCertifs' => $allDegreeCertifs
+            'courseCertifs' => $certificates["course"],
+            'pathCertifs'   => $certificates["path"],
+            'degreeCertifs' => $certificates["degree"]
         ]);
     }
 
