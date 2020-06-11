@@ -15,6 +15,11 @@ use Twig\Error\SyntaxError;
 class UserController extends MainController
 {
     /**
+     * @var array
+     */
+    private $user = [];
+
+    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
