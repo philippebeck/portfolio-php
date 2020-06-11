@@ -51,7 +51,7 @@
             </h2>
             <figure class="gallery">
 
-                {% for toolProject in allToolProjects %}
+                {% for toolProject in toolProjects %}
                     <figure class="button-red anima-fullX">
                         <a href="https://{{ toolProject.link }}" title="Watch {{ toolProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ toolProject.image }}" alt="Screenshot of {{ toolProject.name }}">
@@ -76,7 +76,7 @@
             </h2>
             <figure class="gallery">
 
-                {% for websiteProject in allWebsiteProjects %}
+                {% for websiteProject in websiteProjects %}
                     <figure class="btn-blue anima-fullY">
                         <a href="https://{{ websiteProject.link }}" title="Watch {{ websiteProject.name }} on GitHub" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ websiteProject.image }}" alt="Screenshot of {{ websiteProject.name }}">
@@ -101,7 +101,7 @@
             </h2>
             <figure class="gallery">
 
-                {% for animadioPen in allAnimadioPens %}
+                {% for animadioPen in animadioPens %}
                     <figure class="btn anima-halfX">
                         <a href="https://{{ animadioPen.link }}" title="Watch {{ animadioPen.name }} on CodePen" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ animadioPen.image }}" alt="Screenshot of {{ animadioPen.name }}">
@@ -126,7 +126,7 @@
             </h2>
             <figure class="gallery">
 
-                {% for freecodecampPen in allFreecodecampPens %}
+                {% for freecodecampPen in freecodecampPens %}
                     <figure class="btn-green anima-halfY">
                         <a href="https://{{ freecodecampPen.link }}" title="Watch {{ freecodecampPen.name }} on CodePen" rel="noreferrer noopener" target="_blank">
                             <img src="img/projects/{{ freecodecampPen.image }}" alt="Screenshot of {{ freecodecampPen.name }}">

@@ -15,6 +15,11 @@ use Twig\Error\SyntaxError;
 class JobController extends MainController
 {
     /**
+     * @var array
+     */
+    private $job = [];
+
+    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
@@ -25,6 +30,20 @@ class JobController extends MainController
         $allJobs = ModelFactory::getModel('Job')->listData();
 
         return $this->render('front/job.twig', ['allJobs'  =>  $allJobs]);
+    }
+
+    private function setJobLink()
+    {
+        $this->job["company_link"]  = str_replace("https://", "", $this->job["company_link"]);
+        $this->job["project_link"]  = str_replace("https://", "", $this->job["project_link"]);
+    }
+
+    private function setJobLogo()
+    {
+        $this->job["logo"] = $this->cleanString($this->job["company"]) . $this->globals->getFiles()->setFileExtension();
+
+        $this->globals->getFiles()->uploadFile("img/jobs/", $this->cleanString($this->job["company"]));
+        $this->globals->getFiles()->makeThumbnail("img/jobs/" . $this->job["logo"], 100);
     }
 
     /**
@@ -39,10 +58,11 @@ class JobController extends MainController
 
         if (!empty($this->globals->getPost()->getPostArray())) {
 
-            $data           = $this->globals->getPost()->getPostArray();
-            $data['logo']   = $this->globals->getFiles()->uploadFile('img/jobs');
+            $this->job = $this->globals->getPost()->getPostArray();
+            $this->setJobLink();
+            $this->setJobLogo();
 
-            ModelFactory::getModel('Job')->createData($data);
+            ModelFactory::getModel('Job')->createData($this->job);
             $this->globals->getSession()->createAlert('New job successfully created !', 'green');
 
             $this->redirect('admin');
@@ -62,13 +82,15 @@ class JobController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $data = $this->globals->getPost()->getPostArray();
+            $this->job = $this->globals->getPost()->getPostArray();
+
+            $this->setJobLink();
 
             if (!empty($this->globals->getFiles()->getFileVar('name'))) {
-                $data['logo'] = $this->globals->getFiles()->uploadFile('img/jobs');
+                $this->setJobLogo();
             }
 
-            ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $data);
+            ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $this->job);
             $this->globals->getSession()->createAlert('Successful modification of the selected job !', 'blue');
 
             $this->redirect('admin');

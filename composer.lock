@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78d061a1f11a4c636790d165dbb59463",
+    "content-hash": "0cccb138e78a64de7a2a3d36f5121274",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -189,16 +189,16 @@
         },
         {
             "name": "philippebeck/pam",
-            "version": "3.3.1",
+            "version": "3.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "7e18b889ebb5fbf468fa49c99604de34517455de"
+                "reference": "b77b9514c54e20c3d88e088f8d2b552a26d41a0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/7e18b889ebb5fbf468fa49c99604de34517455de",
-                "reference": "7e18b889ebb5fbf468fa49c99604de34517455de",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/b77b9514c54e20c3d88e088f8d2b552a26d41a0e",
+                "reference": "b77b9514c54e20c3d88e088f8d2b552a26d41a0e",
                 "shasum": ""
             },
             "require": {
@@ -210,7 +210,7 @@
                 "twig/twig": "^3.0.3"
             },
             "require-dev": {
-                "tracy/tracy": "^2.7.2"
+                "tracy/tracy": "^2.7.5"
             },
             "type": "library",
             "autoload": {
@@ -242,7 +242,7 @@
                 "superglobal",
                 "twig extension"
             ],
-            "time": "2020-06-09T07:54:04+00:00"
+            "time": "2020-06-11T15:31:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

@@ -7,7 +7,7 @@
 {% block main %}
     <main class="align-center">
         <form class="form" method="post" action={{ url('job!update'), {'id': job.id}) }} enctype="multipart/form-data">
-            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+            <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
             <fieldset>
                 <legend>
                     <i class="fas fa-suitcase fa-2x" aria-hidden="true"></i>
@@ -19,11 +19,11 @@
                     </li>
                     <li>
                         <label for="company_link">Company Link</label>
-                        <input id="company_link" name="company_link" type="text" maxlength="50" required value="{{ job.company_link }}">
+                        <input id="company_link" name="company_link" type="text" maxlength="50" required value="https://{{ job.company_link }}">
                     </li>
                     <li>
                         <label for="logo">Logo</label>
-                        <input name="logo" type="file" accept=".jpg, .jpeg, .png, .svg, .gif, .pdf" required>
+                        <input name="logo" type="file" accept=".jpg, .jpeg, .png, .gif" required>
                     </li>
                     <li>
                         <label for="position">Position</label>
@@ -35,7 +35,7 @@
                     </li>
                     <li>
                         <label for="project_link">Project Link</label>
-                        <input id="project_link" name="project_link" type="text" maxlength="50" required value="{{ job.project_link }}">
+                        <input id="project_link" name="project_link" type="text" maxlength="50" required value="https://{{ job.project_link }}">
                     </li>
                     <li>
                         <label for="start_date">Start Date</label>

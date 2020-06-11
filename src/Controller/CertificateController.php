@@ -15,6 +15,11 @@ use Twig\Error\SyntaxError;
 class CertificateController extends MainController
 {
     /**
+     * @var array
+     */
+    private $certificate = [];
+
+    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
@@ -22,31 +27,12 @@ class CertificateController extends MainController
      */
     public function defaultMethod()
     {
-        $allCertificates = ModelFactory::getModel('Certificate')->listData();
-        $allCertificates = array_reverse($allCertificates);
-
-        $allCourseCertifs  = array();
-        $allPathCertifs    = array();
-        $allDegreeCertifs  = array();
-
-        foreach ($allCertificates as $certificate) {
-            switch ($certificate['category']) {
-                case 'course':
-                    $allCourseCertifs[] = $certificate;
-                    break;
-                case 'path':
-                    $allPathCertifs[] = $certificate;
-                    break;
-                case 'degree':
-                    $allDegreeCertifs[] = $certificate;
-                    break;
-            }
-        }
+        $certificates = $this->getArrayElements(ModelFactory::getModel('Certificate')->listData());
 
         return $this->render('front/certificate.twig', [
-            'allCourseCertifs' => $allCourseCertifs,
-            'allPathCertifs'   => $allPathCertifs,
-            'allDegreeCertifs' => $allDegreeCertifs
+            'courseCertifs' => $certificates["course"],
+            'pathCertifs'   => $certificates["path"],
+            'degreeCertifs' => $certificates["degree"]
         ]);
     }
 
@@ -61,8 +47,10 @@ class CertificateController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
+            $this->certificate          = $this->globals->getPost()->getPostArray();
+            $this->certificate["link"]  = str_replace("https://", "", $this->certificate["link"]);
 
-            ModelFactory::getModel('Certificate')->createData($this->globals->getPost()->getPostArray());
+            ModelFactory::getModel('Certificate')->createData($this->certificate);
             $this->globals->getSession()->createAlert('New certificate successfully created !', 'green');
 
             $this->redirect('admin');
@@ -81,8 +69,10 @@ class CertificateController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
+            $this->certificate          = $this->globals->getPost()->getPostArray();
+            $this->certificate["link"]  = str_replace("https://", "", $this->certificate["link"]);
 
-            ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->globals->getPost()->getPostArray());
+            ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->certificate);
             $this->globals->getSession()->createAlert('Successful modification of the selected certificate !', 'blue');
 
             $this->redirect('admin');
