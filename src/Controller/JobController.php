@@ -27,9 +27,9 @@ class JobController extends MainController
      */
     public function defaultMethod()
     {
-        $allJobs = ModelFactory::getModel('Job')->listData();
+        $jobs = ModelFactory::getModel('Job')->listData();
 
-        return $this->render('front/job.twig', ['allJobs'  =>  $allJobs]);
+        return $this->render('front/job.twig', ['jobs'  =>  $jobs]);
     }
 
     private function setJobLink()
