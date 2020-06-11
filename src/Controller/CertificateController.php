@@ -15,6 +15,11 @@ use Twig\Error\SyntaxError;
 class CertificateController extends MainController
 {
     /**
+     * @var array
+     */
+    private $certificate = [];
+
+    /**
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
