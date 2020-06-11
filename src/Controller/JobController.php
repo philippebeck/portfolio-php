@@ -58,10 +58,11 @@ class JobController extends MainController
 
         if (!empty($this->globals->getPost()->getPostArray())) {
 
-            $data           = $this->globals->getPost()->getPostArray();
-            $data['logo']   = $this->globals->getFiles()->uploadFile('img/jobs');
+            $this->job = $this->globals->getPost()->getPostArray();
+            $this->setJobLink();
+            $this->setJobLogo();
 
-            ModelFactory::getModel('Job')->createData($data);
+            ModelFactory::getModel('Job')->createData($this->job);
             $this->globals->getSession()->createAlert('New job successfully created !', 'green');
 
             $this->redirect('admin');
@@ -81,13 +82,15 @@ class JobController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
-            $data = $this->globals->getPost()->getPostArray();
+            $this->job = $this->globals->getPost()->getPostArray();
+
+            $this->setJobLink();
 
             if (!empty($this->globals->getFiles()->getFileVar('name'))) {
-                $data['logo'] = $this->globals->getFiles()->uploadFile('img/jobs');
+                $this->setJobLogo();
             }
 
-            ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $data);
+            ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $this->job);
             $this->globals->getSession()->createAlert('Successful modification of the selected job !', 'blue');
 
             $this->redirect('admin');
