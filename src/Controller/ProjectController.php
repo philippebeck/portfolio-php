@@ -27,51 +27,31 @@ class ProjectController extends MainController
      */
     public function defaultMethod()
     {
-        $allProjects = ModelFactory::getModel('Project')->listData();
-        $allProjects = array_reverse($allProjects);
-
-        $allToolProjects        = array();
-        $allWebsiteProjects     = array();
-        $allAnimadioPens        = array();
-        $allFreecodecampPens    = array();
-
-        foreach ($allProjects as $project) {
-            switch ($project['category']) {
-                case 'tool':
-                    $allToolProjects[] = $project;
-                    break;
-                case 'website':
-                    $allWebsiteProjects[] = $project;
-                    break;
-                case 'animadio':
-                    $allAnimadioPens[] = $project;
-                    break;
-                case 'freecodecamp':
-                    $allFreecodecampPens[] = $project;
-                    break;
-            }
-        }
+        $projects = $this->getArrayElements(ModelFactory::getModel('Project')->listData());
 
         return $this->render('front/project.twig', [
-            'allToolProjects'       => $allToolProjects,
-            'allWebsiteProjects'    => $allWebsiteProjects,
-            'allAnimadioPens'       => $allAnimadioPens,
-            'allFreecodecampPens'   => $allFreecodecampPens
+            'toolProjects'      => $projects["tool"],
+            'websiteProjects'   => $projects["website"],
+            'animadioPens'      => $projects["animadio"],
+            'freecodecampPens'  => $projects["freecodecamp"]
         ]);
     }
 
-    private function postMethod()
+    private function setProjectData()
     {
-        $this->data['name']         = $this->globals->getPost()->getPostVar('name');
-        $this->data['link']         = $this->globals->getPost()->getPostVar('link');
-        $this->data['year']         = $this->globals->getPost()->getPostVar('year');
-        $this->data['category']     = $this->globals->getPost()->getPostVar('category');
-        $this->data['description']  = $this->globals->getPost()->getPostVar('description');
+        $this->project['name']         = $this->globals->getPost()->getPostVar('name');
+        $this->project['year']         = $this->globals->getPost()->getPostVar('year');
+        $this->project['category']     = $this->globals->getPost()->getPostVar('category');
+        $this->project['description']  = $this->globals->getPost()->getPostVar('description');
+
+        $this->project["link"] = str_replace("https://", "", $this->globals->getPost()->getPostVar('link'));
     }
 
-    private function setImage() {
-        $this->data['image'] = $this->globals->getFiles()->uploadFile('img/projects/', $this->data['name']);
-        $this->globals->getFiles()->makeThumbnail("img/projects/" . $this->data['image'], 300);
+    private function setProjectPicture() {
+        $this->project['image'] = $this->cleanString($this->project["name"]) . $this->globals->getFiles()->setFileExtension();
+
+        $this->globals->getFiles()->uploadFile('img/projects/', $this->cleanString($this->project['name']));
+        $this->globals->getFiles()->makeThumbnail("img/projects/" . $this->project['image'], 300);
     }
 
     /**
