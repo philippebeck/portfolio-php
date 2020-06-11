@@ -27,31 +27,31 @@ class ProjectController extends MainController
      */
     public function defaultMethod()
     {
-        $projects = $this->getArrayElements(ModelFactory::getModel('Project')->listData());
+        $projects = $this->getArrayElements(ModelFactory::getModel("Project")->listData());
 
-        return $this->render('front/project.twig', [
-            'toolProjects'      => $projects["tool"],
-            'websiteProjects'   => $projects["website"],
-            'animadioPens'      => $projects["animadio"],
-            'freecodecampPens'  => $projects["freecodecamp"]
+        return $this->render("front/project.twig", [
+            "toolProjects"      => $projects["tool"],
+            "websiteProjects"   => $projects["website"],
+            "animadioPens"      => $projects["animadio"],
+            "freecodecampPens"  => $projects["freecodecamp"]
         ]);
     }
 
     private function setProjectData()
     {
-        $this->project['name']         = $this->globals->getPost()->getPostVar('name');
-        $this->project['year']         = $this->globals->getPost()->getPostVar('year');
-        $this->project['category']     = $this->globals->getPost()->getPostVar('category');
-        $this->project['description']  = $this->globals->getPost()->getPostVar('description');
+        $this->project["name"]         = $this->globals->getPost()->getPostVar("name");
+        $this->project["year"]         = $this->globals->getPost()->getPostVar("year");
+        $this->project["category"]     = $this->globals->getPost()->getPostVar("category");
+        $this->project["description"]  = $this->globals->getPost()->getPostVar("description");
 
-        $this->project["link"] = str_replace("https://", "", $this->globals->getPost()->getPostVar('link'));
+        $this->project["link"] = str_replace("https://", "", $this->globals->getPost()->getPostVar("link"));
     }
 
     private function setProjectPicture() {
-        $this->project['image'] = $this->cleanString($this->project["name"]) . $this->globals->getFiles()->setFileExtension();
+        $this->project["image"] = $this->cleanString($this->project["name"]) . $this->globals->getFiles()->setFileExtension();
 
-        $this->globals->getFiles()->uploadFile('img/projects/', $this->cleanString($this->project['name']));
-        $this->globals->getFiles()->makeThumbnail("img/projects/" . $this->project['image'], 300);
+        $this->globals->getFiles()->uploadFile("img/projects/", $this->cleanString($this->project["name"]));
+        $this->globals->getFiles()->makeThumbnail("img/projects/" . $this->project["image"], 300);
     }
 
     /**
@@ -68,13 +68,13 @@ class ProjectController extends MainController
             $this->setProjectData();
             $this->setProjectPicture();
 
-            ModelFactory::getModel('Project')->createData($this->project);
-            $this->globals->getSession()->createAlert('New project created successfully !', 'green');
+            ModelFactory::getModel("Project")->createData($this->project);
+            $this->globals->getSession()->createAlert("New project created successfully !", "green");
 
-            $this->redirect('admin');
+            $this->redirect("admin");
         }
 
-        return $this->render('back/createProject.twig');
+        return $this->render("back/createProject.twig");
     }
 
     /**
@@ -90,27 +90,27 @@ class ProjectController extends MainController
         if (!empty($this->globals->getPost()->getPostArray())) {
             $this->setProjectData();
 
-            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+            if (!empty($this->globals->getFiles()->getFileVar("name"))) {
                 $this->setProjectPicture();
             }
 
-            ModelFactory::getModel('Project')->updateData($this->globals->getGet()->getGetVar('id'), $this->project);
-            $this->globals->getSession()->createAlert('Successful modification of the selected project !', 'blue');
+            ModelFactory::getModel("Project")->updateData($this->globals->getGet()->getGetVar("id"), $this->project);
+            $this->globals->getSession()->createAlert("Successful modification of the selected project !", "blue");
 
-            $this->redirect('admin');
+            $this->redirect("admin");
         }
-        $project = ModelFactory::getModel('Project')->readData($this->globals->getGet()->getGetVar('id'));
+        $project = ModelFactory::getModel("Project")->readData($this->globals->getGet()->getGetVar("id"));
 
-        return $this->render('back/updateProject.twig', ['project' => $project]);
+        return $this->render("back/updateProject.twig", ["project" => $project]);
     }
 
     public function deleteMethod()
     {
         $this->checkAdminAccess();
 
-        ModelFactory::getModel('Project')->deleteData($this->globals->getGet()->getGetVar('id'));
-        $this->globals->getSession()->createAlert('Project actually deleted !', 'red');
+        ModelFactory::getModel("Project")->deleteData($this->globals->getGet()->getGetVar("id"));
+        $this->globals->getSession()->createAlert("Project actually deleted !", "red");
 
-        $this->redirect('admin');
+        $this->redirect("admin");
     }
 }

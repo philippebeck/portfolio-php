@@ -27,9 +27,9 @@ class JobController extends MainController
      */
     public function defaultMethod()
     {
-        $jobs = ModelFactory::getModel('Job')->listData();
+        $jobs = ModelFactory::getModel("Job")->listData();
 
-        return $this->render('front/job.twig', ['jobs'  =>  $jobs]);
+        return $this->render("front/job.twig", ["jobs"  =>  $jobs]);
     }
 
     private function setJobLink()
@@ -62,13 +62,13 @@ class JobController extends MainController
             $this->setJobLink();
             $this->setJobLogo();
 
-            ModelFactory::getModel('Job')->createData($this->job);
-            $this->globals->getSession()->createAlert('New job successfully created !', 'green');
+            ModelFactory::getModel("Job")->createData($this->job);
+            $this->globals->getSession()->createAlert("New job successfully created !", "green");
 
-            $this->redirect('admin');
+            $this->redirect("admin");
         }
 
-        return $this->render('back/createJob.twig');
+        return $this->render("back/createJob.twig");
     }
 
     /**
@@ -86,27 +86,27 @@ class JobController extends MainController
 
             $this->setJobLink();
 
-            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
+            if (!empty($this->globals->getFiles()->getFileVar("name"))) {
                 $this->setJobLogo();
             }
 
-            ModelFactory::getModel('Job')->updateData($this->globals->getGet()->getGetVar('id'), $this->job);
-            $this->globals->getSession()->createAlert('Successful modification of the selected job !', 'blue');
+            ModelFactory::getModel("Job")->updateData($this->globals->getGet()->getGetVar("id"), $this->job);
+            $this->globals->getSession()->createAlert("Successful modification of the selected job !", "blue");
 
-            $this->redirect('admin');
+            $this->redirect("admin");
         }
-        $job = ModelFactory::getModel('Job')->readData($this->globals->getGet()->getGetVar('id'));
+        $job = ModelFactory::getModel("Job")->readData($this->globals->getGet()->getGetVar("id"));
 
-        return $this->render('back/updateJob.twig', ['job' => $job]);
+        return $this->render("back/updateJob.twig", ["job" => $job]);
     }
 
     public function deleteMethod()
     {
         $this->checkAdminAccess();
 
-        ModelFactory::getModel('Job')->deleteData($this->globals->getGet()->getGetVar('id'));
-        $this->globals->getSession()->createAlert('Job permanently deleted !', 'red');
+        ModelFactory::getModel("Job")->deleteData($this->globals->getGet()->getGetVar("id"));
+        $this->globals->getSession()->createAlert("Job permanently deleted !", "red");
 
-        $this->redirect('admin');
+        $this->redirect("admin");
     }
 }

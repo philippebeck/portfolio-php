@@ -27,12 +27,12 @@ class CertificateController extends MainController
      */
     public function defaultMethod()
     {
-        $certificates = $this->getArrayElements(ModelFactory::getModel('Certificate')->listData());
+        $certificates = $this->getArrayElements(ModelFactory::getModel("Certificate")->listData());
 
-        return $this->render('front/certificate.twig', [
-            'courseCertifs' => $certificates["course"],
-            'pathCertifs'   => $certificates["path"],
-            'degreeCertifs' => $certificates["degree"]
+        return $this->render("front/certificate.twig", [
+            "courseCertifs" => $certificates["course"],
+            "pathCertifs"   => $certificates["path"],
+            "degreeCertifs" => $certificates["degree"]
         ]);
     }
 
@@ -50,12 +50,12 @@ class CertificateController extends MainController
             $this->certificate          = $this->globals->getPost()->getPostArray();
             $this->certificate["link"]  = str_replace("https://", "", $this->certificate["link"]);
 
-            ModelFactory::getModel('Certificate')->createData($this->certificate);
-            $this->globals->getSession()->createAlert('New certificate successfully created !', 'green');
+            ModelFactory::getModel("Certificate")->createData($this->certificate);
+            $this->globals->getSession()->createAlert("New certificate successfully created !", "green");
 
-            $this->redirect('admin');
+            $this->redirect("admin");
         }
-        return $this->render('back/createCertificate.twig');
+        return $this->render("back/createCertificate.twig");
     }
 
     /**
@@ -72,24 +72,24 @@ class CertificateController extends MainController
             $this->certificate          = $this->globals->getPost()->getPostArray();
             $this->certificate["link"]  = str_replace("https://", "", $this->certificate["link"]);
 
-            ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->certificate);
-            $this->globals->getSession()->createAlert('Successful modification of the selected certificate !', 'blue');
+            ModelFactory::getModel("Certificate")->updateData($this->globals->getGet()->getGetVar("id"), $this->certificate);
+            $this->globals->getSession()->createAlert("Successful modification of the selected certificate !", "blue");
 
-            $this->redirect('admin');
+            $this->redirect("admin");
         }
-        $certificate = ModelFactory::getModel('Certificate')->readData($this->globals->getGet()->getGetVar('id'));
+        $certificate = ModelFactory::getModel("Certificate")->readData($this->globals->getGet()->getGetVar("id"));
 
-        return $this->render('back/updateCertificate.twig', ['certificate' => $certificate]);
+        return $this->render("back/updateCertificate.twig", ["certificate" => $certificate]);
     }
 
     public function deleteMethod()
     {
         $this->checkAdminAccess();
 
-        ModelFactory::getModel('Certificate')->deleteData($this->globals->getGet()->getGetVar('id'));
-        $this->globals->getSession()->createAlert('Certificate permanently deleted !', 'red');
+        ModelFactory::getModel("Certificate")->deleteData($this->globals->getGet()->getGetVar("id"));
+        $this->globals->getSession()->createAlert("Certificate permanently deleted !", "red");
 
-        $this->redirect('admin');
+        $this->redirect("admin");
 
     }
 }

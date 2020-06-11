@@ -24,19 +24,19 @@ class AdminController extends MainController
     {
         $this->checkAdminAccess();
 
-        $projects       = ModelFactory::getModel('Project')->listData();
-        $jobs           = ModelFactory::getModel('Job')->listData();
-        $certificates   = ModelFactory::getModel('Certificate')->listData();
-        $users          = ModelFactory::getModel('User')->listData();
+        $projects       = ModelFactory::getModel("Project")->listData();
+        $jobs           = ModelFactory::getModel("Job")->listData();
+        $certificates   = ModelFactory::getModel("Certificate")->listData();
+        $users          = ModelFactory::getModel("User")->listData();
 
         $projects       = array_reverse($projects);
         $certificates   = array_reverse($certificates);
 
-        return $this->render('back/admin.twig', [
-            'projects'      => $projects,
-            'jobs'          => $jobs,
-            'certificates'  => $certificates,
-            'users'         => $users
+        return $this->render("back/admin.twig", [
+            "projects"      => $projects,
+            "jobs"          => $jobs,
+            "certificates"  => $certificates,
+            "users"         => $users
         ]);
     }
 }
