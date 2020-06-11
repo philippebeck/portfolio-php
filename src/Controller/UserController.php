@@ -48,6 +48,25 @@ class UserController extends MainController
         return $this->render('front/login.twig');
     }
 
+    private function setUpdatePassword()
+    {
+        $user = ModelFactory::getModel("User")->readData($this->globals->getGet()->getGetVar("id"));
+
+        if (!password_verify($this->globals->getPost()->getPostVar("old-pass"), $user["pass"])) {
+            $this->globals->getSession()->createAlert("Old Password does not match !", "red");
+
+            $this->redirect("admin");
+        }
+
+        if ($this->globals->getPost()->getPostVar("new-pass") !== $this->globals->getPost()->getPostVar("conf-pass")) {
+            $this->globals->getSession()->createAlert("New Passwords do not match !", "red");
+
+            $this->redirect("admin");
+        }
+
+        $this->user["pass"] = password_hash($this->globals->getPost()->getPostVar("new-pass"), PASSWORD_DEFAULT);
+    }
+
     /**
      * @return string
      * @throws LoaderError
