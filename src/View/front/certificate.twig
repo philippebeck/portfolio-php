@@ -48,7 +48,7 @@
                 </thead>
 
                 <tbody>
-                {% for degreeCertif in allDegreeCertifs %}
+                {% for degreeCertif in degreeCertifs %}
                     <tr>
                         <td>{{ date(degreeCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
@@ -77,7 +77,7 @@
                 </thead>
 
                 <tbody>
-                {% for pathCertif in allPathCertifs %}
+                {% for pathCertif in pathCertifs %}
                     <tr>
                         <td>{{ date(pathCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
@@ -104,7 +104,7 @@
                 </thead>
 
                 <tbody>
-                {% for courseCertif in allCourseCertifs %}
+                {% for courseCertif in courseCertifs %}
                     <tr>
                         <td>{{ date(courseCertif.certif_date)|date('d/m/y') }}</td>
                         <td>
