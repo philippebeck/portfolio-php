@@ -47,8 +47,10 @@ class CertificateController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
+            $this->certificate          = $this->globals->getPost()->getPostArray();
+            $this->certificate["link"]  = str_replace("https://", "", $this->certificate["link"]);
 
-            ModelFactory::getModel('Certificate')->createData($this->globals->getPost()->getPostArray());
+            ModelFactory::getModel('Certificate')->createData($this->certificate);
             $this->globals->getSession()->createAlert('New certificate successfully created !', 'green');
 
             $this->redirect('admin');
@@ -67,8 +69,10 @@ class CertificateController extends MainController
         $this->checkAdminAccess();
 
         if (!empty($this->globals->getPost()->getPostArray())) {
+            $this->certificate          = $this->globals->getPost()->getPostArray();
+            $this->certificate["link"]  = str_replace("https://", "", $this->certificate["link"]);
 
-            ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->globals->getPost()->getPostArray());
+            ModelFactory::getModel('Certificate')->updateData($this->globals->getGet()->getGetVar('id'), $this->certificate);
             $this->globals->getSession()->createAlert('Successful modification of the selected certificate !', 'blue');
 
             $this->redirect('admin');
