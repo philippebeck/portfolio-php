@@ -22,7 +22,7 @@ class AdminController extends MainController
      */
     public function defaultMethod()
     {
-        $this->checkAdminAccess();
+        $this->service->getSecurity()->checkAdminAccess();
 
         $projects       = ModelFactory::getModel("Project")->listData();
         $jobs           = ModelFactory::getModel("Job")->listData();
