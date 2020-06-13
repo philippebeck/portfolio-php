@@ -15,14 +15,14 @@
             <h2>Image Manager</h2>
 
             <form class="form" method="post" action={{ url('tool') }} enctype="multipart/form-data">
-                <input name="MAX_FILE_SIZE" type="hidden" value="50000000">
+                <input name="MAX_FILE_SIZE" type="hidden" value="10000000">
                 <fieldset>
                     <legend>
                         <i class="far fa-image fa-2x" aria-hidden="true"></i>
                     </legend>
                     <ul>
                         <li>
-                            <label for="file">Submit Image (max 50Mo)</label>
+                            <label for="file">Submit Image (max 10Mo)</label>
                             <input name="file" type="file" accept=".bmp, .jpg, .jpeg, .png, .gif, .wbmp, .webp, .xbm">
                         </li>
                         <li>

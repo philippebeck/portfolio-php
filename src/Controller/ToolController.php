@@ -27,7 +27,7 @@ class ToolController extends MainController
             $image["type"]  = $this->getPost()->getPostVar("type");
             $image["width"] = $this->getPost()->getPostVar("width");
 
-            $this->service->getString()->cleanString($this->getFiles()->uploadFile("img/convert/", "convert"));
+            $this->service->getString()->cleanString($this->getFiles()->uploadFile("img/convert/", "convert", 10000000));
 
             if ($image["type"] !== "") {
                 $this->service->getImage()->convertImage($image["image"], $image["type"], "img/convert/convert" . $image["type"]);
