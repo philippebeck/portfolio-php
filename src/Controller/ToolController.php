@@ -38,8 +38,6 @@ class ToolController extends MainController
                 $this->service->getImage()->makeThumbnail($image["image"], $image["width"]);
             }
 
-            $this->getSession()->createAlert("New Image created successfully !", "green");
-
             return $this->render("front/tool.twig", ["image" => $image]);
         }
 
