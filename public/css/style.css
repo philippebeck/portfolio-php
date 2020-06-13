@@ -28,6 +28,10 @@ form label {
   box-shadow: inset 0 0 10px 2px;
 }
 
+select {
+  margin: 10px auto 20px;
+}
+
 figure {
   margin-right: 10px;
   margin-left: 10px;

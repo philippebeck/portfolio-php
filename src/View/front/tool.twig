@@ -1,0 +1,62 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Tools{% endblock %}
+
+{% block description %}Tools for Files Manipulations : Image Manager{% endblock %}
+
+{% block main %}
+    <main id="home" class="container-90tn-80md-70wd mar-bot-md">
+
+        <header class="bg-white bord-double bord-curve bord-purple pad-md mar-bot-lg anima-slipB">
+            <p>Your can find here some tools for files manipulations, for the moment : you can access to Image Manager, but some others will follow !</p>
+        </header>
+
+        <section class="anima-flipX">
+            <h2>Image Manager</h2>
+
+            <form class="form" method="post" action={{ url('tool') }} enctype="multipart/form-data">
+                <input name="MAX_FILE_SIZE" type="hidden" value="50000000">
+                <fieldset>
+                    <legend>
+                        <i class="far fa-image fa-2x" aria-hidden="true"></i>
+                    </legend>
+                    <ul>
+                        <li>
+                            <label for="file">Submit Image (max 50Mo)</label>
+                            <input name="file" type="file" accept=".bmp, .jpg, .jpeg, .png, .gif, .wbmp, .webp, .xbm">
+                        </li>
+                        <li>
+                            <label for="type">To Convert the Type</label>
+                            <select id="type" name="type">
+                                <option value="">-- Choose Type to Convert</option>
+                                <option value=".bmp">BMP</option>
+                                <option value=".gif">GIF</option>
+                                <option value=".jpg">JPG</option>
+                                <option value=".png">PNG</option>
+                                <option value=".webp">WEBP</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="width">To Make a Thumbnail</label>
+                            <input id="width" name="width" type="number" min="16" max="2000" placeholder="Type the Width">
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Convert">
+                        </li>
+                    </ul>
+                </fieldset>
+            </form>
+
+            {% if image %}
+                <figure class="container">
+                    <img class="bord-curve" src="{{ image['image'] }}" alt="Converted Image">
+                    <figcaption>Your New Image</figcaption>
+                </figure>
+            {% endif %}
+        </section>
+
+    </main>
+{% endblock %}

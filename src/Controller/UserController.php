@@ -27,49 +27,49 @@ class UserController extends MainController
      */
     public function defaultMethod()
     {
-        if (!empty($this->globals->getPost()->getPostArray())) {
-            $userPost = $this->globals->getPost()->getPostArray();
+        if (!empty($this->getPost()->getPostArray())) {
+            $userPost = $this->getPost()->getPostArray();
 
-            if (isset($userPost['g-recaptcha-response']) && !empty($userPost['g-recaptcha-response'])) {
+            if (isset($userPost["g-recaptcha-response"]) && !empty($userPost["g-recaptcha-response"])) {
 
-                if ($this->checkRecaptcha($userPost['g-recaptcha-response'])) {
-                    $userData = ModelFactory::getModel('User')->readData($userPost['email'], 'email');
+                if ($this->service->getSecurity()->checkRecaptcha($userPost["g-recaptcha-response"])) {
+                    $userData = ModelFactory::getModel("User")->readData($userPost["email"], "email");
 
-                    if (password_verify($userPost['pass'], $userData['pass'])) {
-                        $this->globals->getSession()->createSession($userData);
-                        $this->globals->getSession()->createAlert('Successful authentication, welcome ' . $userData['name'] . ' !', 'purple');
+                    if (password_verify($userPost["pass"], $userData["pass"])) {
+                        $this->getSession()->createSession($userData);
+                        $this->getSession()->createAlert("Successful authentication, welcome " . $userData["name"] . " !", "purple");
 
-                        $this->redirect('admin');
+                        $this->redirect("admin");
                     }
-                    $this->globals->getSession()->createAlert('Failed authentication !', 'black');
+                    $this->getSession()->createAlert("Failed authentication !", "black");
 
-                    $this->redirect('user');
+                    $this->redirect("user");
                 }
             }
-            $this->globals->getSession()->createAlert('Check the reCAPTCHA !', 'red');
+            $this->getSession()->createAlert("Check the reCAPTCHA !", "red");
 
-            $this->redirect('user');
+            $this->redirect("user");
         }
-        return $this->render('front/login.twig');
+        return $this->render("front/login.twig");
     }
 
     private function setUpdatePassword()
     {
-        $user = ModelFactory::getModel("User")->readData($this->globals->getGet()->getGetVar("id"));
+        $user = ModelFactory::getModel("User")->readData($this->getGet()->getGetVar("id"));
 
-        if (!password_verify($this->globals->getPost()->getPostVar("old-pass"), $user["pass"])) {
-            $this->globals->getSession()->createAlert("Old Password does not match !", "red");
-
-            $this->redirect("admin");
-        }
-
-        if ($this->globals->getPost()->getPostVar("new-pass") !== $this->globals->getPost()->getPostVar("conf-pass")) {
-            $this->globals->getSession()->createAlert("New Passwords do not match !", "red");
+        if (!password_verify($this->getPost()->getPostVar("old-pass"), $user["pass"])) {
+            $this->getSession()->createAlert("Old Password does not match !", "red");
 
             $this->redirect("admin");
         }
 
-        $this->user["pass"] = password_hash($this->globals->getPost()->getPostVar("new-pass"), PASSWORD_DEFAULT);
+        if ($this->getPost()->getPostVar("new-pass") !== $this->getPost()->getPostVar("conf-pass")) {
+            $this->getSession()->createAlert("New Passwords do not match !", "red");
+
+            $this->redirect("admin");
+        }
+
+        $this->user["pass"] = password_hash($this->getPost()->getPostVar("new-pass"), PASSWORD_DEFAULT);
     }
 
     /**
@@ -80,38 +80,38 @@ class UserController extends MainController
      */
     public function updateMethod()
     {
-        $this->checkAdminAccess();
+        $this->service->getSecurity()->checkAdminAccess();
 
-        if (!empty($this->globals->getPost()->getPostArray())) {
+        if (!empty($this->getPost()->getPostArray())) {
 
-            $user['name']   = $this->globals->getPost()->getPostVar('name');
-            $user['email']  = $this->globals->getPost()->getPostVar('email');
+            $user["name"]   = $this->getPost()->getPostVar("name");
+            $user["email"]  = $this->getPost()->getPostVar("email");
 
-            if (!empty($this->globals->getFiles()->getFileVar('name'))) {
-                $user["image"] = $this->cleanString($user["name"]) . $this->globals->getFiles()->setFileExtension();
+            if (!empty($this->getFiles()->getFileVar("name"))) {
+                $user["image"] = $this->service->getString()->cleanString($user["name"]) . $this->getFiles()->setFileExtension();
 
-                $this->globals->getFiles()->uploadFile("img/user/", $this->cleanString($user["name"]));
-                $this->globals->getFiles()->makeThumbnail("img/user/" . $user["image"], 150);
+                $this->getFiles()->uploadFile("img/user/", $this->service->getString()->cleanString($user["name"]));
+                $this->service->getImage()->makeThumbnail("img/user/" . $user["image"], 150);
             }
 
-            if (!empty($this->globals->getPost()->getPostVar('pass'))) {
-                $user['pass'] = password_hash($this->globals->getPost()->getPostVar('pass'), PASSWORD_DEFAULT);
+            if (!empty($this->getPost()->getPostVar("pass"))) {
+                $user["pass"] = password_hash($this->getPost()->getPostVar("pass"), PASSWORD_DEFAULT);
             }
 
-            ModelFactory::getModel('User')->updateData('1', $user);
-            $this->globals->getSession()->createAlert('Successful modification of the user !', 'blue');
+            ModelFactory::getModel("User")->updateData("1", $user);
+            $this->getSession()->createAlert("Successful modification of the user !", "blue");
 
-            $this->redirect('admin');
+            $this->redirect("admin");
         }
-        $user = ModelFactory::getModel('User')->readData(1);
+        $user = ModelFactory::getModel("User")->readData(1);
 
-        return $this->render('back/updateUser.twig', ['user' => $user]);
+        return $this->render("back/updateUser.twig", ["user" => $user]);
     }
 
     public function logoutMethod()
     {
-        $this->globals->getSession()->destroySession();
+        $this->getSession()->destroySession();
 
-        $this->redirect('home');
+        $this->redirect("home");
     }
 }

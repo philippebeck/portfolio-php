@@ -22,21 +22,21 @@ class AdminController extends MainController
      */
     public function defaultMethod()
     {
-        $this->checkAdminAccess();
+        $this->service->getSecurity()->checkAdminAccess();
 
-        $allProjects        = ModelFactory::getModel('Project')->listData();
-        $allJobs            = ModelFactory::getModel('Job')->listData();
-        $allCertificates    = ModelFactory::getModel('Certificate')->listData();
-        $allUsers           = ModelFactory::getModel('User')->listData();
+        $projects       = ModelFactory::getModel("Project")->listData();
+        $jobs           = ModelFactory::getModel("Job")->listData();
+        $certificates   = ModelFactory::getModel("Certificate")->listData();
+        $users          = ModelFactory::getModel("User")->listData();
 
-        $allProjects        = array_reverse($allProjects);
-        $allCertificates    = array_reverse($allCertificates);
+        $projects       = array_reverse($projects);
+        $certificates   = array_reverse($certificates);
 
-        return $this->render('back/admin.twig', [
-            'allProjects'       => $allProjects,
-            'allJobs'           => $allJobs,
-            'allCertificates'   => $allCertificates,
-            'allUsers'          => $allUsers
+        return $this->render("back/admin.twig", [
+            "projects"      => $projects,
+            "jobs"          => $jobs,
+            "certificates"  => $certificates,
+            "users"         => $users
         ]);
     }
 }
