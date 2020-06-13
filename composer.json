@@ -1,6 +1,6 @@
 {
   "name": "philippebeck/portfolio",
-  "version": "0.11.1",
+  "version": "1.0.0",
   "type": "library",
   "description": "Web Development, Tool Design, Developer Training - Open-source Technologies - HTML, CSS, JavaScript, PHP, SQL",
   "keywords": [
@@ -24,10 +24,10 @@
   },
   "require": {
     "php": "7.3",
-    "philippebeck/pam": "^3.3.0"
+    "philippebeck/pam": "^4.0.0"
   },
   "require-dev": {
-    "tracy/tracy": "^2.7.2"
+    "tracy/tracy": "^2.7.5"
   },
   "config": {
     "platform": {

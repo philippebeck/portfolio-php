@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0cccb138e78a64de7a2a3d36f5121274",
+    "content-hash": "6461652109db3726710f9b6c900a200e",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -189,16 +189,16 @@
         },
         {
             "name": "philippebeck/pam",
-            "version": "3.3.2",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "b77b9514c54e20c3d88e088f8d2b552a26d41a0e"
+                "reference": "833a3f7fbb6419028e9d7b915383c2ef9ffda151"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/b77b9514c54e20c3d88e088f8d2b552a26d41a0e",
-                "reference": "b77b9514c54e20c3d88e088f8d2b552a26d41a0e",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/833a3f7fbb6419028e9d7b915383c2ef9ffda151",
+                "reference": "833a3f7fbb6419028e9d7b915383c2ef9ffda151",
                 "shasum": ""
             },
             "require": {
@@ -232,17 +232,22 @@
             ],
             "description": "Php Approachable Microframework",
             "keywords": [
+                "array",
                 "crud",
                 "filters",
                 "framework",
-                "integrate profiler",
+                "image",
+                "mail",
                 "mvc",
                 "php",
                 "prepared queries",
-                "superglobal",
-                "twig extension"
+                "profiler",
+                "security",
+                "string",
+                "superglobals",
+                "twig"
             ],
-            "time": "2020-06-11T15:31:49+00:00"
+            "time": "2020-06-13T14:48:04+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
