@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6461652109db3726710f9b6c900a200e",
+    "content-hash": "5c27c8df484a3254737cb9f43b47827b",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -84,16 +84,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.17",
+            "version": "2.1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "ade6887fd9bd74177769645ab5c474824f8a418a"
+                "reference": "cfa3d44471c7f5bfb684ac2b0da7114283d78441"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ade6887fd9bd74177769645ab5c474824f8a418a",
-                "reference": "ade6887fd9bd74177769645ab5c474824f8a418a",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/cfa3d44471c7f5bfb684ac2b0da7114283d78441",
+                "reference": "cfa3d44471c7f5bfb684ac2b0da7114283d78441",
                 "shasum": ""
             },
             "require": {
@@ -117,7 +117,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Egulias\\EmailValidator\\": "EmailValidator"
+                    "Egulias\\EmailValidator\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -138,7 +138,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-02-13T22:36:52+00:00"
+            "time": "2020-06-16T20:11:17+00:00"
         },
         {
             "name": "google/recaptcha",
@@ -189,21 +189,24 @@
         },
         {
             "name": "philippebeck/pam",
-            "version": "4.0.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippebeck/pam.git",
-                "reference": "833a3f7fbb6419028e9d7b915383c2ef9ffda151"
+                "reference": "a6ea7461a6492df59d73c13033f068d32c4b49f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippebeck/pam/zipball/833a3f7fbb6419028e9d7b915383c2ef9ffda151",
-                "reference": "833a3f7fbb6419028e9d7b915383c2ef9ffda151",
+                "url": "https://api.github.com/repos/philippebeck/pam/zipball/a6ea7461a6492df59d73c13033f068d32c4b49f3",
+                "reference": "a6ea7461a6492df59d73c13033f068d32c4b49f3",
                 "shasum": ""
             },
             "require": {
+                "ext-curl": "*",
                 "ext-exif": "*",
                 "ext-gd": "*",
+                "ext-json": "*",
+                "ext-pdo": "*",
                 "google/recaptcha": "^1.2.4",
                 "php": "^7.3",
                 "swiftmailer/swiftmailer": "^6.2.3",
@@ -247,7 +250,7 @@
                 "superglobals",
                 "twig"
             ],
-            "time": "2020-06-13T14:48:04+00:00"
+            "time": "2020-06-18T17:24:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
