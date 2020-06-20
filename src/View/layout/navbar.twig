@@ -28,18 +28,16 @@
                 <span>Certificates</span>
             </a>
         </li>
-        <li>
-            <a href="{{ url('tool') }}" accesskey="t" title="Image Manager">
-                <i class="fas fa-tools fa-fw" aria-hidden="true"></i>
-                <span>Tools</span>
-            </a>
-        </li>
     </ul>
 
     <!-- User access -->
     <ul>
-
         {% if (isLogged()) %}
+            <li>
+                <a href="{{ url('tool') }}" accesskey="t" title="Image Manager">
+                    <i class="fas fa-tools fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
             <li>
                 <a href="{{ url('admin') }}" accesskey="a" title="{{ getUserVar('name') }} Admin">
                     <img class="bord-circle" src="img/user/{{ getUserVar('image') }}" alt="{{ getUserVar('name') }} Picture">
