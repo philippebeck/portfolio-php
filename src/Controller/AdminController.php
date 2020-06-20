@@ -22,7 +22,9 @@ class AdminController extends MainController
      */
     public function defaultMethod()
     {
-        $this->service->getSecurity()->checkAdminAccess();
+        if ($this->service->getSecurity()->checkIsAdmin() !== true) {
+            $this->redirect("home");
+        }
 
         $projects       = ModelFactory::getModel("Project")->listData();
         $jobs           = ModelFactory::getModel("Job")->listData();

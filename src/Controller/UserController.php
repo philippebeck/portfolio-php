@@ -80,7 +80,9 @@ class UserController extends MainController
      */
     public function updateMethod()
     {
-        $this->service->getSecurity()->checkAdminAccess();
+        if ($this->service->getSecurity()->checkIsAdmin() !== true) {
+            $this->redirect("home");
+        }
 
         if (!empty($this->getPost()->getPostArray())) {
 

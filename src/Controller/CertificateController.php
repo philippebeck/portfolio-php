@@ -44,7 +44,9 @@ class CertificateController extends MainController
      */
     public function createMethod()
     {
-        $this->service->getSecurity()->checkAdminAccess();
+        if ($this->service->getSecurity()->checkIsAdmin() !== true) {
+            $this->redirect("home");
+        }
 
         if (!empty($this->getPost()->getPostArray())) {
             $this->certificate          = $this->getPost()->getPostArray();
@@ -66,7 +68,9 @@ class CertificateController extends MainController
      */
     public function updateMethod()
     {
-        $this->service->getSecurity()->checkAdminAccess();
+        if ($this->service->getSecurity()->checkIsAdmin() !== true) {
+            $this->redirect("home");
+        }
 
         if (!empty($this->getPost()->getPostArray())) {
             $this->certificate          = $this->getPost()->getPostArray();
@@ -84,7 +88,9 @@ class CertificateController extends MainController
 
     public function deleteMethod()
     {
-        $this->service->getSecurity()->checkAdminAccess();
+        if ($this->service->getSecurity()->checkIsAdmin() !== true) {
+            $this->redirect("home");
+        }
 
         ModelFactory::getModel("Certificate")->deleteData($this->getGet()->getGetVar("id"));
         $this->getSession()->createAlert("Certificate permanently deleted !", "red");

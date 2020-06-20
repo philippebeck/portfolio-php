@@ -21,6 +21,10 @@ class ToolController extends MainController
      */
     public function defaultMethod()
     {
+        if ($this->service->getSecurity()->checkIsAdmin() !== true) {
+            $this->redirect("home");
+        }
+
         if (!empty($this->getPost()->getPostArray())) {
             $image["image"] = "img/convert/convert" . $this->getFiles()->setFileExtension();
 
