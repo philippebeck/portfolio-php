@@ -26,12 +26,10 @@ class ToolController extends MainController
         }
 
         if (!empty($this->getPost()->getPostArray())) {
-            $image["image"] = "img/convert/convert" . $this->getFiles()->setFileExtension();
+            $image["image"] = $this->getFiles()->getFileVar("tmp_name");
 
             $image["type"]  = $this->getPost()->getPostVar("type");
             $image["width"] = $this->getPost()->getPostVar("width");
-
-            $this->service->getString()->cleanString($this->getFiles()->uploadFile("img/convert/", "convert", 10000000));
 
             if ($image["type"] !== "") {
                 $this->service->getImage()->convertImage($image["image"], $image["type"], "img/convert/convert" . $image["type"]);
