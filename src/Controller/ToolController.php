@@ -21,13 +21,15 @@ class ToolController extends MainController
      */
     public function defaultMethod()
     {
+        if ($this->service->getSecurity()->checkIsAdmin() !== true) {
+            $this->redirect("home");
+        }
+
         if (!empty($this->getPost()->getPostArray())) {
-            $image["image"] = "img/convert/convert" . $this->getFiles()->setFileExtension();
+            $image["image"] = $this->getFiles()->getFileVar("tmp_name");
 
             $image["type"]  = $this->getPost()->getPostVar("type");
             $image["width"] = $this->getPost()->getPostVar("width");
-
-            $this->service->getString()->cleanString($this->getFiles()->uploadFile("img/convert/", "convert"));
 
             if ($image["type"] !== "") {
                 $this->service->getImage()->convertImage($image["image"], $image["type"], "img/convert/convert" . $image["type"]);
@@ -37,8 +39,6 @@ class ToolController extends MainController
             if ($image["width"] !== "") {
                 $this->service->getImage()->makeThumbnail($image["image"], $image["width"]);
             }
-
-            $this->getSession()->createAlert("New Image created successfully !", "green");
 
             return $this->render("front/tool.twig", ["image" => $image]);
         }
