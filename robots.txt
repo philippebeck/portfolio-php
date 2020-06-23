@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /src/View/back/
 
-Sitemap: https://philippebeck.net/sitemap.xml
+Sitemap: https://philippebeck.net/public/sitemap.xml
